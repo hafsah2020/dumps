@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ab2af9788cea8091649d81e207d844d7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ab2af9788cea8091649d81e207d844d7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ab2af9788cea8091649d81e207d844d7 = L.map(
+                "map_ab2af9788cea8091649d81e207d844d7",
+                {
+                    center: [9.014613169499999, 7.363421537000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_05eb3e27f0e20a38b225dc2e76bd4ba1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_05eb3e27f0e20a38b225dc2e76bd4ba1.addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var marker_f6ea3a38d477108a7997dda9736ecfcc = L.marker(
+                [8.9382215, 7.3084276],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_2839682e81f989db33404dd40b6866e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4b12a10565ad7f8a4ac0fc9ca86039c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45d6f9221c4c44141ab46bb3e4d32b80 = $(`<div id="html_45d6f9221c4c44141ab46bb3e4d32b80" style="width: 100.0%; height: 100.0%;">Location: Lugbe district, AMAC<br> Fuel type: CNG</div>`)[0];
+                popup_f4b12a10565ad7f8a4ac0fc9ca86039c.setContent(html_45d6f9221c4c44141ab46bb3e4d32b80);
+            
+        
+
+        marker_f6ea3a38d477108a7997dda9736ecfcc.bindPopup(popup_f4b12a10565ad7f8a4ac0fc9ca86039c)
+        ;
+
+        
+    
+    
+                marker_f6ea3a38d477108a7997dda9736ecfcc.setIcon(icon_2839682e81f989db33404dd40b6866e4);
+            
+    
+            var marker_761be0b214ec0a070a771ceee200aab9 = L.marker(
+                [8.96858228, 7.35853449],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_4f1379d2993d92a28917d58db36f5ed3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cbde2a6af8039a1308ea4834cc0fc3dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_393b7e06b3ecac6d302c7f7f08b4a132 = $(`<div id="html_393b7e06b3ecac6d302c7f7f08b4a132" style="width: 100.0%; height: 100.0%;">Location: Lugbe district, AMAC<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_cbde2a6af8039a1308ea4834cc0fc3dd.setContent(html_393b7e06b3ecac6d302c7f7f08b4a132);
+            
+        
+
+        marker_761be0b214ec0a070a771ceee200aab9.bindPopup(popup_cbde2a6af8039a1308ea4834cc0fc3dd)
+        ;
+
+        
+    
+    
+                marker_761be0b214ec0a070a771ceee200aab9.setIcon(icon_4f1379d2993d92a28917d58db36f5ed3);
+            
+    
+            var marker_1845dbbd31823e84cca0d0151d710e4c = L.marker(
+                [9.0637937, 7.4242305],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_779eeade25377c5bbc87991f20042308 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56996dfc211614020b79b49f58359a7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87b1d515a3640a7a5d887eb66d24d275 = $(`<div id="html_87b1d515a3640a7a5d887eb66d24d275" style="width: 100.0%; height: 100.0%;">Location: Jabi district, AMAC<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_56996dfc211614020b79b49f58359a7f.setContent(html_87b1d515a3640a7a5d887eb66d24d275);
+            
+        
+
+        marker_1845dbbd31823e84cca0d0151d710e4c.bindPopup(popup_56996dfc211614020b79b49f58359a7f)
+        ;
+
+        
+    
+    
+                marker_1845dbbd31823e84cca0d0151d710e4c.setIcon(icon_779eeade25377c5bbc87991f20042308);
+            
+    
+            var marker_18d49f9a7a1f4436459ffc53c5d68dc7 = L.marker(
+                [9.0864443, 7.4432883],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_0ccb21ddc294cbbf7cb54c94ba2071d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f55c0695ccfb57d9b1cf2d0b1e544f5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eab9c026a15dcd99d94644fbb97e825a = $(`<div id="html_eab9c026a15dcd99d94644fbb97e825a" style="width: 100.0%; height: 100.0%;">Location: Wuse 2 district, AMAC<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_f55c0695ccfb57d9b1cf2d0b1e544f5d.setContent(html_eab9c026a15dcd99d94644fbb97e825a);
+            
+        
+
+        marker_18d49f9a7a1f4436459ffc53c5d68dc7.bindPopup(popup_f55c0695ccfb57d9b1cf2d0b1e544f5d)
+        ;
+
+        
+    
+    
+                marker_18d49f9a7a1f4436459ffc53c5d68dc7.setIcon(icon_0ccb21ddc294cbbf7cb54c94ba2071d3);
+            
+    
+            var marker_43910a7759d5dfbb5b94854eede846c5 = L.marker(
+                [9.0897776, 7.4312014],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_61683ebad8cc5185430e445d51216967 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_986dc01f527d9af8bf3510aa56e10d7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1dbb2aecda71268bc49afe7c7f178cc = $(`<div id="html_b1dbb2aecda71268bc49afe7c7f178cc" style="width: 100.0%; height: 100.0%;">Location: Kado<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_986dc01f527d9af8bf3510aa56e10d7d.setContent(html_b1dbb2aecda71268bc49afe7c7f178cc);
+            
+        
+
+        marker_43910a7759d5dfbb5b94854eede846c5.bindPopup(popup_986dc01f527d9af8bf3510aa56e10d7d)
+        ;
+
+        
+    
+    
+                marker_43910a7759d5dfbb5b94854eede846c5.setIcon(icon_61683ebad8cc5185430e445d51216967);
+            
+    
+            var marker_50702ed0bb9b18a52d12b8873629a997 = L.marker(
+                [9.0827605, 7.464558],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_aa55d5362f490d7e6e717acfb8c0a2c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c5a0df5cc4e23d13c183deeeca4cb05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8522955db1357f9dee4f5adaabcea017 = $(`<div id="html_8522955db1357f9dee4f5adaabcea017" style="width: 100.0%; height: 100.0%;">Location: Wuse<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_7c5a0df5cc4e23d13c183deeeca4cb05.setContent(html_8522955db1357f9dee4f5adaabcea017);
+            
+        
+
+        marker_50702ed0bb9b18a52d12b8873629a997.bindPopup(popup_7c5a0df5cc4e23d13c183deeeca4cb05)
+        ;
+
+        
+    
+    
+                marker_50702ed0bb9b18a52d12b8873629a997.setIcon(icon_aa55d5362f490d7e6e717acfb8c0a2c1);
+            
+    
+            var marker_da7c8b9daae41932c1544326e8e76ce5 = L.marker(
+                [9.1412447, 7.32498832],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_7dc9ce57a2ed47371e3ef43a4df782e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_03250cffe6b27ef9704eaa6108a84195 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9c5ff3f81b7010eb5985d8a7ca09df4 = $(`<div id="html_e9c5ff3f81b7010eb5985d8a7ca09df4" style="width: 100.0%; height: 100.0%;">Location: Kubwa<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_03250cffe6b27ef9704eaa6108a84195.setContent(html_e9c5ff3f81b7010eb5985d8a7ca09df4);
+            
+        
+
+        marker_da7c8b9daae41932c1544326e8e76ce5.bindPopup(popup_03250cffe6b27ef9704eaa6108a84195)
+        ;
+
+        
+    
+    
+                marker_da7c8b9daae41932c1544326e8e76ce5.setIcon(icon_7dc9ce57a2ed47371e3ef43a4df782e4);
+            
+    
+            var marker_ec6d5a6f82ded75056cae78df9193e96 = L.marker(
+                [9.0289003, 7.5850823],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_67b6f4560225275ae2518f81e68c2292 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad7bfc71abc18e3261dda8d11f0e4966 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_194accd5037652f666dc0cdeb0e8cbe4 = $(`<div id="html_194accd5037652f666dc0cdeb0e8cbe4" style="width: 100.0%; height: 100.0%;">Location: Karu<br> Fuel type: Conventional</div>`)[0];
+                popup_ad7bfc71abc18e3261dda8d11f0e4966.setContent(html_194accd5037652f666dc0cdeb0e8cbe4);
+            
+        
+
+        marker_ec6d5a6f82ded75056cae78df9193e96.bindPopup(popup_ad7bfc71abc18e3261dda8d11f0e4966)
+        ;
+
+        
+    
+    
+                marker_ec6d5a6f82ded75056cae78df9193e96.setIcon(icon_67b6f4560225275ae2518f81e68c2292);
+            
+    
+            var marker_228d501411911e6ea88bbd5f5560125e = L.marker(
+                [9.2781567, 7.3679467],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_734f19f2e976ae8934efcf39edd1d6a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d344d9f3a0439d65c5296d3d929693b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef77a8c342266c157453e26670b10cc5 = $(`<div id="html_ef77a8c342266c157453e26670b10cc5" style="width: 100.0%; height: 100.0%;">Location: Bwari<br> Fuel type: Conventional</div>`)[0];
+                popup_6d344d9f3a0439d65c5296d3d929693b.setContent(html_ef77a8c342266c157453e26670b10cc5);
+            
+        
+
+        marker_228d501411911e6ea88bbd5f5560125e.bindPopup(popup_6d344d9f3a0439d65c5296d3d929693b)
+        ;
+
+        
+    
+    
+                marker_228d501411911e6ea88bbd5f5560125e.setIcon(icon_734f19f2e976ae8934efcf39edd1d6a4);
+            
+    
+            var marker_bc6a5b495a162068d8af1c9292296bb7 = L.marker(
+                [9.061299, 7.201572],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_f2fe2a9ea4830dfb6f481b7d75a86015 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_610b1f4b416326c02cc271d2a7a0db2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72f3aeaee8ccfc3b5b6d83c8ebc809bc = $(`<div id="html_72f3aeaee8ccfc3b5b6d83c8ebc809bc" style="width: 100.0%; height: 100.0%;">Location: Kabusa<br> Fuel type: CNG</div>`)[0];
+                popup_610b1f4b416326c02cc271d2a7a0db2f.setContent(html_72f3aeaee8ccfc3b5b6d83c8ebc809bc);
+            
+        
+
+        marker_bc6a5b495a162068d8af1c9292296bb7.bindPopup(popup_610b1f4b416326c02cc271d2a7a0db2f)
+        ;
+
+        
+    
+    
+                marker_bc6a5b495a162068d8af1c9292296bb7.setIcon(icon_f2fe2a9ea4830dfb6f481b7d75a86015);
+            
+    
+            var marker_aa472df431897a534c33661846848da6 = L.marker(
+                [9.11665358, 7.24838809],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_5f7a90136380e29cb6578e10046d5e80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f748c7334552a5225a9c44a197fb471 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62036093f09f60e11684eebc457b55c1 = $(`<div id="html_62036093f09f60e11684eebc457b55c1" style="width: 100.0%; height: 100.0%;">Location: Outskirt<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_2f748c7334552a5225a9c44a197fb471.setContent(html_62036093f09f60e11684eebc457b55c1);
+            
+        
+
+        marker_aa472df431897a534c33661846848da6.bindPopup(popup_2f748c7334552a5225a9c44a197fb471)
+        ;
+
+        
+    
+    
+                marker_aa472df431897a534c33661846848da6.setIcon(icon_5f7a90136380e29cb6578e10046d5e80);
+            
+    
+            var marker_3a40af80c2354a43468ba5e2710bf39d = L.marker(
+                [8.9748707, 7.3579039],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_23512d13d6c3122b7800df6b350393d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a73bc91d287ed54b53e6ee4c7fc58720 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b52684780f1f0c4b4c056681d89726a7 = $(`<div id="html_b52684780f1f0c4b4c056681d89726a7" style="width: 100.0%; height: 100.0%;">Location: Lugbe district, AMAC<br> Fuel type: Conventional</div>`)[0];
+                popup_a73bc91d287ed54b53e6ee4c7fc58720.setContent(html_b52684780f1f0c4b4c056681d89726a7);
+            
+        
+
+        marker_3a40af80c2354a43468ba5e2710bf39d.bindPopup(popup_a73bc91d287ed54b53e6ee4c7fc58720)
+        ;
+
+        
+    
+    
+                marker_3a40af80c2354a43468ba5e2710bf39d.setIcon(icon_23512d13d6c3122b7800df6b350393d0);
+            
+    
+            var marker_118ef22f47e28427a0b6a0f8f4c636d4 = L.marker(
+                [8.9562984, 7.4432093],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_4612e149c69b5083ae64e858074f91c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90aabbb7f2f97c467f2faef535c99b12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fac2b4ddedb4dd11245e531bdcac3bf = $(`<div id="html_4fac2b4ddedb4dd11245e531bdcac3bf" style="width: 100.0%; height: 100.0%;">Location: Lokogoma district, AMAC<br> Fuel type: Conventional</div>`)[0];
+                popup_90aabbb7f2f97c467f2faef535c99b12.setContent(html_4fac2b4ddedb4dd11245e531bdcac3bf);
+            
+        
+
+        marker_118ef22f47e28427a0b6a0f8f4c636d4.bindPopup(popup_90aabbb7f2f97c467f2faef535c99b12)
+        ;
+
+        
+    
+    
+                marker_118ef22f47e28427a0b6a0f8f4c636d4.setIcon(icon_4612e149c69b5083ae64e858074f91c9);
+            
+    
+            var marker_9abc6f0432adf034274a58ff6ea74780 = L.marker(
+                [9.08934947, 7.45147625],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_2ada8fcb27326d1f7cf4873164c6395a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb653ba8c6835f83d0fdaac30b03dd43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17a141b08f602eed88ea6905c5e78379 = $(`<div id="html_17a141b08f602eed88ea6905c5e78379" style="width: 100.0%; height: 100.0%;">Location: Mabushi<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_eb653ba8c6835f83d0fdaac30b03dd43.setContent(html_17a141b08f602eed88ea6905c5e78379);
+            
+        
+
+        marker_9abc6f0432adf034274a58ff6ea74780.bindPopup(popup_eb653ba8c6835f83d0fdaac30b03dd43)
+        ;
+
+        
+    
+    
+                marker_9abc6f0432adf034274a58ff6ea74780.setIcon(icon_2ada8fcb27326d1f7cf4873164c6395a);
+            
+    
+            var marker_75b490f7c68071c7202d93ffb1d93376 = L.marker(
+                [9.13110266, 7.49078778],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_57c2094067663e6a2c3d792bd78d8bc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1eaa4fd83477ab35e6b3d0e8a1c09832 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bab37f495397ac7010bb6b8c0e2f9b0a = $(`<div id="html_bab37f495397ac7010bb6b8c0e2f9b0a" style="width: 100.0%; height: 100.0%;">Location: Mape<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_1eaa4fd83477ab35e6b3d0e8a1c09832.setContent(html_bab37f495397ac7010bb6b8c0e2f9b0a);
+            
+        
+
+        marker_75b490f7c68071c7202d93ffb1d93376.bindPopup(popup_1eaa4fd83477ab35e6b3d0e8a1c09832)
+        ;
+
+        
+    
+    
+                marker_75b490f7c68071c7202d93ffb1d93376.setIcon(icon_57c2094067663e6a2c3d792bd78d8bc7);
+            
+    
+            var marker_1ace9216786c67225941aeb4a919903b = L.marker(
+                [8.9962076, 7.5708085],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_bcf42b95e8c7d4cf57326f7133284aef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22ea484e3ddc3fdcd5fc6e9f97ce39b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6cc3a1fb8681bb2c6baaca13e31be9d = $(`<div id="html_c6cc3a1fb8681bb2c6baaca13e31be9d" style="width: 100.0%; height: 100.0%;">Location: Karu<br> Fuel type: Conventional</div>`)[0];
+                popup_22ea484e3ddc3fdcd5fc6e9f97ce39b2.setContent(html_c6cc3a1fb8681bb2c6baaca13e31be9d);
+            
+        
+
+        marker_1ace9216786c67225941aeb4a919903b.bindPopup(popup_22ea484e3ddc3fdcd5fc6e9f97ce39b2)
+        ;
+
+        
+    
+    
+                marker_1ace9216786c67225941aeb4a919903b.setIcon(icon_bcf42b95e8c7d4cf57326f7133284aef);
+            
+    
+            var marker_6f1a5f8a7ea92dcb609689ba2e8760e9 = L.marker(
+                [8.9124646, 7.0864856],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_35796a0ac59570e258945a265e6053c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acbc1b178b3a573707b7a614a2da955f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef47365e910b430b2fbfcb11ebdd2df2 = $(`<div id="html_ef47365e910b430b2fbfcb11ebdd2df2" style="width: 100.0%; height: 100.0%;">Location: Gwagwalada<br> Fuel type: Conventional</div>`)[0];
+                popup_acbc1b178b3a573707b7a614a2da955f.setContent(html_ef47365e910b430b2fbfcb11ebdd2df2);
+            
+        
+
+        marker_6f1a5f8a7ea92dcb609689ba2e8760e9.bindPopup(popup_acbc1b178b3a573707b7a614a2da955f)
+        ;
+
+        
+    
+    
+                marker_6f1a5f8a7ea92dcb609689ba2e8760e9.setIcon(icon_35796a0ac59570e258945a265e6053c5);
+            
+    
+            var marker_fe4cb9a4249652e34a57f017d54a8e74 = L.marker(
+                [8.8745856, 7.2518844],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_c29e99e7839d9714600a36bd7517ced7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ec2af32874b6a4c8f00fd873fec7ce6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29aa296f367fa16be878bc2c191f6d18 = $(`<div id="html_29aa296f367fa16be878bc2c191f6d18" style="width: 100.0%; height: 100.0%;">Location: Kuje<br> Fuel type: LPG</div>`)[0];
+                popup_8ec2af32874b6a4c8f00fd873fec7ce6.setContent(html_29aa296f367fa16be878bc2c191f6d18);
+            
+        
+
+        marker_fe4cb9a4249652e34a57f017d54a8e74.bindPopup(popup_8ec2af32874b6a4c8f00fd873fec7ce6)
+        ;
+
+        
+    
+    
+                marker_fe4cb9a4249652e34a57f017d54a8e74.setIcon(icon_c29e99e7839d9714600a36bd7517ced7);
+            
+    
+            var marker_45ef1a22035c9bb7c337287c377fb6a8 = L.marker(
+                [8.4902165, 6.9395359],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_ba3d8d204defaaaf610d8a785b5fa7a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d5441e08c509f7f0d636fb1706c890d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cbd308d27dea53784418fb27e0fc0d5c = $(`<div id="html_cbd308d27dea53784418fb27e0fc0d5c" style="width: 100.0%; height: 100.0%;">Location: Abaji<br> Fuel type: Conventional + Gas</div>`)[0];
+                popup_2d5441e08c509f7f0d636fb1706c890d.setContent(html_cbd308d27dea53784418fb27e0fc0d5c);
+            
+        
+
+        marker_45ef1a22035c9bb7c337287c377fb6a8.bindPopup(popup_2d5441e08c509f7f0d636fb1706c890d)
+        ;
+
+        
+    
+    
+                marker_45ef1a22035c9bb7c337287c377fb6a8.setIcon(icon_ba3d8d204defaaaf610d8a785b5fa7a3);
+            
+    
+            var marker_614dc39e45288cdb10d6d728bb287898 = L.marker(
+                [9.0113337, 7.51812141],
+                {
+}
+            ).addTo(map_ab2af9788cea8091649d81e207d844d7);
+        
+    
+            var icon_6dc352af2341d9031f53a86cbc9adebe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e0b7f9c1f548a4f466ac0e7fa8bc566 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd4ce0eb53d37c69bc9eed395aebf626 = $(`<div id="html_fd4ce0eb53d37c69bc9eed395aebf626" style="width: 100.0%; height: 100.0%;">Location: Guzape<br> Fuel type: </div>`)[0];
+                popup_2e0b7f9c1f548a4f466ac0e7fa8bc566.setContent(html_fd4ce0eb53d37c69bc9eed395aebf626);
+            
+        
+
+        marker_614dc39e45288cdb10d6d728bb287898.bindPopup(popup_2e0b7f9c1f548a4f466ac0e7fa8bc566)
+        ;
+
+        
+    
+    
+                marker_614dc39e45288cdb10d6d728bb287898.setIcon(icon_6dc352af2341d9031f53a86cbc9adebe);
+            
+</script>
+</html>
