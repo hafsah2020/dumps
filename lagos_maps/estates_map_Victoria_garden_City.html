@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d9fceb66c3deae8976e61656020c6f95 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d9fceb66c3deae8976e61656020c6f95" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d9fceb66c3deae8976e61656020c6f95 = L.map(
+                "map_d9fceb66c3deae8976e61656020c6f95",
+                {
+                    center: [6.4363, 3.5313],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_d9fceb66c3deae8976e61656020c6f95);
+
+            
+
+        
+    
+            var tile_layer_d34f0dcb03c4a085a464c28233fd46a2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d34f0dcb03c4a085a464c28233fd46a2.addTo(map_d9fceb66c3deae8976e61656020c6f95);
+        
+    
+            var tile_layer_53fedaf198a10d0709b67199335142a5 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_53fedaf198a10d0709b67199335142a5.addTo(map_d9fceb66c3deae8976e61656020c6f95);
+        
+    
+        function geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffff00", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+        function geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffcc00", "weight": 3};
+            }
+        }
+
+        function geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_3b51168f35a7d341a57dd9f0dc8fcbea.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_3b51168f35a7d341a57dd9f0dc8fcbea = L.geoJson(null, {
+                onEachFeature: geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_onEachFeature,
+            
+                style: geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_styler,
+            ...{
+}
+        });
+
+        function geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_add (data) {
+            geo_json_3b51168f35a7d341a57dd9f0dc8fcbea
+                .addData(data);
+        }
+            geo_json_3b51168f35a7d341a57dd9f0dc8fcbea_add({"bbox": [3.535978, 6.443361, 3.555153, 6.460969], "features": [{"bbox": [3.535978, 6.443361, 3.555153, 6.460969], "geometry": {"coordinates": [[[3.536132, 6.443361], [3.542224, 6.44564], [3.548869, 6.448564], [3.549955, 6.449012], [3.551557, 6.449668], [3.55302, 6.450266], [3.553276, 6.450395], [3.553462, 6.450514], [3.553632, 6.450624], [3.553873, 6.450804], [3.554119, 6.451024], [3.554354, 6.451278], [3.554509, 6.4515], [3.554647, 6.451702], [3.554792, 6.451994], [3.554887, 6.452254], [3.554975, 6.452497], [3.555047, 6.452813], [3.555079, 6.453054], [3.555153, 6.460041], [3.554779, 6.460668], [3.554426, 6.46083], [3.554385, 6.460831], [3.550111, 6.460969], [3.54885, 6.460647], [3.548772, 6.460601], [3.548709, 6.46054], [3.54867, 6.460476], [3.548645, 6.460365], [3.548672, 6.460084], [3.5487, 6.459804], [3.548701, 6.459797], [3.548717, 6.459677], [3.548732, 6.459625], [3.548756, 6.459573], [3.548692, 6.451446], [3.54575, 6.449671], [3.545451, 6.44947], [3.543624, 6.448571], [3.541622, 6.447389], [3.538526, 6.445471], [3.535978, 6.443687], [3.536132, 6.443361]]], "type": "Polygon"}, "id": "3", "properties": {"point_coords": [3.5445844, 6.4660322], "zone_name": "Victoria garden City"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_3b51168f35a7d341a57dd9f0dc8fcbea.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_name"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_3b51168f35a7d341a57dd9f0dc8fcbea.addTo(map_d9fceb66c3deae8976e61656020c6f95);
+        
+    
+            var feature_group_0596e5f043f33bbc308be325e0a2dd9e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_7bd9ed9ab94149450d499b10ba1b3917 = L.marker(
+                [6.4660322, 3.5445844],
+                {
+}
+            ).addTo(feature_group_0596e5f043f33bbc308be325e0a2dd9e);
+        
+    
+            var icon_e45f2f3a318f73a90b23513edba7effd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f2179f6bb14510209945da601a4a631 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0d1f2f658bc23eef250d0c32ae1888c = $(`<div id="html_d0d1f2f658bc23eef250d0c32ae1888c" style="width: 100.0%; height: 100.0%;">Victoria Garden City</div>`)[0];
+                popup_8f2179f6bb14510209945da601a4a631.setContent(html_d0d1f2f658bc23eef250d0c32ae1888c);
+            
+        
+
+        marker_7bd9ed9ab94149450d499b10ba1b3917.bindPopup(popup_8f2179f6bb14510209945da601a4a631)
+        ;
+
+        
+    
+    
+                marker_7bd9ed9ab94149450d499b10ba1b3917.setIcon(icon_e45f2f3a318f73a90b23513edba7effd);
+            
+    
+            var marker_5dfb2393ae9b4fea82eb12c35a2facf4 = L.marker(
+                [6.4564263, 3.5314075],
+                {
+}
+            ).addTo(feature_group_0596e5f043f33bbc308be325e0a2dd9e);
+        
+    
+            var icon_e11c69e2410ba50b9ee0e1c7d88779fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f2e9d584c95bcc60c90a8da8580b46a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a0cb08111e48449a91c5ae3ed39308f = $(`<div id="html_7a0cb08111e48449a91c5ae3ed39308f" style="width: 100.0%; height: 100.0%;">Lekki Paradise 3 Estate</div>`)[0];
+                popup_5f2e9d584c95bcc60c90a8da8580b46a.setContent(html_7a0cb08111e48449a91c5ae3ed39308f);
+            
+        
+
+        marker_5dfb2393ae9b4fea82eb12c35a2facf4.bindPopup(popup_5f2e9d584c95bcc60c90a8da8580b46a)
+        ;
+
+        
+    
+    
+                marker_5dfb2393ae9b4fea82eb12c35a2facf4.setIcon(icon_e11c69e2410ba50b9ee0e1c7d88779fb);
+            
+    
+            feature_group_0596e5f043f33bbc308be325e0a2dd9e.addTo(map_d9fceb66c3deae8976e61656020c6f95);
+        
+    
+            var feature_group_99af7238a7e8465171805a29fcc53985 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_814e37aa6dca006b200eccc8b479126e = L.circleMarker(
+                [6.4660322, 3.5445844],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_99af7238a7e8465171805a29fcc53985);
+        
+    
+        var popup_c37dc84643aa324c7fff531468ea8977 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e30636937a7605c2fe421e0288884382 = $(`<div id="html_e30636937a7605c2fe421e0288884382" style="width: 100.0%; height: 100.0%;">Victoria garden City</div>`)[0];
+                popup_c37dc84643aa324c7fff531468ea8977.setContent(html_e30636937a7605c2fe421e0288884382);
+            
+        
+
+        circle_marker_814e37aa6dca006b200eccc8b479126e.bindPopup(popup_c37dc84643aa324c7fff531468ea8977)
+        ;
+
+        
+    
+    
+            feature_group_99af7238a7e8465171805a29fcc53985.addTo(map_d9fceb66c3deae8976e61656020c6f95);
+        
+    
+            var layer_control_57b327157a555533fff1b96e63ce8bca_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d34f0dcb03c4a085a464c28233fd46a2,
+                    "Satellite View" : tile_layer_53fedaf198a10d0709b67199335142a5,
+                },
+                overlays :  {
+                    "Travel Time Buffers" : geo_json_3b51168f35a7d341a57dd9f0dc8fcbea,
+                    "Estates" : feature_group_0596e5f043f33bbc308be325e0a2dd9e,
+                    "Zones" : feature_group_99af7238a7e8465171805a29fcc53985,
+                },
+            };
+            let layer_control_57b327157a555533fff1b96e63ce8bca = L.control.layers(
+                layer_control_57b327157a555533fff1b96e63ce8bca_layers.base_layers,
+                layer_control_57b327157a555533fff1b96e63ce8bca_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_d9fceb66c3deae8976e61656020c6f95);
+
+        
+</script>
+</html>

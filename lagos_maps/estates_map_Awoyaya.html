@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5b157d38c4af186fb9730099c837f640 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5b157d38c4af186fb9730099c837f640" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5b157d38c4af186fb9730099c837f640 = L.map(
+                "map_5b157d38c4af186fb9730099c837f640",
+                {
+                    center: [6.4363, 3.5313],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_5b157d38c4af186fb9730099c837f640);
+
+            
+
+        
+    
+            var tile_layer_4b94176d4855d3bc546bb0b38d429ea8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4b94176d4855d3bc546bb0b38d429ea8.addTo(map_5b157d38c4af186fb9730099c837f640);
+        
+    
+            var tile_layer_eff8d951671b14038d4d092b682d7e1a = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_eff8d951671b14038d4d092b682d7e1a.addTo(map_5b157d38c4af186fb9730099c837f640);
+        
+    
+        function geo_json_4e7cd01950447c5257789026fa084931_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffff00", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+        function geo_json_4e7cd01950447c5257789026fa084931_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffcc00", "weight": 3};
+            }
+        }
+
+        function geo_json_4e7cd01950447c5257789026fa084931_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_4e7cd01950447c5257789026fa084931.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_4e7cd01950447c5257789026fa084931_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_4e7cd01950447c5257789026fa084931 = L.geoJson(null, {
+                onEachFeature: geo_json_4e7cd01950447c5257789026fa084931_onEachFeature,
+            
+                style: geo_json_4e7cd01950447c5257789026fa084931_styler,
+            ...{
+}
+        });
+
+        function geo_json_4e7cd01950447c5257789026fa084931_add (data) {
+            geo_json_4e7cd01950447c5257789026fa084931
+                .addData(data);
+        }
+            geo_json_4e7cd01950447c5257789026fa084931_add({"bbox": [3.70505, 6.45155, 3.746785, 6.475149], "features": [{"bbox": [3.70505, 6.45155, 3.746785, 6.475149], "geometry": {"coordinates": [[[3.705058, 6.464243], [3.70505, 6.457404], [3.705058, 6.456306], [3.705136, 6.455067], [3.705388, 6.45155], [3.705748, 6.451565], [3.712692, 6.455686], [3.712876, 6.455996], [3.712649, 6.45907], [3.71265, 6.45943], [3.710573, 6.463244], [3.716182, 6.467735], [3.717468, 6.467307], [3.717828, 6.467311], [3.718925, 6.467401], [3.723338, 6.468343], [3.731268, 6.467264], [3.731605, 6.467389], [3.737883, 6.472284], [3.739154, 6.472593], [3.741949, 6.472788], [3.742168, 6.472807], [3.746785, 6.47479], [3.746751, 6.475149], [3.746536, 6.475128], [3.746322, 6.475107], [3.743784, 6.474861], [3.740646, 6.474561], [3.73911, 6.47441], [3.731232, 6.473637], [3.729893, 6.473507], [3.728216, 6.473344], [3.726903, 6.473217], [3.722049, 6.472735], [3.721039, 6.472636], [3.715386, 6.472031], [3.714794, 6.471946], [3.714444, 6.471887], [3.714098, 6.471828], [3.712572, 6.471528], [3.712227, 6.471462], [3.711875, 6.47138], [3.71153, 6.471299], [3.710976, 6.471153], [3.710047, 6.470911], [3.709668, 6.470813], [3.709169, 6.470661], [3.708677, 6.470511], [3.707548, 6.470126], [3.706425, 6.469743], [3.705132, 6.469056], [3.705058, 6.464243]]], "type": "Polygon"}, "id": "10", "properties": {"point_coords": [3.7051201, 6.4652268], "zone_name": "Awoyaya"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_4e7cd01950447c5257789026fa084931.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_name"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_4e7cd01950447c5257789026fa084931.addTo(map_5b157d38c4af186fb9730099c837f640);
+        
+    
+            var feature_group_40254bfecfd1922501c990bf23897a33 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_dfdb38c9c0573bcc08193bdf7e53e375 = L.marker(
+                [6.4749383, 3.6717417],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_49f62fc53a59d461f4d30be726848b79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b69bfe3f3d35f8e7fba104672a62ffa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8ea90ea27710c308f7c9e235b52e591 = $(`<div id="html_d8ea90ea27710c308f7c9e235b52e591" style="width: 100.0%; height: 100.0%;">Gracias Emerald Estate</div>`)[0];
+                popup_6b69bfe3f3d35f8e7fba104672a62ffa.setContent(html_d8ea90ea27710c308f7c9e235b52e591);
+            
+        
+
+        marker_dfdb38c9c0573bcc08193bdf7e53e375.bindPopup(popup_6b69bfe3f3d35f8e7fba104672a62ffa)
+        ;
+
+        
+    
+    
+                marker_dfdb38c9c0573bcc08193bdf7e53e375.setIcon(icon_49f62fc53a59d461f4d30be726848b79);
+            
+    
+            var marker_b93c4665681470fc1712edef914616f2 = L.marker(
+                [6.466203, 3.6821722],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_5f3c8f219001128de5a42083e6fe76fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02cc8973e161bdbc1445889c6cc93ea6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_596270254ed8fcc9959a3b0375fde0a8 = $(`<div id="html_596270254ed8fcc9959a3b0375fde0a8" style="width: 100.0%; height: 100.0%;">Flourish Gardens Estate</div>`)[0];
+                popup_02cc8973e161bdbc1445889c6cc93ea6.setContent(html_596270254ed8fcc9959a3b0375fde0a8);
+            
+        
+
+        marker_b93c4665681470fc1712edef914616f2.bindPopup(popup_02cc8973e161bdbc1445889c6cc93ea6)
+        ;
+
+        
+    
+    
+                marker_b93c4665681470fc1712edef914616f2.setIcon(icon_5f3c8f219001128de5a42083e6fe76fd);
+            
+    
+            var marker_0ff3448250b1e297d0cc71ed9a379a42 = L.marker(
+                [6.449614899999999, 3.6817799],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_5ac363945ac4bf02d4a40795d7823d9e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_102bf5e4a7a6211a9bf3ba87b52b1ea5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57f9bb3edae3d3a35d9bd4b9f20a7851 = $(`<div id="html_57f9bb3edae3d3a35d9bd4b9f20a7851" style="width: 100.0%; height: 100.0%;">Brookhill Park Estate(By Bluemool Ltd)</div>`)[0];
+                popup_102bf5e4a7a6211a9bf3ba87b52b1ea5.setContent(html_57f9bb3edae3d3a35d9bd4b9f20a7851);
+            
+        
+
+        marker_0ff3448250b1e297d0cc71ed9a379a42.bindPopup(popup_102bf5e4a7a6211a9bf3ba87b52b1ea5)
+        ;
+
+        
+    
+    
+                marker_0ff3448250b1e297d0cc71ed9a379a42.setIcon(icon_5ac363945ac4bf02d4a40795d7823d9e);
+            
+    
+            var marker_078b2146114377c8ebcd4e20cff6c0f3 = L.marker(
+                [6.4395557, 3.6787174],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_d4ed7bff33a3b4e378b079ae08f96375 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39137fc5f1a71f8cdafc0d5abf870c1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7996f28dc7a70ab833e419469d4dc26a = $(`<div id="html_7996f28dc7a70ab833e419469d4dc26a" style="width: 100.0%; height: 100.0%;">Royal Haven Estate Abijo Gra</div>`)[0];
+                popup_39137fc5f1a71f8cdafc0d5abf870c1d.setContent(html_7996f28dc7a70ab833e419469d4dc26a);
+            
+        
+
+        marker_078b2146114377c8ebcd4e20cff6c0f3.bindPopup(popup_39137fc5f1a71f8cdafc0d5abf870c1d)
+        ;
+
+        
+    
+    
+                marker_078b2146114377c8ebcd4e20cff6c0f3.setIcon(icon_d4ed7bff33a3b4e378b079ae08f96375);
+            
+    
+            var marker_40d0cbdee5551934999bd10fe89ca216 = L.marker(
+                [6.4667508, 3.6788694],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_407c5d2647eef0bbd5ab334a0bb35232 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfc2653b3a6e025db7b268f79f2db0de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c727e4bcfec546c1ba15fb5cb4130920 = $(`<div id="html_c727e4bcfec546c1ba15fb5cb4130920" style="width: 100.0%; height: 100.0%;">Shalom Park Estate</div>`)[0];
+                popup_bfc2653b3a6e025db7b268f79f2db0de.setContent(html_c727e4bcfec546c1ba15fb5cb4130920);
+            
+        
+
+        marker_40d0cbdee5551934999bd10fe89ca216.bindPopup(popup_bfc2653b3a6e025db7b268f79f2db0de)
+        ;
+
+        
+    
+    
+                marker_40d0cbdee5551934999bd10fe89ca216.setIcon(icon_407c5d2647eef0bbd5ab334a0bb35232);
+            
+    
+            var marker_416ecdc3fe91eb77f07abecdcb74a18b = L.marker(
+                [6.4565701, 3.6770874],
+                {
+}
+            ).addTo(feature_group_40254bfecfd1922501c990bf23897a33);
+        
+    
+            var icon_ab74ae9c9c3853787076b909b9707b56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f4d8627b2386793f7d010dc21f8af03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a118234a105d7688b4014e72a4633c3 = $(`<div id="html_8a118234a105d7688b4014e72a4633c3" style="width: 100.0%; height: 100.0%;">Angels Court Residences, Plot 921E, Block 37, Chief Oma Eyewuoma Street, Abijo Gra, Lekki Peninsula</div>`)[0];
+                popup_8f4d8627b2386793f7d010dc21f8af03.setContent(html_8a118234a105d7688b4014e72a4633c3);
+            
+        
+
+        marker_416ecdc3fe91eb77f07abecdcb74a18b.bindPopup(popup_8f4d8627b2386793f7d010dc21f8af03)
+        ;
+
+        
+    
+    
+                marker_416ecdc3fe91eb77f07abecdcb74a18b.setIcon(icon_ab74ae9c9c3853787076b909b9707b56);
+            
+    
+            feature_group_40254bfecfd1922501c990bf23897a33.addTo(map_5b157d38c4af186fb9730099c837f640);
+        
+    
+            var feature_group_70b9f344985847d93ab433a745c51f05 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_5fcc7d824864fed7110bff40fe7adef6 = L.circleMarker(
+                [6.4652268, 3.7051201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_70b9f344985847d93ab433a745c51f05);
+        
+    
+        var popup_60fdf027adc0a8c6d0748d34568e5cd5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25755a241ddca11810bf03125bb1ff85 = $(`<div id="html_25755a241ddca11810bf03125bb1ff85" style="width: 100.0%; height: 100.0%;">Awoyaya</div>`)[0];
+                popup_60fdf027adc0a8c6d0748d34568e5cd5.setContent(html_25755a241ddca11810bf03125bb1ff85);
+            
+        
+
+        circle_marker_5fcc7d824864fed7110bff40fe7adef6.bindPopup(popup_60fdf027adc0a8c6d0748d34568e5cd5)
+        ;
+
+        
+    
+    
+            feature_group_70b9f344985847d93ab433a745c51f05.addTo(map_5b157d38c4af186fb9730099c837f640);
+        
+    
+            var layer_control_57ac61bbe7ca93a80f7ccd4279279e05_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_4b94176d4855d3bc546bb0b38d429ea8,
+                    "Satellite View" : tile_layer_eff8d951671b14038d4d092b682d7e1a,
+                },
+                overlays :  {
+                    "Travel Time Buffers" : geo_json_4e7cd01950447c5257789026fa084931,
+                    "Estates" : feature_group_40254bfecfd1922501c990bf23897a33,
+                    "Zones" : feature_group_70b9f344985847d93ab433a745c51f05,
+                },
+            };
+            let layer_control_57ac61bbe7ca93a80f7ccd4279279e05 = L.control.layers(
+                layer_control_57ac61bbe7ca93a80f7ccd4279279e05_layers.base_layers,
+                layer_control_57ac61bbe7ca93a80f7ccd4279279e05_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_5b157d38c4af186fb9730099c837f640);
+
+        
+</script>
+</html>

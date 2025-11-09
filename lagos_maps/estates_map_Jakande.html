@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_03d5de287ead5acb628ad336944dda91 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_03d5de287ead5acb628ad336944dda91" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_03d5de287ead5acb628ad336944dda91 = L.map(
+                "map_03d5de287ead5acb628ad336944dda91",
+                {
+                    center: [6.4363, 3.5313],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_03d5de287ead5acb628ad336944dda91);
+
+            
+
+        
+    
+            var tile_layer_2c339e859aed4b7b78cd41f1456a0811 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2c339e859aed4b7b78cd41f1456a0811.addTo(map_03d5de287ead5acb628ad336944dda91);
+        
+    
+            var tile_layer_36c8b7957fa7b76fb63fb52bc4f2bd75 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_36c8b7957fa7b76fb63fb52bc4f2bd75.addTo(map_03d5de287ead5acb628ad336944dda91);
+        
+    
+        function geo_json_2eb7cfa4b92e25445b27271cc0282783_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffff00", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+        function geo_json_2eb7cfa4b92e25445b27271cc0282783_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffcc00", "weight": 3};
+            }
+        }
+
+        function geo_json_2eb7cfa4b92e25445b27271cc0282783_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_2eb7cfa4b92e25445b27271cc0282783.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_2eb7cfa4b92e25445b27271cc0282783_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_2eb7cfa4b92e25445b27271cc0282783 = L.geoJson(null, {
+                onEachFeature: geo_json_2eb7cfa4b92e25445b27271cc0282783_onEachFeature,
+            
+                style: geo_json_2eb7cfa4b92e25445b27271cc0282783_styler,
+            ...{
+}
+        });
+
+        function geo_json_2eb7cfa4b92e25445b27271cc0282783_add (data) {
+            geo_json_2eb7cfa4b92e25445b27271cc0282783
+                .addData(data);
+        }
+            geo_json_2eb7cfa4b92e25445b27271cc0282783_add({"bbox": [3.470832, 6.420873, 3.537955, 6.455904], "features": [{"bbox": [3.470832, 6.420873, 3.537955, 6.455904], "geometry": {"coordinates": [[[3.471342, 6.429637], [3.474757, 6.430125], [3.480423, 6.427499], [3.484021, 6.427375], [3.490003, 6.42661], [3.493443, 6.420873], [3.50095, 6.421047], [3.504668, 6.421312], [3.507819, 6.421617], [3.516219, 6.423222], [3.516374, 6.423356], [3.516803, 6.423813], [3.517774, 6.424777], [3.526176, 6.426291], [3.526688, 6.428949], [3.526819, 6.433226], [3.532128, 6.439846], [3.535365, 6.440964], [3.536195, 6.441209], [3.536304, 6.441273], [3.537955, 6.442213], [3.536576, 6.445538], [3.530685, 6.448022], [3.530549, 6.448021], [3.528892, 6.446489], [3.521911, 6.446936], [3.519876, 6.452899], [3.51993, 6.453371], [3.519988, 6.45397], [3.519991, 6.454044], [3.519092, 6.455578], [3.517909, 6.455904], [3.517596, 6.455899], [3.511966, 6.454986], [3.509729, 6.454789], [3.503195, 6.454059], [3.500572, 6.455171], [3.500401, 6.455226], [3.498756, 6.454819], [3.490677, 6.451512], [3.488986, 6.450185], [3.48766, 6.445377], [3.481786, 6.439566], [3.474502, 6.435055], [3.470832, 6.4332], [3.471342, 6.429637]]], "type": "Polygon"}, "id": "1", "properties": {"point_coords": [3.5089815, 6.433529399999999], "zone_name": "Jakande"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_2eb7cfa4b92e25445b27271cc0282783.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_name"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_2eb7cfa4b92e25445b27271cc0282783.addTo(map_03d5de287ead5acb628ad336944dda91);
+        
+    
+            var feature_group_716d99297f8527901eec7b4127fc5fdf = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6345d43f62f7e5d84f65deaa6466b825 = L.marker(
+                [6.451014799999999, 3.5019787],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_ed4710df9d1deb0a7bc250f9f7b937c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5b2c0d62b2fcf8ed01c2a2c71418e60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_603178801057e795903c9594bcdddb51 = $(`<div id="html_603178801057e795903c9594bcdddb51" style="width: 100.0%; height: 100.0%;">The Atlantis 4 Estate</div>`)[0];
+                popup_a5b2c0d62b2fcf8ed01c2a2c71418e60.setContent(html_603178801057e795903c9594bcdddb51);
+            
+        
+
+        marker_6345d43f62f7e5d84f65deaa6466b825.bindPopup(popup_a5b2c0d62b2fcf8ed01c2a2c71418e60)
+        ;
+
+        
+    
+    
+                marker_6345d43f62f7e5d84f65deaa6466b825.setIcon(icon_ed4710df9d1deb0a7bc250f9f7b937c0);
+            
+    
+            var marker_0a1259b4ce47a0f64f01c2a0d5ba7078 = L.marker(
+                [6.441148699999999, 3.5036984],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_27adbfe9d29c0b7416d72dd8b46e6c5f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36a2a8687a97dcabfc54001ea2aa8f4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_075f5ed846417ae2c52cc30405978d36 = $(`<div id="html_075f5ed846417ae2c52cc30405978d36" style="width: 100.0%; height: 100.0%;">Femi Okunnu Estate Phase Ll</div>`)[0];
+                popup_36a2a8687a97dcabfc54001ea2aa8f4b.setContent(html_075f5ed846417ae2c52cc30405978d36);
+            
+        
+
+        marker_0a1259b4ce47a0f64f01c2a0d5ba7078.bindPopup(popup_36a2a8687a97dcabfc54001ea2aa8f4b)
+        ;
+
+        
+    
+    
+                marker_0a1259b4ce47a0f64f01c2a0d5ba7078.setIcon(icon_27adbfe9d29c0b7416d72dd8b46e6c5f);
+            
+    
+            var marker_f3645e4a292eb9fa6f37bfe38f76566f = L.marker(
+                [6.440109, 3.4933506],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_c481595f961ef5f03d5a178c16257344 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d89c4447f5820e1d1870d1482853f66 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f9b1d1bddea3425dbff08a43f0f3486 = $(`<div id="html_1f9b1d1bddea3425dbff08a43f0f3486" style="width: 100.0%; height: 100.0%;">Kits Court Estate</div>`)[0];
+                popup_2d89c4447f5820e1d1870d1482853f66.setContent(html_1f9b1d1bddea3425dbff08a43f0f3486);
+            
+        
+
+        marker_f3645e4a292eb9fa6f37bfe38f76566f.bindPopup(popup_2d89c4447f5820e1d1870d1482853f66)
+        ;
+
+        
+    
+    
+                marker_f3645e4a292eb9fa6f37bfe38f76566f.setIcon(icon_c481595f961ef5f03d5a178c16257344);
+            
+    
+            var marker_552574d74592a6bc3b92a7c74093fb9a = L.marker(
+                [6.4258662, 3.5242031],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_37bd6af52af74de65105a7509c353d9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98e7854c19979d7e9e9473d11b6f1230 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43e7691e00d995e5674d25fd41c7eda1 = $(`<div id="html_43e7691e00d995e5674d25fd41c7eda1" style="width: 100.0%; height: 100.0%;">Atlantic View Estate New Road</div>`)[0];
+                popup_98e7854c19979d7e9e9473d11b6f1230.setContent(html_43e7691e00d995e5674d25fd41c7eda1);
+            
+        
+
+        marker_552574d74592a6bc3b92a7c74093fb9a.bindPopup(popup_98e7854c19979d7e9e9473d11b6f1230)
+        ;
+
+        
+    
+    
+                marker_552574d74592a6bc3b92a7c74093fb9a.setIcon(icon_37bd6af52af74de65105a7509c353d9b);
+            
+    
+            var marker_c0e00e6e4efa563e10fe7655c1c364ba = L.marker(
+                [6.4316189, 3.5134434],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_fd0a3ead02b9984ac1df86e1cd0f00c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7cf16d32cc3c2ff68f45ab6fc01ac882 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eaafa5e8837967cfd45b4c4809feefa3 = $(`<div id="html_eaafa5e8837967cfd45b4c4809feefa3" style="width: 100.0%; height: 100.0%;">Atlantis 3 Estate</div>`)[0];
+                popup_7cf16d32cc3c2ff68f45ab6fc01ac882.setContent(html_eaafa5e8837967cfd45b4c4809feefa3);
+            
+        
+
+        marker_c0e00e6e4efa563e10fe7655c1c364ba.bindPopup(popup_7cf16d32cc3c2ff68f45ab6fc01ac882)
+        ;
+
+        
+    
+    
+                marker_c0e00e6e4efa563e10fe7655c1c364ba.setIcon(icon_fd0a3ead02b9984ac1df86e1cd0f00c9);
+            
+    
+            var marker_300ec4a8e2f4ca240658542ef54fb896 = L.marker(
+                [6.4310569, 3.515021],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_4c3e1fc08b23166f180c6c32cdf51243 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1845d2fc285d8939bc408c3655c072c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a41e4f93beb7f72518a3ac828ad4c77c = $(`<div id="html_a41e4f93beb7f72518a3ac828ad4c77c" style="width: 100.0%; height: 100.0%;">The Atlantis 2 Estate</div>`)[0];
+                popup_1845d2fc285d8939bc408c3655c072c8.setContent(html_a41e4f93beb7f72518a3ac828ad4c77c);
+            
+        
+
+        marker_300ec4a8e2f4ca240658542ef54fb896.bindPopup(popup_1845d2fc285d8939bc408c3655c072c8)
+        ;
+
+        
+    
+    
+                marker_300ec4a8e2f4ca240658542ef54fb896.setIcon(icon_4c3e1fc08b23166f180c6c32cdf51243);
+            
+    
+            var marker_146389d3c3e572a2288c6a1a61e7846c = L.marker(
+                [6.443225, 3.497495],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_52c2d946aa1f5a7051a739724c1c15e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a99c4773b8427202e2dea5f5cd4865d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec741efa369fcfc1a6a1c33151566d0f = $(`<div id="html_ec741efa369fcfc1a6a1c33151566d0f" style="width: 100.0%; height: 100.0%;">Palm Springs Estate</div>`)[0];
+                popup_a99c4773b8427202e2dea5f5cd4865d6.setContent(html_ec741efa369fcfc1a6a1c33151566d0f);
+            
+        
+
+        marker_146389d3c3e572a2288c6a1a61e7846c.bindPopup(popup_a99c4773b8427202e2dea5f5cd4865d6)
+        ;
+
+        
+    
+    
+                marker_146389d3c3e572a2288c6a1a61e7846c.setIcon(icon_52c2d946aa1f5a7051a739724c1c15e5);
+            
+    
+            var marker_f3e87126c9a4edc66dcec772301cf839 = L.marker(
+                [6.4525118, 3.5012249],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_fe237aaa9d257cb6d33f54cb9434b16e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eedd1bc019f8932f16ac1ad0b3acc474 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a89a73b9229df8918aa6182eb47dd119 = $(`<div id="html_a89a73b9229df8918aa6182eb47dd119" style="width: 100.0%; height: 100.0%;">Beach Resort Estate</div>`)[0];
+                popup_eedd1bc019f8932f16ac1ad0b3acc474.setContent(html_a89a73b9229df8918aa6182eb47dd119);
+            
+        
+
+        marker_f3e87126c9a4edc66dcec772301cf839.bindPopup(popup_eedd1bc019f8932f16ac1ad0b3acc474)
+        ;
+
+        
+    
+    
+                marker_f3e87126c9a4edc66dcec772301cf839.setIcon(icon_fe237aaa9d257cb6d33f54cb9434b16e);
+            
+    
+            var marker_bb6e5c0a4e260a331ab738e19c0a3e0e = L.marker(
+                [6.4327888, 3.5184067],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_db34610911718f0dc47635cba97114d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecfd2e6082025eca40a1b9de4fc5c724 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aeee3e8495439afdfc0c1557b1aa70fe = $(`<div id="html_aeee3e8495439afdfc0c1557b1aa70fe" style="width: 100.0%; height: 100.0%;">South Lake Homes - Phase 1</div>`)[0];
+                popup_ecfd2e6082025eca40a1b9de4fc5c724.setContent(html_aeee3e8495439afdfc0c1557b1aa70fe);
+            
+        
+
+        marker_bb6e5c0a4e260a331ab738e19c0a3e0e.bindPopup(popup_ecfd2e6082025eca40a1b9de4fc5c724)
+        ;
+
+        
+    
+    
+                marker_bb6e5c0a4e260a331ab738e19c0a3e0e.setIcon(icon_db34610911718f0dc47635cba97114d3);
+            
+    
+            var marker_7517a2d8bfe99515608e8f063708373b = L.marker(
+                [6.4281992, 3.5151297],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_ad2b293e23309d60c8276de19672990a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8175090d06932f12cf8be6330d1d7e13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30cf49206cec177c7e9cd54a65a3e659 = $(`<div id="html_30cf49206cec177c7e9cd54a65a3e659" style="width: 100.0%; height: 100.0%;">Davies Court Lekki</div>`)[0];
+                popup_8175090d06932f12cf8be6330d1d7e13.setContent(html_30cf49206cec177c7e9cd54a65a3e659);
+            
+        
+
+        marker_7517a2d8bfe99515608e8f063708373b.bindPopup(popup_8175090d06932f12cf8be6330d1d7e13)
+        ;
+
+        
+    
+    
+                marker_7517a2d8bfe99515608e8f063708373b.setIcon(icon_ad2b293e23309d60c8276de19672990a);
+            
+    
+            var marker_fa77b3c9089475e3a9c6b9218f6f3ce6 = L.marker(
+                [6.430235499999999, 3.5121104],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_e70620e10e922e61530a5b73d31bfaf7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_058e434ac853339c47c5f9d5c9f8c286 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_628e153ec60548b1975050ba1a10b5d9 = $(`<div id="html_628e153ec60548b1975050ba1a10b5d9" style="width: 100.0%; height: 100.0%;">Josephine Court 2</div>`)[0];
+                popup_058e434ac853339c47c5f9d5c9f8c286.setContent(html_628e153ec60548b1975050ba1a10b5d9);
+            
+        
+
+        marker_fa77b3c9089475e3a9c6b9218f6f3ce6.bindPopup(popup_058e434ac853339c47c5f9d5c9f8c286)
+        ;
+
+        
+    
+    
+                marker_fa77b3c9089475e3a9c6b9218f6f3ce6.setIcon(icon_e70620e10e922e61530a5b73d31bfaf7);
+            
+    
+            var marker_1052597209c606b54ee382e3d57f39cb = L.marker(
+                [6.4387637, 3.4930164],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_3a7013b99f7cb37775b589e5cd5280a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bbc22b447e22a6b1a5043a2316481661 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2fb12ec235d46abd9e3616cf24fc901 = $(`<div id="html_b2fb12ec235d46abd9e3616cf24fc901" style="width: 100.0%; height: 100.0%;">Vintage Park Estate</div>`)[0];
+                popup_bbc22b447e22a6b1a5043a2316481661.setContent(html_b2fb12ec235d46abd9e3616cf24fc901);
+            
+        
+
+        marker_1052597209c606b54ee382e3d57f39cb.bindPopup(popup_bbc22b447e22a6b1a5043a2316481661)
+        ;
+
+        
+    
+    
+                marker_1052597209c606b54ee382e3d57f39cb.setIcon(icon_3a7013b99f7cb37775b589e5cd5280a7);
+            
+    
+            var marker_ea6b7bbd5c5539f6fa9360a50700b8d5 = L.marker(
+                [6.448148799999999, 3.4951678],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_72e1456b8a16dbbfdc712bcc7df5f7ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7b3cb19af5b1b4d35075f310f61a016 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed32c4dfeee14970f92621e9ac5df392 = $(`<div id="html_ed32c4dfeee14970f92621e9ac5df392" style="width: 100.0%; height: 100.0%;">Cowrie Creek Estate</div>`)[0];
+                popup_f7b3cb19af5b1b4d35075f310f61a016.setContent(html_ed32c4dfeee14970f92621e9ac5df392);
+            
+        
+
+        marker_ea6b7bbd5c5539f6fa9360a50700b8d5.bindPopup(popup_f7b3cb19af5b1b4d35075f310f61a016)
+        ;
+
+        
+    
+    
+                marker_ea6b7bbd5c5539f6fa9360a50700b8d5.setIcon(icon_72e1456b8a16dbbfdc712bcc7df5f7ff);
+            
+    
+            var marker_069234b5de877781e9da0c9c5fc708a0 = L.marker(
+                [6.4311376, 3.5202312],
+                {
+}
+            ).addTo(feature_group_716d99297f8527901eec7b4127fc5fdf);
+        
+    
+            var icon_22564ad5cbc273eb1b65759317c7e890 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3557918a6db885fec7cf225b165b510 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d38517c894b62450828214b190b42f4 = $(`<div id="html_2d38517c894b62450828214b190b42f4" style="width: 100.0%; height: 100.0%;">Mosaic Court</div>`)[0];
+                popup_d3557918a6db885fec7cf225b165b510.setContent(html_2d38517c894b62450828214b190b42f4);
+            
+        
+
+        marker_069234b5de877781e9da0c9c5fc708a0.bindPopup(popup_d3557918a6db885fec7cf225b165b510)
+        ;
+
+        
+    
+    
+                marker_069234b5de877781e9da0c9c5fc708a0.setIcon(icon_22564ad5cbc273eb1b65759317c7e890);
+            
+    
+            feature_group_716d99297f8527901eec7b4127fc5fdf.addTo(map_03d5de287ead5acb628ad336944dda91);
+        
+    
+            var feature_group_672cb7ce1f0199ae590834dddecc55db = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_8ba8154cc09115f3ebf75aef08f5886e = L.circleMarker(
+                [6.433529399999999, 3.5089815],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_672cb7ce1f0199ae590834dddecc55db);
+        
+    
+        var popup_dc0033bb78081cada5f983fe3b50c3d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_22e81b4cbb91b95a4830f429c34bb568 = $(`<div id="html_22e81b4cbb91b95a4830f429c34bb568" style="width: 100.0%; height: 100.0%;">Jakande</div>`)[0];
+                popup_dc0033bb78081cada5f983fe3b50c3d5.setContent(html_22e81b4cbb91b95a4830f429c34bb568);
+            
+        
+
+        circle_marker_8ba8154cc09115f3ebf75aef08f5886e.bindPopup(popup_dc0033bb78081cada5f983fe3b50c3d5)
+        ;
+
+        
+    
+    
+            feature_group_672cb7ce1f0199ae590834dddecc55db.addTo(map_03d5de287ead5acb628ad336944dda91);
+        
+    
+            var layer_control_8a39c319c0a7afa83467dc49c2fca068_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_2c339e859aed4b7b78cd41f1456a0811,
+                    "Satellite View" : tile_layer_36c8b7957fa7b76fb63fb52bc4f2bd75,
+                },
+                overlays :  {
+                    "Travel Time Buffers" : geo_json_2eb7cfa4b92e25445b27271cc0282783,
+                    "Estates" : feature_group_716d99297f8527901eec7b4127fc5fdf,
+                    "Zones" : feature_group_672cb7ce1f0199ae590834dddecc55db,
+                },
+            };
+            let layer_control_8a39c319c0a7afa83467dc49c2fca068 = L.control.layers(
+                layer_control_8a39c319c0a7afa83467dc49c2fca068_layers.base_layers,
+                layer_control_8a39c319c0a7afa83467dc49c2fca068_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_03d5de287ead5acb628ad336944dda91);
+
+        
+</script>
+</html>

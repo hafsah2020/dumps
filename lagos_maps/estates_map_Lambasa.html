@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0290bfb1eb6c99e11dfa37306f2240ec {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0290bfb1eb6c99e11dfa37306f2240ec" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0290bfb1eb6c99e11dfa37306f2240ec = L.map(
+                "map_0290bfb1eb6c99e11dfa37306f2240ec",
+                {
+                    center: [6.4363, 3.5313],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+
+            
+
+        
+    
+            var tile_layer_3a5e425f58ae3387bfdef14d822018c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3a5e425f58ae3387bfdef14d822018c2.addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+        
+    
+            var tile_layer_de7ae356f0f67274b6d51c00054cc03c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_de7ae356f0f67274b6d51c00054cc03c.addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+        
+    
+        function geo_json_3a7c636d69832ee7b92644718c59e622_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffff00", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+        function geo_json_3a7c636d69832ee7b92644718c59e622_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffcc00", "weight": 3};
+            }
+        }
+
+        function geo_json_3a7c636d69832ee7b92644718c59e622_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_3a7c636d69832ee7b92644718c59e622.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_3a7c636d69832ee7b92644718c59e622_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_3a7c636d69832ee7b92644718c59e622 = L.geoJson(null, {
+                onEachFeature: geo_json_3a7c636d69832ee7b92644718c59e622_onEachFeature,
+            
+                style: geo_json_3a7c636d69832ee7b92644718c59e622_styler,
+            ...{
+}
+        });
+
+        function geo_json_3a7c636d69832ee7b92644718c59e622_add (data) {
+            geo_json_3a7c636d69832ee7b92644718c59e622
+                .addData(data);
+        }
+            geo_json_3a7c636d69832ee7b92644718c59e622_add({"bbox": [3.574786, 6.484732, 3.622477, 6.51231], "features": [{"bbox": [3.574786, 6.484732, 3.622477, 6.51231], "geometry": {"coordinates": [[[3.578096, 6.506429], [3.5809, 6.499372], [3.577583, 6.492905], [3.5773, 6.492683], [3.574786, 6.484986], [3.574829, 6.484798], [3.574842, 6.484785], [3.575041, 6.484732], [3.580278, 6.487529], [3.581787, 6.488685], [3.581853, 6.489039], [3.581839, 6.492037], [3.582102, 6.492736], [3.582235, 6.493029], [3.582306, 6.493185], [3.588603, 6.495788], [3.591381, 6.492085], [3.592005, 6.491375], [3.594152, 6.489782], [3.594872, 6.489071], [3.595232, 6.489059], [3.600548, 6.488764], [3.600906, 6.488726], [3.60247, 6.488879], [3.605045, 6.49063], [3.605795, 6.491827], [3.609079, 6.49639], [3.609087, 6.49675], [3.609522, 6.501548], [3.615237, 6.506556], [3.620417, 6.50692], [3.622145, 6.506837], [3.622477, 6.506974], [3.622417, 6.507528], [3.622186, 6.507804], [3.616199, 6.511351], [3.614616, 6.511983], [3.61145, 6.51231], [3.6063, 6.512122], [3.605947, 6.512051], [3.59984, 6.509705], [3.593921, 6.51095], [3.593688, 6.51068], [3.5916, 6.508571], [3.59141, 6.508371], [3.588131, 6.505289], [3.580171, 6.508711], [3.579812, 6.508729], [3.578117, 6.506511], [3.578096, 6.506429]]], "type": "Polygon"}, "id": "9", "properties": {"point_coords": [3.5989888, 6.4989102], "zone_name": "Lambasa"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_3a7c636d69832ee7b92644718c59e622.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_name"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_3a7c636d69832ee7b92644718c59e622.addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+        
+    
+            var feature_group_9d8f208fe69a1cec27870edd664a7d84 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_8aed54fe1cf7ba93f4d0b0efb2b20f77 = L.marker(
+                [6.5055461, 3.6039325],
+                {
+}
+            ).addTo(feature_group_9d8f208fe69a1cec27870edd664a7d84);
+        
+    
+            var icon_00148454090271b35461e6d8ee30641a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37ab5aaa3af230800e34a2da06e24d5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2197d381cebd78c3d2fcfb0017a895bc = $(`<div id="html_2197d381cebd78c3d2fcfb0017a895bc" style="width: 100.0%; height: 100.0%;">Allied Gardens Estate, Dokpesi Olusola St.</div>`)[0];
+                popup_37ab5aaa3af230800e34a2da06e24d5d.setContent(html_2197d381cebd78c3d2fcfb0017a895bc);
+            
+        
+
+        marker_8aed54fe1cf7ba93f4d0b0efb2b20f77.bindPopup(popup_37ab5aaa3af230800e34a2da06e24d5d)
+        ;
+
+        
+    
+    
+                marker_8aed54fe1cf7ba93f4d0b0efb2b20f77.setIcon(icon_00148454090271b35461e6d8ee30641a);
+            
+    
+            var marker_d8862a8c7239fc2e075535f8a0ba7497 = L.marker(
+                [6.5037588, 3.6014641],
+                {
+}
+            ).addTo(feature_group_9d8f208fe69a1cec27870edd664a7d84);
+        
+    
+            var icon_7850c5290cde63011bc37f81973f0d41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f31b9cb4ed218a4ee1ebc5c1c893262 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8edd264c602c7fcf75bbbd895d47d416 = $(`<div id="html_8edd264c602c7fcf75bbbd895d47d416" style="width: 100.0%; height: 100.0%;">Rockstone Ville Estate</div>`)[0];
+                popup_7f31b9cb4ed218a4ee1ebc5c1c893262.setContent(html_8edd264c602c7fcf75bbbd895d47d416);
+            
+        
+
+        marker_d8862a8c7239fc2e075535f8a0ba7497.bindPopup(popup_7f31b9cb4ed218a4ee1ebc5c1c893262)
+        ;
+
+        
+    
+    
+                marker_d8862a8c7239fc2e075535f8a0ba7497.setIcon(icon_7850c5290cde63011bc37f81973f0d41);
+            
+    
+            var marker_f2c6e45e25a0f092e569ead69e89fb21 = L.marker(
+                [6.5032547, 3.5996447],
+                {
+}
+            ).addTo(feature_group_9d8f208fe69a1cec27870edd664a7d84);
+        
+    
+            var icon_d5af0765aa1dd67e5e3d6c03c6ede1c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5349ea7a47166b6ed58cf583693e6bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d193fc73a7887ae8ff740d4cbb031e6 = $(`<div id="html_6d193fc73a7887ae8ff740d4cbb031e6" style="width: 100.0%; height: 100.0%;">Mega Estate</div>`)[0];
+                popup_a5349ea7a47166b6ed58cf583693e6bf.setContent(html_6d193fc73a7887ae8ff740d4cbb031e6);
+            
+        
+
+        marker_f2c6e45e25a0f092e569ead69e89fb21.bindPopup(popup_a5349ea7a47166b6ed58cf583693e6bf)
+        ;
+
+        
+    
+    
+                marker_f2c6e45e25a0f092e569ead69e89fb21.setIcon(icon_d5af0765aa1dd67e5e3d6c03c6ede1c0);
+            
+    
+            var marker_51c5e2bce62481e7a7f2fd5a15d9b4d7 = L.marker(
+                [6.4772245, 3.6081006],
+                {
+}
+            ).addTo(feature_group_9d8f208fe69a1cec27870edd664a7d84);
+        
+    
+            var icon_dd989ceffa806484ded04c00543f162e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d277c78da6b33d070ca05092888fac50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f19bd99e140c82a8c1c2ece95a9069a = $(`<div id="html_1f19bd99e140c82a8c1c2ece95a9069a" style="width: 100.0%; height: 100.0%;">Greenland Estate</div>`)[0];
+                popup_d277c78da6b33d070ca05092888fac50.setContent(html_1f19bd99e140c82a8c1c2ece95a9069a);
+            
+        
+
+        marker_51c5e2bce62481e7a7f2fd5a15d9b4d7.bindPopup(popup_d277c78da6b33d070ca05092888fac50)
+        ;
+
+        
+    
+    
+                marker_51c5e2bce62481e7a7f2fd5a15d9b4d7.setIcon(icon_dd989ceffa806484ded04c00543f162e);
+            
+    
+            feature_group_9d8f208fe69a1cec27870edd664a7d84.addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+        
+    
+            var feature_group_dd68749174b950ccb8fc6841e056a8ce = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_e1b1ad16864a56becac69fd820ee4e64 = L.circleMarker(
+                [6.4989102, 3.5989888],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd68749174b950ccb8fc6841e056a8ce);
+        
+    
+        var popup_8c1a7d12bb7068711d6482078911c0b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61300c60f0a8cd43fbc9c8d934b5eec4 = $(`<div id="html_61300c60f0a8cd43fbc9c8d934b5eec4" style="width: 100.0%; height: 100.0%;">Lambasa</div>`)[0];
+                popup_8c1a7d12bb7068711d6482078911c0b8.setContent(html_61300c60f0a8cd43fbc9c8d934b5eec4);
+            
+        
+
+        circle_marker_e1b1ad16864a56becac69fd820ee4e64.bindPopup(popup_8c1a7d12bb7068711d6482078911c0b8)
+        ;
+
+        
+    
+    
+            feature_group_dd68749174b950ccb8fc6841e056a8ce.addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+        
+    
+            var layer_control_6f2dc1b8ce9336aab55316222e755b98_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_3a5e425f58ae3387bfdef14d822018c2,
+                    "Satellite View" : tile_layer_de7ae356f0f67274b6d51c00054cc03c,
+                },
+                overlays :  {
+                    "Travel Time Buffers" : geo_json_3a7c636d69832ee7b92644718c59e622,
+                    "Estates" : feature_group_9d8f208fe69a1cec27870edd664a7d84,
+                    "Zones" : feature_group_dd68749174b950ccb8fc6841e056a8ce,
+                },
+            };
+            let layer_control_6f2dc1b8ce9336aab55316222e755b98 = L.control.layers(
+                layer_control_6f2dc1b8ce9336aab55316222e755b98_layers.base_layers,
+                layer_control_6f2dc1b8ce9336aab55316222e755b98_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_0290bfb1eb6c99e11dfa37306f2240ec);
+
+        
+</script>
+</html>

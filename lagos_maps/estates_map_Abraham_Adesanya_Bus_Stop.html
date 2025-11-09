@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cf8526e27887f5677a8b4a93ca814629 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cf8526e27887f5677a8b4a93ca814629" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cf8526e27887f5677a8b4a93ca814629 = L.map(
+                "map_cf8526e27887f5677a8b4a93ca814629",
+                {
+                    center: [6.4363, 3.5313],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_cf8526e27887f5677a8b4a93ca814629);
+
+            
+
+        
+    
+            var tile_layer_7baaf84311cc3824f4fc51c6f5bb14f2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7baaf84311cc3824f4fc51c6f5bb14f2.addTo(map_cf8526e27887f5677a8b4a93ca814629);
+        
+    
+            var tile_layer_2d2f173feca9562c51263b355ec6428c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2d2f173feca9562c51263b355ec6428c.addTo(map_cf8526e27887f5677a8b4a93ca814629);
+        
+    
+        function geo_json_f8e1ad879fa411363a3347d33f23f24e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffff00", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+        function geo_json_f8e1ad879fa411363a3347d33f23f24e_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#ffcc00", "weight": 3};
+            }
+        }
+
+        function geo_json_f8e1ad879fa411363a3347d33f23f24e_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_f8e1ad879fa411363a3347d33f23f24e.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_f8e1ad879fa411363a3347d33f23f24e_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_f8e1ad879fa411363a3347d33f23f24e = L.geoJson(null, {
+                onEachFeature: geo_json_f8e1ad879fa411363a3347d33f23f24e_onEachFeature,
+            
+                style: geo_json_f8e1ad879fa411363a3347d33f23f24e_styler,
+            ...{
+}
+        });
+
+        function geo_json_f8e1ad879fa411363a3347d33f23f24e_add (data) {
+            geo_json_f8e1ad879fa411363a3347d33f23f24e
+                .addData(data);
+        }
+            geo_json_f8e1ad879fa411363a3347d33f23f24e_add({"bbox": [3.53401, 6.432019, 3.647964, 6.492779], "features": [{"bbox": [3.53401, 6.432019, 3.647964, 6.492779], "geometry": {"coordinates": [[[3.535366, 6.4413], [3.536719, 6.44185], [3.542189, 6.443918], [3.542781, 6.444119], [3.544936, 6.445245], [3.550572, 6.447514], [3.553633, 6.448766], [3.55401, 6.448951], [3.554513, 6.449265], [3.554841, 6.449505], [3.555202, 6.449819], [3.555546, 6.45018], [3.555983, 6.450786], [3.556248, 6.451285], [3.556498, 6.451944], [3.556628, 6.452463], [3.556685, 6.452846], [3.555071, 6.457774], [3.558176, 6.463732], [3.559156, 6.464363], [3.560497, 6.465055], [3.565952, 6.466303], [3.567279, 6.466872], [3.569486, 6.467069], [3.57223, 6.466339], [3.5736, 6.457967], [3.572478, 6.456017], [3.572505, 6.4558], [3.574177, 6.450644], [3.574608, 6.44707], [3.57638, 6.446449], [3.580656, 6.44372], [3.583463, 6.439385], [3.587086, 6.432518], [3.587893, 6.432397], [3.590651, 6.432019], [3.594558, 6.436257], [3.600529, 6.441083], [3.602606, 6.440911], [3.603955, 6.44087], [3.604666, 6.441087], [3.605056, 6.441326], [3.60689, 6.442742], [3.604738, 6.445628], [3.597652, 6.450684], [3.597699, 6.45132], [3.598367, 6.454258], [3.598872, 6.455122], [3.602124, 6.458049], [3.603891, 6.459368], [3.604349, 6.459811], [3.608921, 6.46289], [3.616201, 6.467169], [3.623458, 6.464901], [3.624157, 6.464505], [3.624325, 6.464473], [3.625617, 6.464624], [3.632249, 6.467348], [3.63821, 6.467071], [3.64181, 6.46706], [3.647102, 6.46786], [3.647937, 6.469583], [3.647964, 6.469744], [3.647612, 6.471424], [3.647315, 6.471559], [3.646664, 6.471643], [3.638898, 6.472832], [3.636247, 6.473273], [3.63354, 6.473641], [3.630779, 6.474122], [3.622937, 6.475803], [3.619731, 6.479869], [3.619263, 6.479944], [3.615304, 6.479452], [3.608486, 6.482201], [3.605385, 6.482573], [3.605094, 6.482605], [3.604555, 6.482583], [3.603278, 6.481687], [3.600139, 6.479495], [3.596871, 6.478572], [3.588625, 6.47882], [3.587619, 6.478464], [3.584143, 6.477877], [3.583231, 6.486774], [3.584738, 6.487673], [3.584864, 6.488116], [3.583608, 6.491463], [3.580258, 6.492779], [3.576248, 6.487957], [3.573692, 6.486183], [3.573388, 6.485878], [3.569873, 6.481282], [3.565866, 6.479855], [3.562975, 6.478973], [3.562717, 6.47868], [3.556854, 6.472036], [3.553346, 6.468123], [3.549797, 6.462322], [3.548345, 6.460597], [3.548389, 6.460289], [3.549495, 6.457359], [3.544185, 6.450189], [3.54359, 6.450191], [3.537487, 6.446715], [3.53401, 6.444635], [3.535366, 6.4413]]], "type": "Polygon"}, "id": "6", "properties": {"point_coords": [3.584618399999999, 6.469415199999999], "zone_name": "Abraham Adesanya Bus Stop"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_f8e1ad879fa411363a3347d33f23f24e.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["zone_name"];
+    let aliases = ["Zone:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_f8e1ad879fa411363a3347d33f23f24e.addTo(map_cf8526e27887f5677a8b4a93ca814629);
+        
+    
+            var feature_group_5a36f06351aa38834fe2c0b82f32d0ce = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_53c33e5374b8d190678330666cffd59d = L.marker(
+                [6.4570516, 3.6022671],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_ac989b0084a0f2d1a3eb47f2610850fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76a9573d391df127a19a32c3fe61da80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5210b15d5374f69869d8b0de7761be9 = $(`<div id="html_b5210b15d5374f69869d8b0de7761be9" style="width: 100.0%; height: 100.0%;">Atlantic Garden Estate</div>`)[0];
+                popup_76a9573d391df127a19a32c3fe61da80.setContent(html_b5210b15d5374f69869d8b0de7761be9);
+            
+        
+
+        marker_53c33e5374b8d190678330666cffd59d.bindPopup(popup_76a9573d391df127a19a32c3fe61da80)
+        ;
+
+        
+    
+    
+                marker_53c33e5374b8d190678330666cffd59d.setIcon(icon_ac989b0084a0f2d1a3eb47f2610850fe);
+            
+    
+            var marker_6c8584ed0d5f0ea9992a3ed2e06e8acd = L.marker(
+                [6.4589849, 3.6015207],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_e85928c8e7b661936eb63428648a0ba7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcf7ab80f9b96651703234fac0c39cd0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8777358b6fc18c0a75dbc1e85d5c96a6 = $(`<div id="html_8777358b6fc18c0a75dbc1e85d5c96a6" style="width: 100.0%; height: 100.0%;">Jakande Estate Lekki</div>`)[0];
+                popup_fcf7ab80f9b96651703234fac0c39cd0.setContent(html_8777358b6fc18c0a75dbc1e85d5c96a6);
+            
+        
+
+        marker_6c8584ed0d5f0ea9992a3ed2e06e8acd.bindPopup(popup_fcf7ab80f9b96651703234fac0c39cd0)
+        ;
+
+        
+    
+    
+                marker_6c8584ed0d5f0ea9992a3ed2e06e8acd.setIcon(icon_e85928c8e7b661936eb63428648a0ba7);
+            
+    
+            var marker_07ccd077b0121cbfd550982f1876d6ef = L.marker(
+                [6.4607949, 3.5860772],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_d4e3dc5baaededed92f7de575071dd3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d74c00d594372aecfaef721c81831a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46f2c709a585d7bb6e826763b62ada33 = $(`<div id="html_46f2c709a585d7bb6e826763b62ada33" style="width: 100.0%; height: 100.0%;">Inoyo Havens Estate</div>`)[0];
+                popup_8d74c00d594372aecfaef721c81831a2.setContent(html_46f2c709a585d7bb6e826763b62ada33);
+            
+        
+
+        marker_07ccd077b0121cbfd550982f1876d6ef.bindPopup(popup_8d74c00d594372aecfaef721c81831a2)
+        ;
+
+        
+    
+    
+                marker_07ccd077b0121cbfd550982f1876d6ef.setIcon(icon_d4e3dc5baaededed92f7de575071dd3e);
+            
+    
+            var marker_3079364f1dbed1332695111949629aea = L.marker(
+                [6.4671439, 3.6057898],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_3d27f3029748dd4ee675a0c949851c8d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fbf66465a061a1cbbaa47de93c5d8af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39cc4eb6f69efced08ab0940461d36e3 = $(`<div id="html_39cc4eb6f69efced08ab0940461d36e3" style="width: 100.0%; height: 100.0%;">Lekki Gardens Estate Phase 3</div>`)[0];
+                popup_6fbf66465a061a1cbbaa47de93c5d8af.setContent(html_39cc4eb6f69efced08ab0940461d36e3);
+            
+        
+
+        marker_3079364f1dbed1332695111949629aea.bindPopup(popup_6fbf66465a061a1cbbaa47de93c5d8af)
+        ;
+
+        
+    
+    
+                marker_3079364f1dbed1332695111949629aea.setIcon(icon_3d27f3029748dd4ee675a0c949851c8d);
+            
+    
+            var marker_6e077a156d4fea2861d56dd4d937d3fd = L.marker(
+                [6.467281799999999, 3.599219],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_1fb8bacc73b3edc7f97adc6c72a4eafc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_125b17ba2fd5155edde2db25558d0dc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17833ffa1c2d063bb484c1389f4074c5 = $(`<div id="html_17833ffa1c2d063bb484c1389f4074c5" style="width: 100.0%; height: 100.0%;">The Ambiance Estate</div>`)[0];
+                popup_125b17ba2fd5155edde2db25558d0dc9.setContent(html_17833ffa1c2d063bb484c1389f4074c5);
+            
+        
+
+        marker_6e077a156d4fea2861d56dd4d937d3fd.bindPopup(popup_125b17ba2fd5155edde2db25558d0dc9)
+        ;
+
+        
+    
+    
+                marker_6e077a156d4fea2861d56dd4d937d3fd.setIcon(icon_1fb8bacc73b3edc7f97adc6c72a4eafc);
+            
+    
+            var marker_ccea870e785ea99ee61e921d7e326d68 = L.marker(
+                [6.4562427, 3.5815902],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_e1859af258e0bd693ddcda12e04a99b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1296c45fe6c846e74c13740a31c5445 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4870007e05249d3b9af8c99b2ef8e5ab = $(`<div id="html_4870007e05249d3b9af8c99b2ef8e5ab" style="width: 100.0%; height: 100.0%;">De Mosaic Court</div>`)[0];
+                popup_e1296c45fe6c846e74c13740a31c5445.setContent(html_4870007e05249d3b9af8c99b2ef8e5ab);
+            
+        
+
+        marker_ccea870e785ea99ee61e921d7e326d68.bindPopup(popup_e1296c45fe6c846e74c13740a31c5445)
+        ;
+
+        
+    
+    
+                marker_ccea870e785ea99ee61e921d7e326d68.setIcon(icon_e1859af258e0bd693ddcda12e04a99b9);
+            
+    
+            var marker_800f9add816b5f95e715263c6f37aab1 = L.marker(
+                [6.4724447, 3.5787384],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_652805fab717b060046e9bf2ad72523d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76cd289dbd5d21b7f2acfdb816699de4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d41f70207559bf727c2b11dbb863e598 = $(`<div id="html_d41f70207559bf727c2b11dbb863e598" style="width: 100.0%; height: 100.0%;">Thomas Estate</div>`)[0];
+                popup_76cd289dbd5d21b7f2acfdb816699de4.setContent(html_d41f70207559bf727c2b11dbb863e598);
+            
+        
+
+        marker_800f9add816b5f95e715263c6f37aab1.bindPopup(popup_76cd289dbd5d21b7f2acfdb816699de4)
+        ;
+
+        
+    
+    
+                marker_800f9add816b5f95e715263c6f37aab1.setIcon(icon_652805fab717b060046e9bf2ad72523d);
+            
+    
+            var marker_e872505a944af077638572f7f18af015 = L.marker(
+                [6.4601408, 3.5806384],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_33adaa8054ed6bb7596a48d6fafb37d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c968d1b160e85c20acaa762d1858cd82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5671e59cd3c06d9fd1c63594ba9d6d0 = $(`<div id="html_d5671e59cd3c06d9fd1c63594ba9d6d0" style="width: 100.0%; height: 100.0%;">Dammy’S Court</div>`)[0];
+                popup_c968d1b160e85c20acaa762d1858cd82.setContent(html_d5671e59cd3c06d9fd1c63594ba9d6d0);
+            
+        
+
+        marker_e872505a944af077638572f7f18af015.bindPopup(popup_c968d1b160e85c20acaa762d1858cd82)
+        ;
+
+        
+    
+    
+                marker_e872505a944af077638572f7f18af015.setIcon(icon_33adaa8054ed6bb7596a48d6fafb37d2);
+            
+    
+            var marker_75fa829d19e0e653e5717a8441e04c01 = L.marker(
+                [6.4627655, 3.5884538],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_61058d29bcdf3b83583aae582e0a0310 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4f571b3294c7dac2b7f0cba04df105c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04c6d6fe179b9cb59b9114aad5b7a65c = $(`<div id="html_04c6d6fe179b9cb59b9114aad5b7a65c" style="width: 100.0%; height: 100.0%;">Hi Life Estate</div>`)[0];
+                popup_f4f571b3294c7dac2b7f0cba04df105c.setContent(html_04c6d6fe179b9cb59b9114aad5b7a65c);
+            
+        
+
+        marker_75fa829d19e0e653e5717a8441e04c01.bindPopup(popup_f4f571b3294c7dac2b7f0cba04df105c)
+        ;
+
+        
+    
+    
+                marker_75fa829d19e0e653e5717a8441e04c01.setIcon(icon_61058d29bcdf3b83583aae582e0a0310);
+            
+    
+            var marker_6afe432b863803eda23552d725aabc4e = L.marker(
+                [6.4712999, 3.5935435],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_2d2ff31fec13720fd78d25bf62aae108 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51e2dbcd854c8964945bf85e23753521 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_150a60ecf0c2a6320ad0fef7bcd84ca7 = $(`<div id="html_150a60ecf0c2a6320ad0fef7bcd84ca7" style="width: 100.0%; height: 100.0%;">Eden Gardens</div>`)[0];
+                popup_51e2dbcd854c8964945bf85e23753521.setContent(html_150a60ecf0c2a6320ad0fef7bcd84ca7);
+            
+        
+
+        marker_6afe432b863803eda23552d725aabc4e.bindPopup(popup_51e2dbcd854c8964945bf85e23753521)
+        ;
+
+        
+    
+    
+                marker_6afe432b863803eda23552d725aabc4e.setIcon(icon_2d2ff31fec13720fd78d25bf62aae108);
+            
+    
+            var marker_85db79ca7893fae134c89b56cbca9323 = L.marker(
+                [6.463497299999999, 3.5811675],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_2aef9ebc8cb558c7735de9e5caf8e942 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70482fc651dacc4b190794bb0f0f8349 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11b2fa118612b44f4f413831bdac4b44 = $(`<div id="html_11b2fa118612b44f4f413831bdac4b44" style="width: 100.0%; height: 100.0%;">Appleton Court</div>`)[0];
+                popup_70482fc651dacc4b190794bb0f0f8349.setContent(html_11b2fa118612b44f4f413831bdac4b44);
+            
+        
+
+        marker_85db79ca7893fae134c89b56cbca9323.bindPopup(popup_70482fc651dacc4b190794bb0f0f8349)
+        ;
+
+        
+    
+    
+                marker_85db79ca7893fae134c89b56cbca9323.setIcon(icon_2aef9ebc8cb558c7735de9e5caf8e942);
+            
+    
+            var marker_018c64da23fad5ee4cbcd748a1c3f550 = L.marker(
+                [6.461472, 3.596576],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_8a29e92f30bc629895ae33e5cbac5895 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1405e4e880c203ccde75f5548de15c05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da3f360c76d81ba09330379cfc1f57e9 = $(`<div id="html_da3f360c76d81ba09330379cfc1f57e9" style="width: 100.0%; height: 100.0%;">Lekki Gardens</div>`)[0];
+                popup_1405e4e880c203ccde75f5548de15c05.setContent(html_da3f360c76d81ba09330379cfc1f57e9);
+            
+        
+
+        marker_018c64da23fad5ee4cbcd748a1c3f550.bindPopup(popup_1405e4e880c203ccde75f5548de15c05)
+        ;
+
+        
+    
+    
+                marker_018c64da23fad5ee4cbcd748a1c3f550.setIcon(icon_8a29e92f30bc629895ae33e5cbac5895);
+            
+    
+            var marker_3cfd97ab28071341051fe633d6ac5755 = L.marker(
+                [6.477322099999999, 3.5915557],
+                {
+}
+            ).addTo(feature_group_5a36f06351aa38834fe2c0b82f32d0ce);
+        
+    
+            var icon_f431f75053391bd0f52eb5bd48af912c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c5e61654c9f95aec1f8df30a29114a63 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_998dc3a63eb14c01cca9e789fdb9b0ae = $(`<div id="html_998dc3a63eb14c01cca9e789fdb9b0ae" style="width: 100.0%; height: 100.0%;">Phase 2 Lekki Gardens</div>`)[0];
+                popup_c5e61654c9f95aec1f8df30a29114a63.setContent(html_998dc3a63eb14c01cca9e789fdb9b0ae);
+            
+        
+
+        marker_3cfd97ab28071341051fe633d6ac5755.bindPopup(popup_c5e61654c9f95aec1f8df30a29114a63)
+        ;
+
+        
+    
+    
+                marker_3cfd97ab28071341051fe633d6ac5755.setIcon(icon_f431f75053391bd0f52eb5bd48af912c);
+            
+    
+            feature_group_5a36f06351aa38834fe2c0b82f32d0ce.addTo(map_cf8526e27887f5677a8b4a93ca814629);
+        
+    
+            var feature_group_e831bd48ade2bf792b3b5e05f7db09bd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_579b4309497fd9b7b9d68bf0e92710ba = L.circleMarker(
+                [6.469415199999999, 3.584618399999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e831bd48ade2bf792b3b5e05f7db09bd);
+        
+    
+        var popup_0da2327f7fc253193372aad44e0c5ff2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa2e534f04f0158c41004961b35b388f = $(`<div id="html_aa2e534f04f0158c41004961b35b388f" style="width: 100.0%; height: 100.0%;">Abraham Adesanya Bus Stop</div>`)[0];
+                popup_0da2327f7fc253193372aad44e0c5ff2.setContent(html_aa2e534f04f0158c41004961b35b388f);
+            
+        
+
+        circle_marker_579b4309497fd9b7b9d68bf0e92710ba.bindPopup(popup_0da2327f7fc253193372aad44e0c5ff2)
+        ;
+
+        
+    
+    
+            feature_group_e831bd48ade2bf792b3b5e05f7db09bd.addTo(map_cf8526e27887f5677a8b4a93ca814629);
+        
+    
+            var layer_control_eddb62a5c99a94dbc430b6a0a6526f0c_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_7baaf84311cc3824f4fc51c6f5bb14f2,
+                    "Satellite View" : tile_layer_2d2f173feca9562c51263b355ec6428c,
+                },
+                overlays :  {
+                    "Travel Time Buffers" : geo_json_f8e1ad879fa411363a3347d33f23f24e,
+                    "Estates" : feature_group_5a36f06351aa38834fe2c0b82f32d0ce,
+                    "Zones" : feature_group_e831bd48ade2bf792b3b5e05f7db09bd,
+                },
+            };
+            let layer_control_eddb62a5c99a94dbc430b6a0a6526f0c = L.control.layers(
+                layer_control_eddb62a5c99a94dbc430b6a0a6526f0c_layers.base_layers,
+                layer_control_eddb62a5c99a94dbc430b6a0a6526f0c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_cf8526e27887f5677a8b4a93ca814629);
+
+        
+</script>
+</html>
