@@ -101,7 +101,7 @@
     busStops.forEach((stop, index) => {
       const id = "preview-" + index;
       const card = document.createElement("a");
-      card.href = `maps/${stop.name.replace(/\s+/g, '_').toLowerCase()}.html`; // e.g. maps/lekki_phase_i.html
+      card.href = `${stop.name.replace(/\s+/g, '_').toLowerCase()}.html`; // e.g. maps/lekki_phase_i.html
       card.target = "_blank";
       card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow hover:shadow-lg transition-all flex flex-col gap-3";
       card.innerHTML = `
