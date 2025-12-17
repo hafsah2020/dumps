@@ -1,73 +1,111 @@
-import folium
-from folium import IFrame
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Kado Supermarkets Map</title>
 
-# Create map
-kado_map = folium.Map(location=kado_location, zoom_start=14)
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 
-# ---------- SIDEBAR HTML ----------
-sidebar_html = """
-<div id="sidebar" style="
-    position: fixed;
-    top: 50px;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    background-color: white;
-    z-index: 9999;
-    padding: 15px;
-    border-left: 2px solid #ccc;
-    display: none;
-    overflow-y: auto;
-">
-    <h4 id="sidebar-title">Location Details</h4>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 320px;
+            height: 100%;
+            background: #ffffff;
+            border-left: 2px solid #ccc;
+            padding: 15px;
+            display: none;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        #close-btn {
+            float: right;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<div id="sidebar">
+    <span id="close-btn" onclick="closeSidebar()">✖</span>
+    <h3 id="sidebar-title"></h3>
     <div id="sidebar-content"></div>
-    <br>
-    <button onclick="document.getElementById('sidebar').style.display='none'">
-        Close
-    </button>
 </div>
 
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script>
-function openSidebar(title, content) {
-    document.getElementById('sidebar-title').innerHTML = title;
-    document.getElementById('sidebar-content').innerHTML = content;
-    document.getElementById('sidebar').style.display = 'block';
-}
+    // ---------- MAP SETUP ----------
+    const map = L.map("map").setView([9.072264, 7.491302], 14);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors"
+    }).addTo(map);
+
+    // ---------- SIDEBAR FUNCTIONS ----------
+    function openSidebar(title, content) {
+        document.getElementById("sidebar-title").innerHTML = title;
+        document.getElementById("sidebar-content").innerHTML = content;
+        document.getElementById("sidebar").style.display = "block";
+    }
+
+    function closeSidebar() {
+        document.getElementById("sidebar").style.display = "none";
+    }
+
+    // ---------- LOAD GEOJSON ----------
+    fetch("supermarkets.geojson")
+        .then(response => response.json())
+        .then(data => {
+
+            const geoLayer = L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng);
+                },
+                onEachFeature: function (feature, layer) {
+
+                    layer.on("click", function () {
+                        const props = feature.properties;
+
+                        openSidebar(
+                            props["Super Market"],
+                            `
+                            <p><b>${props["Super Market"]}</b></p>
+                            <a href="${props["google_map_link"]}" target="_blank">
+                                View on Google Maps
+                            </a>
+                            `
+                        );
+                    });
+                }
+            }).addTo(map);
+
+            map.fitBounds(geoLayer.getBounds());
+        })
+        .catch(err => console.error("GeoJSON load error:", err));
 </script>
-"""
 
-kado_map.get_root().html.add_child(folium.Element(sidebar_html))
-
-# ---------- MAIN LOCATION ----------
-folium.Marker(
-    kado_location,
-    icon=folium.Icon(color='red'),
-    tooltip="Kado Location"
-).add_to(kado_map)
-
-# ---------- ADD MARKERS FROM DATA ----------
-for idx, row in gdf.iterrows():
-    html_content = f"""
-    <b>{row['Super Market']}</b><br>
-    <a href="{row['google_map_link']}" target="_blank">
-        View on Google Maps
-    </a>
-    """
-
-    iframe = IFrame(html=f"""
-        <script>
-            openSidebar(
-                "{row['Super Market']}",
-                `{html_content}`
-            );
-        </script>
-    """, width=0, height=0)
-
-    folium.Marker(
-        location=[row['latitude'], row['longitude']],
-        icon=folium.Icon(color='blue'),
-        popup=folium.Popup(iframe)
-    ).add_to(kado_map)
-
-# Display map
-kado_map
+</body>
+</html>
