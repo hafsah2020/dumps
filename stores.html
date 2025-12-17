@@ -1,0 +1,73 @@
+import folium
+from folium import IFrame
+
+# Create map
+kado_map = folium.Map(location=kado_location, zoom_start=14)
+
+# ---------- SIDEBAR HTML ----------
+sidebar_html = """
+<div id="sidebar" style="
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    padding: 15px;
+    border-left: 2px solid #ccc;
+    display: none;
+    overflow-y: auto;
+">
+    <h4 id="sidebar-title">Location Details</h4>
+    <div id="sidebar-content"></div>
+    <br>
+    <button onclick="document.getElementById('sidebar').style.display='none'">
+        Close
+    </button>
+</div>
+
+<script>
+function openSidebar(title, content) {
+    document.getElementById('sidebar-title').innerHTML = title;
+    document.getElementById('sidebar-content').innerHTML = content;
+    document.getElementById('sidebar').style.display = 'block';
+}
+</script>
+"""
+
+kado_map.get_root().html.add_child(folium.Element(sidebar_html))
+
+# ---------- MAIN LOCATION ----------
+folium.Marker(
+    kado_location,
+    icon=folium.Icon(color='red'),
+    tooltip="Kado Location"
+).add_to(kado_map)
+
+# ---------- ADD MARKERS FROM DATA ----------
+for idx, row in gdf.iterrows():
+    html_content = f"""
+    <b>{row['Super Market']}</b><br>
+    <a href="{row['google_map_link']}" target="_blank">
+        View on Google Maps
+    </a>
+    """
+
+    iframe = IFrame(html=f"""
+        <script>
+            openSidebar(
+                "{row['Super Market']}",
+                `{html_content}`
+            );
+        </script>
+    """, width=0, height=0)
+
+    folium.Marker(
+        location=[row['latitude'], row['longitude']],
+        icon=folium.Icon(color='blue'),
+        popup=folium.Popup(iframe)
+    ).add_to(kado_map)
+
+# Display map
+kado_map
