@@ -4,18 +4,20 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap contributors"
 }).addTo(map);
 
-fetch("static/data/supermarkets_in_abuja.geojson")
-  .then(response => response.json())
+fetch("static/data/supermarkets_in_abuja.geojson")  // relative path
+  .then(res => res.json())
   .then(data => {
     L.geoJSON(data, {
       onEachFeature: (feature, layer) => {
         layer.on("click", () => {
           document.getElementById("info").innerHTML = `
             <strong>${feature.properties.name || "N/A"}</strong><br>
-            Type: ${feature.properties.type || "N/A"}
+            Type: ${feature.properties.type || "N/A"}<br>
+            Status: ${feature.properties.status || "N/A"}
           `;
         });
       }
     }).addTo(map);
   })
-  .catch(err => console.error("GeoJSON load error:", err));
+  .catch(err => console.error("Failed to load GeoJSON:", err));
+
