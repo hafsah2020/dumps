@@ -53,7 +53,7 @@ fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.h
             <p><span class="info-label">Phone:</span> ${props.phone_number || "N/A"}</p>
             <p><span class="info-label">Email:</span> ${props.Email || "N/A"}</p>
             <p><span class="info-label">Address:</span> ${props.Address || "N/A"}</p>
-            <p><span class="info-label"><a href="${props.google_map_link || "#"}" target="_blank">View on google map</a></p>
+            <p><a href="${props.google_map_link || "#"}" target="_blank">View on google map</a></p>
           `;
         });
       }
