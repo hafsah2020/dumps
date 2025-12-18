@@ -25,8 +25,8 @@ L.marker([9.090342, 7.4312068], {
 
 // --- Font Awesome Supermarket Icon ---
 const supermarketIcon = L.AwesomeMarkers.icon({
-    icon: "shopping-cart",   // Font Awesome icon
-    prefix: "fa",
+    icon: "fa-shopping-cart", // fa-awesome icon
+    prefix: "fa"
     markerColor: "blue",     // blue marker
     iconColor: "white"       // icon color
 });
