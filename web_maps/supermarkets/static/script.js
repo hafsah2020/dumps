@@ -1,5 +1,17 @@
 const map = L.map("map").setView([9.090342, 7.4312068], 11);
 
+// Add central office marker
+L.marker([9.090342, 7.4312068], {
+    icon: L.icon({
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", // office icon
+        iconSize: [32, 32], // size of the icon
+        iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+        popupAnchor: [0, -32] // point from which the popup should open
+    })
+}).addTo(map)
+.bindPopup("<strong>Office</strong>"); // popup on click
+
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap contributors"
 }).addTo(map);
