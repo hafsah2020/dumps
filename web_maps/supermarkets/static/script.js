@@ -19,12 +19,20 @@ L.marker([9.090342, 7.4312068], {
 .on("click", () => {
   document.getElementById("info").innerHTML = `
     <p><span class="info-label">Name:</span> DEER Nigeria (Kado)</p>
-    <p><span class="info-label">Name:</span> Reference point</p>
+    <p><span class="info-label">Reference:</span> Office / Central Location</p>
   `;
 });
 
+// --- Font Awesome Supermarket Icon ---
+const supermarketIcon = L.AwesomeMarkers.icon({
+    icon: "shopping-cart",   // Font Awesome icon
+    prefix: "fa",
+    markerColor: "blue",     // blue marker
+    iconColor: "white"       // icon color
+});
+
 // --- Load supermarkets GeoJSON ---
-fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.html
+fetch("static/data/supermarkets_in_abuja.geojson")
   .then(res => {
     if (!res.ok) throw new Error("GeoJSON not found: " + res.status);
     return res.json();
@@ -34,26 +42,18 @@ fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.h
 
     L.geoJSON(data, {
       pointToLayer: (feature, latlng) => {
-        // Use custom marker for supermarkets
-        return L.marker(latlng, {
-          icon: L.icon({
-            iconUrl: "https://www.freeiconspng.com/img/28349",
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [0, -41]
-          })
-        });
+        // Use AwesomeMarkers icon
+        return L.marker(latlng, { icon: supermarketIcon });
       },
       onEachFeature: (feature, layer) => {
         layer.on("click", () => {
-          // Update sidebar
           const props = feature.properties;
           document.getElementById("info").innerHTML = `
             <p><span class="info-label">Supermarket:</span> ${props.super_market || "N/A"}</p>
             <p><span class="info-label">Phone:</span> ${props.phone_number || "N/A"}</p>
             <p><span class="info-label">Email:</span> ${props.Email || "N/A"}</p>
             <p><span class="info-label">Address:</span> ${props.Address || "N/A"}</p>
-            <p><a href="${props.google_map_link || "#"}" target="_blank">View on google map</a></p>
+            <p><span class="info-label">Google Map:</span> <a href="${props.google_map_link || "#"}" target="_blank">View</a></p>
           `;
         });
       }
