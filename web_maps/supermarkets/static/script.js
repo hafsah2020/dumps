@@ -11,9 +11,11 @@ fetch("static/data/supermarkets_in_abuja.geojson")  // relative path
       onEachFeature: (feature, layer) => {
         layer.on("click", () => {
           document.getElementById("info").innerHTML = `
-            <strong>${feature.properties.name || "N/A"}</strong><br>
-            Type: ${feature.properties.type || "N/A"}<br>
-            Status: ${feature.properties.status || "N/A"}
+            <strong>${feature.properties.super_market || "N/A"}</strong><br>
+            Phone: ${feature.properties.phone_number || "N/A"}<br>
+            Email: ${feature.properties.Email || "N/A"}<br>
+            Address: ${feature.properties.Address || "N/A"}<br>
+            Location: ${feature.properties.google_map_link || "N/A"}<br>
           `;
         });
       }
