@@ -37,7 +37,7 @@ fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.h
         // Use custom marker for supermarkets
         return L.marker(latlng, {
           icon: L.icon({
-            iconUrl: "https://www.pngkit.com/png/detail/129-1294869_pin-location-map-icon-navigation-symbol-ma-google.png",
+            iconUrl: "https://www.freeiconspng.com/img/28349",
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [0, -41]
