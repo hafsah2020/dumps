@@ -19,8 +19,7 @@ L.marker([9.090342, 7.4312068], {
 .on("click", () => {
   document.getElementById("info").innerHTML = `
     <p><span class="info-label">Name:</span> DEER Nigeria (Kado)</p>
-    <p><span class="info-label">Type:</span> Headquarters</p>
-    <p><span class="info-label">Status:</span> Active</p>
+    <p><span class="info-label">Name:</span> Reference point</p>
   `;
 });
 
@@ -38,7 +37,7 @@ fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.h
         // Use custom marker for supermarkets
         return L.marker(latlng, {
           icon: L.icon({
-            iconUrl: "https://cdn-icons-png.flaticon.com/512/148/148836.png",
+            iconUrl: "https://www.pngkit.com/png/detail/129-1294869_pin-location-map-icon-navigation-symbol-ma-google.png"",
             iconSize: [25, 41],
             iconAnchor: [12, 41],
             popupAnchor: [0, -41]
@@ -54,7 +53,7 @@ fetch("static/data/supermarkets_in_abuja.geojson") // relative path from index.h
             <p><span class="info-label">Phone:</span> ${props.phone_number || "N/A"}</p>
             <p><span class="info-label">Email:</span> ${props.Email || "N/A"}</p>
             <p><span class="info-label">Address:</span> ${props.Address || "N/A"}</p>
-            <p><span class="info-label">Google Map:</span> <a href="${props.google_map_link || "#"}" target="_blank">View</a></p>
+            <p><span class="info-label"><a href="${props.google_map_link || "#"}" target="_blank">View on google map</a></p>
           `;
         });
       }
