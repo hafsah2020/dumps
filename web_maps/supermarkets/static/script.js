@@ -4,7 +4,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap contributors"
 }).addTo(map);
 
-fetch("data/supermarkets_in_abuja.geojson")
+fetch("static/data/supermarkets_in_abuja.geojson")
   .then(response => response.json())
   .then(data => {
     L.geoJSON(data, {
