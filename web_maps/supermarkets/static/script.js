@@ -1,6 +1,4 @@
-const map = L.map("map").setView([kado_location = (9.090342,
-                 7.4312068)
-], 11);
+const map = L.map("map").setView([kado_location = (9.090342, 7.4312068)], 11);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap contributors"
