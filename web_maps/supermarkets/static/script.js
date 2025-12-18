@@ -23,12 +23,13 @@ L.marker([9.090342, 7.4312068], {
   `;
 });
 
-// --- Font Awesome Supermarket Icon ---
-const supermarketIcon = L.AwesomeMarkers.icon({
-    icon: "fa-shopping-cart", // fa-awesome icon
-    prefix: "fa"
-    markerColor: "blue",     // blue marker
-    iconColor: "white"       // icon color
+// --- Blue shopping cart icon for supermarkets ---
+const supermarketIcon = L.divIcon({
+  html: '<i class="fas fa-shopping-cart" style="color:white;font-size:20px;"></i>',
+  className: 'custom-div-icon',
+  iconSize: [30, 42],
+  iconAnchor: [15, 42],
+  popupAnchor: [0, -40]
 });
 
 // --- Load supermarkets GeoJSON ---
@@ -42,7 +43,6 @@ fetch("static/data/supermarkets_in_abuja.geojson")
 
     L.geoJSON(data, {
       pointToLayer: (feature, latlng) => {
-        // Use AwesomeMarkers icon
         return L.marker(latlng, { icon: supermarketIcon });
       },
       onEachFeature: (feature, layer) => {
