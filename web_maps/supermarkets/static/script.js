@@ -25,7 +25,7 @@ L.marker([9.090342, 7.4312068], {
 
 // --- Supermarket image icon ---
 const supermarketIcon = L.icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/283/283182.png", // blue shopping cart icon
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", // blue shopping cart icon
   iconSize: [30, 30],       // adjust as needed
   iconAnchor: [15, 30],     // bottom-center of icon
   popupAnchor: [0, -30]     // popup above icon
