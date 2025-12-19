@@ -8,7 +8,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 // --- Office marker (blue) ---
 const officeIcon = L.icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png", 
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32]
@@ -29,19 +29,19 @@ function getStageIcon(stage) {
   let url;
   switch(stage.toLowerCase()) {
     case "yet to contact":
-      url = "https://cdn-icons-png.flaticon.com/512/252/252025.png"; // red
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red
       break;
     case "contacted and promising":
-      url = "https://cdn-icons-png.flaticon.com/512/252/252019.png"; // yellow
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // yellow
       break;
     case "contacted but unsure":
-      url = "https://cdn-icons-png.flaticon.com/512/252/252027.png"; // brown
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // brown
       break;
     case "converted":
-      url = "https://cdn-icons-png.flaticon.com/512/252/252031.png"; // green
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // green
       break;
     default:
-      url = "https://cdn-icons-png.flaticon.com/512/252/252025.png"; // red as default
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red as default
   }
   return L.icon({
     iconUrl: url,
