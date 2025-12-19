@@ -100,3 +100,8 @@ body {
     height: calc(100% - 200px);
   }
 }
+
+.legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
+.legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
+/* similarly for blue, yellow, green */
+
