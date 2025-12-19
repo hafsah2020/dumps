@@ -32,13 +32,13 @@ function getStageIcon(stage) {
       url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red
       break;
     case "contacted and promising":
-      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // yellow
+      url = "https://cdn-icons-png.flaticon.com/512/149/149060.png"; // blue
       break;
     case "contacted but unsure":
-      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // brown
+      url = "https://cdn-icons-png.flaticon.com/512/727/727606.png"; // yellow
       break;
     case "converted":
-      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // green
+      url = "https://cdn-icons-png.flaticon.com/512/9101/9101314.png"; // green
       break;
     default:
       url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red as default
