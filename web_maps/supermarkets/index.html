@@ -8,9 +8,37 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="static/style.css"/>
+  <style>
+    /* Logo styling */
+    .header { 
+      text-align: center; 
+      padding: 10px 20px; 
+      background: #fff; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    .logo { 
+      max-height: 60px; 
+      max-width: 200px; 
+      width: auto; 
+      height: auto;
+    }
+    .logo-title { 
+      font-size: 1.4em; 
+      color: #333; 
+      margin: 5px 0 0; 
+      font-weight: bold;
+    }
+  </style>
 </head>
   
 <body>
+  <!-- Header with Logo -->
+  <header class="header">
+    <img src="../../deer.pmg" alt="DEER Nigeria" class="logo">
+    <div class="logo-title">Supermarkets Map</div>
+  </header>
+
   <!-- Sidebar for info -->
   <div id="sidebar">
     <h2>Location Info</h2>
