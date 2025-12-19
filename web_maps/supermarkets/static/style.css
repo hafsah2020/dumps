@@ -60,28 +60,48 @@ body {
   position: relative;
 }
 
-/* Sidebar styling */
+/* Sidebar styling (on right) */
 #sidebar {
   width: 320px;
   background: #ffffff;
-  border-right: 2px solid #e0e0e0;
-  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  border-left: 2px solid #e0e0e0; /* right sidebar */
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
-  position: absolute; /* for slide-in effect */
+  position: absolute;
   top: 0;
   bottom: 0;
-  left: -320px; /* hidden by default */
-  transition: left 0.3s ease;
+  right: -320px; /* hidden by default */
+  transition: right 0.3s ease;
   z-index: 500;
 }
 
 #sidebar.open {
-  left: 0; /* sidebar visible */
+  right: 0; /* sidebar visible */
 }
 
+/* Toggle button inside sidebar */
+#toggleSidebar {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* inside sidebar */
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 600;
+  text-align: center;
+  line-height: 30px;
+  padding: 0;
+}
+
+/* Sidebar content */
 #sidebar h2 {
-  margin-top: 0;
+  margin-top: 40px; /* space for toggle button */
   color: #2c3e50;
   font-size: 1.5em;
   border-bottom: 2px solid #3498db;
@@ -106,20 +126,6 @@ body {
   min-height: 0;
 }
 
-/* Toggle button */
-#toggleSidebar {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 600;
-  background: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
 /* Legend colors */
 .legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
 .legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
@@ -131,7 +137,7 @@ body {
 @media (max-width: 768px) {
   #sidebar {
     width: 250px;
-    left: -250px;
+    right: -250px;
   }
 }
 
@@ -143,18 +149,23 @@ body {
   #sidebar {
     width: 100%;
     height: 200px;
-    left: -100%;
-    border-right: none;
-    border-bottom: 2px solid #e0e0e0;
+    right: -100%;
+    border-left: none;
+    border-top: 2px solid #e0e0e0;
     box-shadow: none;
   }
 
   #sidebar.open {
-    left: 0;
+    right: 0;
   }
 
   #map {
     height: calc(100% - 200px);
+  }
+
+  #toggleSidebar {
+    top: 5px;
+    left: 5px;
   }
 
   .header-top {
