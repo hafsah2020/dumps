@@ -1,106 +1,97 @@
+/* Reset and base */
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header with Logo */
+/* Header styling */
 .header {
-  text-align: center;
-  padding: 15px 20px;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007BFF;
   color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  height: 70px;
   flex-shrink: 0;
 }
 
-.logo {
-  max-height: 50px;
-  max-width: 180px;
-  width: auto;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+.header .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
 }
 
-.logo-title {
-  font-size: 1.6em;
-  margin: 8px 0 0;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+.header .logo-title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-/* Main content area */
-.main-content {
+/* Container for sidebar + map */
+.main-container {
   display: flex;
-  flex: 1;
-  height: calc(100vh - 100px); /* Adjust based on header height */
+  flex: 1; /* fill remaining space */
+  height: calc(100% - 70px); /* header height */
 }
 
-/* Sidebar */
+/* Sidebar styling */
 #sidebar {
   width: 320px;
   background: #ffffff;
   border-right: 2px solid #e0e0e0;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
-  padding: 25px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   overflow-y: auto;
-  flex-shrink: 0;
 }
 
 #sidebar h2 {
   margin-top: 0;
   color: #2c3e50;
-  font-size: 1.6em;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 10px;
-  font-weight: 600;
+  font-size: 1.5em;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
 }
 
 #info {
-  margin-top: 20px;
-  font-size: 1.1em;
+  margin-top: 15px;
+  font-size: 1em;
   color: #34495e;
-  line-height: 1.6;
 }
 
 .info-label {
-  font-weight: 700;
+  font-weight: bold;
   color: #2980b9;
-  display: block;
-  margin: 12px 0 4px;
 }
 
-/* Map */
+/* Map styling */
 #map {
   flex: 1;
-  min-height: 100%;
-  position: relative;
+  height: 100%;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-    height: calc(100vh - 120px);
+  #sidebar {
+    width: 250px;
   }
-  
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    flex-direction: column;
+  }
+
   #sidebar {
     width: 100%;
     height: 200px;
     border-right: none;
     border-bottom: 2px solid #e0e0e0;
+    box-shadow: none;
   }
-  
-  #map {
-    flex: 1;
-  }
-}
 
-/* Leaflet map improvements */
-#map .leaflet-container {
-  height: 100%;
-  font-family: inherit;
+  #map {
+    height: calc(100% - 200px);
+  }
 }
