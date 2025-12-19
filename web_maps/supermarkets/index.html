@@ -34,11 +34,29 @@
   
 <body>
   <!-- Header with Logo -->
-  <header class="header">
+<header class="header">
+  <div class="header-top">
     <img src="../../deer.png" alt="DEER Nigeria" class="logo">
     <div class="logo-title">Supermarkets Map</div>
-    <p>Click a location on the map to see details here.</p>
-  </header>
+  </div>
+
+  <div class="header-description">
+    <p>Click a location on the map to see details in the sidebar.</p>
+    <p>Please update the status on the sheet here for easy visualization of the supermarkets' status.</p>
+  </div>
+
+  <div class="header-legend">
+    <h3>Legend:</h3>
+    <ul>
+      <li><span class="legend-black"></span> DEER Nigeria's Location (reference point)</li>
+      <li><span class="legend-red"></span> Stores not contacted</li>
+      <li><span class="legend-blue"></span> Stores contacted and showing interest</li>
+      <li><span class="legend-yellow"></span> Stores contacted but not showing interest yet</li>
+      <li><span class="legend-green"></span> Stores onboard</li>
+    </ul>
+  </div>
+</header>
+
 
   <!-- Container for sidebar + map -->
   <div class="main-container">
