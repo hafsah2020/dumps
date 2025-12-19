@@ -35,20 +35,23 @@
 <body>
   <!-- Header with Logo -->
   <header class="header">
-    <img src="../../deer.pmg" alt="DEER Nigeria" class="logo">
+    <img src="../../deer.png" alt="DEER Nigeria" class="logo">
     <div class="logo-title">Supermarkets Map</div>
   </header>
 
-  <!-- Sidebar for info -->
-  <div id="sidebar">
-    <h2>Location Info</h2>
-    <div id="info">
-      Click a location on the map to see details here.
+  <!-- Container for sidebar + map -->
+  <div class="main-container">
+    <!-- Sidebar for info -->
+    <div id="sidebar">
+      <h2>Location Info</h2>
+      <div id="info">
+        Click a location on the map to see details here.
+      </div>
     </div>
-  </div>
 
-  <!-- Map container -->
-  <div id="map"></div>
+    <!-- Map container -->
+    <div id="map"></div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
