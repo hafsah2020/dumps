@@ -1,10 +1,14 @@
 /* Reset and base */
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Header styling */
@@ -32,8 +36,8 @@ body {
 /* Container for sidebar + map */
 .main-container {
   display: flex;
-  flex: 1; /* fill remaining space */
-  height: calc(100% - 70px); /* header height */
+  flex: 1;
+  min-height: 0; /* important for flex children to scroll */
 }
 
 /* Sidebar styling */
@@ -69,6 +73,7 @@ body {
 #map {
   flex: 1;
   height: 100%;
+  min-height: 0; /* ensures flexbox allows map to shrink properly */
 }
 
 /* Responsive adjustments */
