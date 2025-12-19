@@ -6,9 +6,21 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap contributors"
 }).addTo(map);
 
+// Sidebar element and toggle button
+const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("toggleSidebar");
+
+// Initially hide sidebar
+sidebar.classList.remove("open");
+
+// Toggle sidebar button click
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+
 // --- Office marker (blue) ---
 const officeIcon = L.icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png", 
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32]
@@ -22,6 +34,7 @@ L.marker([9.090342, 7.4312068], { icon: officeIcon })
       <p><span class="info-label">Name:</span> DEER Nigeria (Kado)</p>
       <p><span class="info-label">Reference:</span> Office / Central Location</p>
     `;
+    sidebar.classList.add("open"); // open sidebar when clicked
   });
 
 // --- Function to return icon based on stage ---
@@ -41,7 +54,7 @@ function getStageIcon(stage) {
       url = "https://cdn-icons-png.flaticon.com/512/9101/9101314.png"; // green
       break;
     default:
-      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red as default
+      url = "https://cdn-icons-png.flaticon.com/512/684/684908.png"; // red default
   }
   return L.icon({
     iconUrl: url,
@@ -82,6 +95,7 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
                 <p><span class="info-label">Stage:</span> ${stage}</p>
                 <p><a href="${props.google_map_link || "#"}" target="_blank">View on Google Map</a></p>
               `;
+              sidebar.classList.add("open"); // open sidebar when marker clicked
             });
           }
         }).addTo(map);
@@ -90,5 +104,15 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
   },
   error: function(err) {
     console.error("Failed to load Google Sheet CSV:", err);
+  }
+});
+
+// --- Close sidebar when clicking outside ---
+map.on('click', () => {
+  sidebar.classList.remove("open");
+});
+document.addEventListener('click', (e) => {
+  if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+    sidebar.classList.remove("open");
   }
 });
