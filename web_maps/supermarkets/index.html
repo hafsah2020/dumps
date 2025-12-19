@@ -8,55 +8,20 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="static/style.css"/>
-  <style>
-    /* Logo styling */
-    .header { 
-      text-align: center; 
-      padding: 10px 20px; 
-      background: #fff; 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 10px;
-    }
-    .logo { 
-      max-height: 60px; 
-      max-width: 200px; 
-      width: auto; 
-      height: auto;
-    }
-    .logo-title { 
-      font-size: 1.4em; 
-      color: #333; 
-      margin: 5px 0 0; 
-      font-weight: bold;
-    }
-  </style>
 </head>
-  
 <body>
+
   <!-- Header with Logo -->
-<header class="header">
-  <div class="header-top">
-    <img src="../../deer.png" alt="DEER Nigeria" class="logo">
-    <div class="logo-title">Supermarkets Map</div>
-  </div>
-
-  <div class="header-description">
-    <p>Click a location on the map to see details in the sidebar.</p>
-    <p>Please update the status on the sheet here for easy visualization of the supermarkets' status.</p>
-  </div>
-
-  <div class="header-legend">
-    <h3>Legend:</h3>
-    <ul>
-      <li><span class="legend-black"></span> DEER Nigeria's Location (reference point)</li>
-      <li><span class="legend-red"></span> Stores not contacted</li>
-      <li><span class="legend-blue"></span> Stores contacted and showing interest</li>
-      <li><span class="legend-yellow"></span> Stores contacted but not showing interest yet</li>
-      <li><span class="legend-green"></span> Stores onboard</li>
-    </ul>
-  </div>
-</header>
-
+  <header class="header">
+    <div class="header-top">
+      <img src="../../deer.png" alt="DEER Nigeria" class="logo">
+      <div class="logo-title">Supermarkets Map</div>
+    </div>
+    <div class="header-description">
+      <p>Click a location on the map to see details in the sidebar.</p>
+      <p>Please update the status on the sheet here for easy visualisation on status of the supermarkets.</p>
+    </div>
+  </header>
 
   <!-- Container for sidebar + map -->
   <div class="main-container">
@@ -72,11 +37,24 @@
     <div id="map"></div>
   </div>
 
+  <!-- Instructions / Legend at the bottom -->
+  <div class="instructions">
+    <h3>Legend:</h3>
+    <ul>
+      <li>The black icon is DEER Nigeria's Location and can be used as a reference point</li>
+      <li>The red icon represents stores that have not been contacted</li>
+      <li>The blue icon represents stores that have been contacted and are showing interests</li>
+      <li>The yellow icon represents stores that have been contacted but are not showing any interest yet</li>
+      <li>The green icon represents stores that are onboard</li>
+    </ul>
+  </div>
+
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
-  <!-- Read google CSV sheet -->
+  <!-- Read Google CSV sheet -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <!-- Custom script -->
   <script src="static/script.js"></script>
+
 </body>
 </html>
