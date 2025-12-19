@@ -9,7 +9,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // --- Office marker ---
 L.marker([9.090342, 7.4312068], {
   icon: L.icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/512/1048/1048949.png", // office icon
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png", // office icon
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
