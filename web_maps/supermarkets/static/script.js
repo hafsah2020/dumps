@@ -52,7 +52,7 @@ function getStageIcon(stage) {
 }
 
 // --- Load Google Sheet CSV (ID + Stage) ---
-Papa.parse("https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv", {
+Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUYqdxpYqeGNJS61_a1OTCzjaVBnEoqTfNL9eTT-ysoBytutaebSc24Swu5gUZ/pub?gid=0&single=true&output=csv", {
   download: true,
   header: true,
   complete: function(sheetData) {
