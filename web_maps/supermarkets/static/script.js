@@ -8,7 +8,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 // --- Office marker (blue) ---
 const officeIcon = L.icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", // blue office
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32]
@@ -24,31 +24,34 @@ L.marker([9.090342, 7.4312068], { icon: officeIcon })
     `;
   });
 
-// --- Function to select marker icon based on stage ---
+// --- Function to return icon based on stage ---
 function getStageIcon(stage) {
   let url;
   switch(stage.toLowerCase()) {
-    case "contacted":
-      url = "https://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+    case "yet to contact":
+      url = "https://cdn-icons-png.flaticon.com/512/252/252025.png"; // red
       break;
-    case "negotiating":
-      url = "https://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+    case "contacted and promising":
+      url = "https://cdn-icons-png.flaticon.com/512/252/252019.png"; // yellow
       break;
-    case "signed":
-      url = "https://maps.google.com/mapfiles/ms/icons/green-dot.png";
+    case "contacted but unsure":
+      url = "https://cdn-icons-png.flaticon.com/512/252/252027.png"; // brown
+      break;
+    case "converted":
+      url = "https://cdn-icons-png.flaticon.com/512/252/252031.png"; // green
       break;
     default:
-      url = "https://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+      url = "https://cdn-icons-png.flaticon.com/512/252/252025.png"; // red as default
   }
   return L.icon({
     iconUrl: url,
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32]
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
   });
 }
 
-// --- Load Google Sheet CSV (only ID and Stage) ---
+// --- Load Google Sheet CSV (ID + Stage) ---
 Papa.parse("https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv", {
   download: true,
   header: true,
@@ -64,13 +67,13 @@ Papa.parse("https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv"
       .then(geoData => {
         L.geoJSON(geoData, {
           pointToLayer: (feature, latlng) => {
-            const stage = stageLookup[feature.properties.ID] || "N/A";
+            const stage = stageLookup[feature.properties.ID] || "Yet to contact";
             return L.marker(latlng, { icon: getStageIcon(stage) });
           },
           onEachFeature: (feature, layer) => {
             layer.on("click", () => {
               const props = feature.properties;
-              const stage = stageLookup[props.ID] || "N/A";
+              const stage = stageLookup[props.ID] || "Yet to contact";
               document.getElementById("info").innerHTML = `
                 <p><span class="info-label">Supermarket:</span> ${props.super_market || "N/A"}</p>
                 <p><span class="info-label">Phone:</span> ${props.phone_number || "N/A"}</p>
