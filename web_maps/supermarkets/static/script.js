@@ -80,7 +80,7 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
                 <p><span class="info-label">Email:</span> ${props.Email || "N/A"}</p>
                 <p><span class="info-label">Address:</span> ${props.Address || "N/A"}</p>
                 <p><span class="info-label">Stage:</span> ${stage}</p>
-                <p><span class="info-label">Google Map:</span> <a href="${props.google_map_link || "#"}" target="_blank">View</a></p>
+                <p><a href="${props.google_map_link || "#"}" target="_blank">View on Google Map</a></p>
               `;
             });
           }
