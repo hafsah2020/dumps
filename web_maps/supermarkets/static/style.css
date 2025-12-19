@@ -14,23 +14,42 @@ body {
 /* Header styling */
 .header {
   display: flex;
+  flex-direction: column; /* stack logo + description vertically */
   align-items: center;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  height: 70px;
-  flex-shrink: 0;
+  justify-content: center;
+  background-color: #ffffff; /* white background */
+  color: #333;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .header .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-right: 15px;
 }
 
 .header .logo-title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: bold;
+  color: #007BFF;
+}
+
+.header-description {
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.header-description p {
+  margin: 5px 0;
 }
 
 /* Container for sidebar + map */
@@ -76,6 +95,13 @@ body {
   min-height: 0; /* ensures flexbox allows map to shrink properly */
 }
 
+/* Legend colors */
+.legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
+.legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
+.legend-blue { display:inline-block; width:12px; height:12px; background:blue; margin-right:5px; }
+.legend-yellow { display:inline-block; width:12px; height:12px; background:yellow; margin-right:5px; }
+.legend-green { display:inline-block; width:12px; height:12px; background:green; margin-right:5px; }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #sidebar {
@@ -99,9 +125,21 @@ body {
   #map {
     height: calc(100% - 200px);
   }
+
+  .header-top {
+    flex-direction: column;
+  }
+
+  .header .logo {
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+
+  .header .logo-title {
+    text-align: center;
+  }
+
+  .header-description {
+    text-align: center;
+  }
 }
-
-.legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
-.legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
-/* similarly for blue, yellow, green */
-
