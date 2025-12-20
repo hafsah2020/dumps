@@ -19,25 +19,27 @@
     </div>
     <div class="header-description">
       <p>Click a location on the map to see details in the sidebar.</p>
-      <p>Please update the status on <a href="https://docs.google.com/spreadsheets/d/1daYffyFy3Zk_kAugRKCSdvedtgYL7rTLU5kURAgudg4/edit?usp=sharing" target="_blank">this sheet</a> for easy visualisation on status of the supermarkets.</p>
+      <p>Please update the status on 
+        <a href="https://docs.google.com/spreadsheets/d/1daYffyFy3Zk_kAugRKCSdvedtgYL7rTLU5kURAgudg4/edit?usp=sharing" target="_blank">
+        this sheet
+        </a> for easy visualisation on status of the supermarkets.
+      </p>
     </div>
   </header>
 
-  <!-- Container for sidebar + map -->
+  <!-- Container for map + sidebar -->
   <div class="main-container">
+    <!-- Map container -->
+    <div id="map"></div>
+
     <!-- Sidebar for info -->
     <div id="sidebar">
-      <!-- Toggle button inside sidebar -->
       <button id="toggleSidebar">×</button>
-      
       <h2>Location Info</h2>
       <div id="info">
         Click a location on the map to see details here.
       </div>
     </div>
-
-    <!-- Map container -->
-    <div id="map"></div>
   </div>
 
   <!-- Instructions / Legend at the bottom -->
@@ -54,9 +56,9 @@
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
-  <!-- Read Google CSV sheet -->
+  <!-- PapaParse for Google Sheets -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <!-- Custom script -->
+  <!-- Custom JS -->
   <script src="static/script.js"></script>
 
 </body>
