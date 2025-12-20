@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* prevent page scroll */
 }
 
 body {
@@ -21,6 +22,7 @@ body {
   color: #333;
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
 .header-top {
@@ -56,15 +58,24 @@ body {
 .main-container {
   display: flex;
   flex: 1;
-  min-height: 0; /* important for flex children to scroll */
   position: relative;
+  height: calc(100% - 140px); /* header + instructions height approx */
 }
 
-/* Sidebar styling (on right) */
+/* Map box (fixed) */
+#map {
+  flex: 1;
+  height: 100%;
+  min-width: 0; /* important for flex children */
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Sidebar styling (fixed on right) */
 #sidebar {
   width: 320px;
   background: #ffffff;
-  border-left: 2px solid #e0e0e0; /* right sidebar */
+  border-left: 2px solid #e0e0e0;
   box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
@@ -84,7 +95,7 @@ body {
 #toggleSidebar {
   position: absolute;
   top: 10px;
-  left: 10px; /* inside sidebar */
+  left: 10px;
   width: 30px;
   height: 30px;
   font-size: 18px;
@@ -119,13 +130,6 @@ body {
   color: #2980b9;
 }
 
-/* Map styling */
-#map {
-  flex: 1;
-  height: 100%;
-  min-height: 0;
-}
-
 /* Legend colors */
 .legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
 .legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
@@ -133,17 +137,32 @@ body {
 .legend-yellow { display:inline-block; width:12px; height:12px; background:yellow; margin-right:5px; }
 .legend-green { display:inline-block; width:12px; height:12px; background:green; margin-right:5px; }
 
+/* Instructions box fixed at bottom */
+.instructions {
+  position: relative;
+  height: 100px;
+  padding: 10px 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #ccc;
+  overflow-y: auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #sidebar {
     width: 250px;
     right: -250px;
   }
+
+  #map {
+    border: none;
+  }
 }
 
 @media (max-width: 576px) {
   .main-container {
     flex-direction: column;
+    height: calc(100% - 200px); /* adjust for header + instructions */
   }
 
   #sidebar {
