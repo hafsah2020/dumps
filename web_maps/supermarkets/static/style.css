@@ -5,11 +5,17 @@ html, body {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden; /* prevent page scroll */
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  padding: 10px; /* overall padding for body */
 }
 
 /* Header styling */
@@ -23,6 +29,7 @@ body {
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   flex-shrink: 0;
+  border-radius: 8px;
 }
 
 .header-top {
@@ -30,6 +37,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 10px;
+  padding: 0 10px;
 }
 
 .header .logo {
@@ -48,6 +56,7 @@ body {
   text-align: center;
   font-size: 0.95em;
   color: #555;
+  padding: 0 10px;
 }
 
 .header-description p {
@@ -60,6 +69,7 @@ body {
   flex: 1;
   position: relative;
   height: calc(100% - 140px); /* header + instructions height approx */
+  padding: 10px; /* padding around main content */
 }
 
 /* Map box (fixed) */
@@ -69,13 +79,15 @@ body {
   min-width: 0; /* important for flex children */
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px;
 }
 
 /* Sidebar styling (fixed on right) */
 #sidebar {
   width: 320px;
   background: #ffffff;
-  border-left: 2px solid #e0e0e0;
+  border-left: 2px solid #e0e0e0; /* right sidebar */
   box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
@@ -85,6 +97,7 @@ body {
   right: -320px; /* hidden by default */
   transition: right 0.3s ease;
   z-index: 500;
+  border-radius: 8px 0 0 8px;
 }
 
 #sidebar.open {
@@ -95,7 +108,7 @@ body {
 #toggleSidebar {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 10px; /* inside sidebar */
   width: 30px;
   height: 30px;
   font-size: 18px;
@@ -123,6 +136,7 @@ body {
   margin-top: 15px;
   font-size: 1em;
   color: #34495e;
+  padding: 0 5px;
 }
 
 .info-label {
@@ -133,74 +147,4 @@ body {
 /* Legend colors */
 .legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
 .legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
-.legend-blue { display:inline-block; width:12px; height:12px; background:blue; margin-right:5px; }
-.legend-yellow { display:inline-block; width:12px; height:12px; background:yellow; margin-right:5px; }
-.legend-green { display:inline-block; width:12px; height:12px; background:green; margin-right:5px; }
-
-/* Instructions box fixed at bottom */
-.instructions {
-  position: relative;
-  height: 100px;
-  padding: 10px 20px;
-  background: #f9f9f9;
-  border-top: 1px solid #ccc;
-  overflow-y: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #sidebar {
-    width: 250px;
-    right: -250px;
-  }
-
-  #map {
-    border: none;
-  }
-}
-
-@media (max-width: 576px) {
-  .main-container {
-    flex-direction: column;
-    height: calc(100% - 200px); /* adjust for header + instructions */
-  }
-
-  #sidebar {
-    width: 100%;
-    height: 200px;
-    right: -100%;
-    border-left: none;
-    border-top: 2px solid #e0e0e0;
-    box-shadow: none;
-  }
-
-  #sidebar.open {
-    right: 0;
-  }
-
-  #map {
-    height: calc(100% - 200px);
-  }
-
-  #toggleSidebar {
-    top: 5px;
-    left: 5px;
-  }
-
-  .header-top {
-    flex-direction: column;
-  }
-
-  .header .logo {
-    margin-bottom: 8px;
-    margin-right: 0;
-  }
-
-  .header .logo-title {
-    text-align: center;
-  }
-
-  .header-description {
-    text-align: center;
-  }
-}
+.legend-blue { display:inline-block; width:12px; height:12px
