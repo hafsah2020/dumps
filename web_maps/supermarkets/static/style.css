@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden; /* prevent page scroll */
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -15,16 +15,16 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  padding: 10px; /* overall padding for body */
+  padding: 10px;
 }
 
 /* Header styling */
 .header {
   display: flex;
-  flex-direction: column; /* stack logo + description vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; /* white background */
+  background-color: #ffffff;
   color: #333;
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -68,64 +68,62 @@ body {
   display: flex;
   flex: 1;
   position: relative;
-  height: calc(100% - 140px); /* header + instructions height approx */
-  padding: 10px; /* padding around main content */
+  padding: 10px;
+  height: calc(100% - 140px);
 }
 
-/* Map box (fixed) */
+/* Map box */
 #map {
   flex: 1;
   height: 100%;
-  min-width: 0; /* important for flex children */
+  min-width: 0;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
-  padding: 10px;
 }
 
-/* Sidebar styling (fixed on right) */
+/* Sidebar (right) */
 #sidebar {
   width: 320px;
   background: #ffffff;
-  border-left: 2px solid #e0e0e0; /* right sidebar */
-  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+  border-left: 2px solid #e0e0e0;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
   padding: 20px;
   overflow-y: auto;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -320px; /* hidden by default */
+  right: -320px;
   transition: right 0.3s ease;
   z-index: 500;
   border-radius: 8px 0 0 8px;
 }
 
 #sidebar.open {
-  right: 0; /* sidebar visible */
+  right: 0;
 }
 
-/* Toggle button inside sidebar */
+/* Sidebar toggle button */
 #toggleSidebar {
   position: absolute;
   top: 10px;
-  left: 10px; /* inside sidebar */
+  left: 10px;
   width: 30px;
   height: 30px;
-  font-size: 18px;
+  font-size: 20px;
   background: #007BFF;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   z-index: 600;
-  text-align: center;
   line-height: 30px;
   padding: 0;
 }
 
 /* Sidebar content */
 #sidebar h2 {
-  margin-top: 40px; /* space for toggle button */
+  margin-top: 40px;
   color: #2c3e50;
   font-size: 1.5em;
   border-bottom: 2px solid #3498db;
@@ -136,15 +134,82 @@ body {
   margin-top: 15px;
   font-size: 1em;
   color: #34495e;
-  padding: 0 5px;
-}
-
-.info-label {
-  font-weight: bold;
-  color: #2980b9;
 }
 
 /* Legend colors */
 .legend-black { display:inline-block; width:12px; height:12px; background:black; margin-right:5px; }
 .legend-red { display:inline-block; width:12px; height:12px; background:red; margin-right:5px; }
-.legend-blue { display:inline-block; width:12px; height:12px
+.legend-blue { display:inline-block; width:12px; height:12px; background:blue; margin-right:5px; }
+.legend-yellow { display:inline-block; width:12px; height:12px; background:yellow; margin-right:5px; }
+.legend-green { display:inline-block; width:12px; height:12px; background:green; margin-right:5px; }
+
+/* Instructions box */
+.instructions {
+  position: relative;
+  height: 100px;
+  padding: 10px 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #ccc;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 250px;
+    right: -250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    flex-direction: column;
+    height: calc(100% - 200px);
+  }
+
+  #sidebar {
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    right: -80%;
+    border-left: none;
+    border-top: 2px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 0;
+  }
+
+  #sidebar.open {
+    right: 0;
+  }
+
+  #toggleSidebar {
+    top: 10px;
+    right: 10px;
+  }
+
+  #map {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .header-top {
+    flex-direction: column;
+  }
+
+  .header .logo {
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+
+  .header .logo-title {
+    text-align: center;
+  }
+
+  .header-description {
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
