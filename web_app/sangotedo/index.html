@@ -22,6 +22,8 @@
   .badge.default { background:#7f8c8d; }
   .tab-content { display:none; }
   .tab-content.active { display:block; }
+  #loading { text-align:center; font-size:1.2em; margin-top:20px; }
+  #error { text-align:center; color:red; font-weight:bold; margin-top:20px; }
 </style>
 </head>
 <body>
@@ -36,36 +38,28 @@
   <input type="text" placeholder="Search by Brand or Stage..." oninput="filterCards(this.value)">
 </div>
 
+<div id="loading">Loading data...</div>
+<div id="error" class="hidden"></div>
+
 <div id="Restaurants" class="tab-content"></div>
 <div id="Hotels" class="tab-content"></div>
 <div id="Caterers" class="tab-content"></div>
 
 <script>
-// Sheet CSV URLs
 const sheets = {
   "Restaurants": "https://docs.google.com/spreadsheets/d/1b6xdUh5sD6ofLIw2qhsF-bWbgtdvqO0M0Kd6ikAVyEw/export?format=csv&gid=0",
   "Hotels": "https://docs.google.com/spreadsheets/d/1b6xdUh5sD6ofLIw2qhsF-bWbgtdvqO0M0Kd6ikAVyEw/export?format=csv&gid=504215961",
   "Caterers": "https://docs.google.com/spreadsheets/d/1b6xdUh5sD6ofLIw2qhsF-bWbgtdvqO0M0Kd6ikAVyEw/export?format=csv&gid=1156167092"
 };
 
-// Load all sheets
-async function loadSheets() {
-  for (const [name, url] of Object.entries(sheets)) {
-    const csv = await fetch(url).then(r=>r.text());
-    const data = csvToJson(csv);
-    renderCards(name, data);
-  }
-}
-
-// Simple CSV → JSON
+// CSV → JSON parser handling quoted commas
 function csvToJson(csv) {
   const lines = csv.split('\n').filter(l=>l.trim()!=="");
-  const headers = lines.shift().split(',');
-  return lines.map(line=>{
-    const row = line.split(',');
+  const headers = lines.shift().split(',').map(h=>h.trim());
+  return lines.map(line => {
+    const values = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
     let obj = {};
-    headers.forEach((h,i)=>obj[h.trim()]=row[i]?.trim()||"");
-    // Add badge class
+    headers.forEach((h,i)=>obj[h] = values[i]?.replace(/^"|"$/g,'') || "");
     const stage = (obj["Stage"]||"").toLowerCase();
     if(stage==="new") obj.badgeClass="new";
     else if(stage==="followup") obj.badgeClass="followup";
@@ -75,11 +69,11 @@ function csvToJson(csv) {
   });
 }
 
-// Render cards
+// Render cards into tab
 function renderCards(tab, data) {
   const container = document.getElementById(tab);
   container.innerHTML = "";
-  data.forEach(row=>{
+  data.forEach(row => {
     const card = document.createElement('div');
     card.className = "card";
     card.dataset.brand = (row["Brand Name"]||"").toLowerCase();
@@ -105,10 +99,32 @@ function renderCards(tab, data) {
   });
 }
 
+// Load all sheets
+async function loadSheets() {
+  try {
+    for (const [name, url] of Object.entries(sheets)) {
+      const csv = await fetch(url).then(r => {
+        if(!r.ok) throw new Error(`Failed to fetch ${name}`);
+        return r.text();
+      });
+      const data = csvToJson(csv);
+      renderCards(name, data);
+    }
+    document.getElementById('loading').style.display='none';
+    document.querySelector('.tab-btn').click(); // open first tab
+  } catch(e) {
+    document.getElementById('loading').style.display='none';
+    const errDiv = document.getElementById('error');
+    errDiv.textContent = "Error loading data. Check CSV URLs and sheet publishing.";
+    errDiv.classList.remove('hidden');
+    console.error(e);
+  }
+}
+
 // Tab switching
 function openTab(tabId, btn) {
-  document.querySelectorAll('.tab-content').forEach(tc=>tc.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
   btn.classList.add('active');
   document.querySelector('.search-box input').value="";
@@ -123,15 +139,12 @@ function filterCards(query) {
   activeTab.querySelectorAll('.card').forEach(card=>{
     const brand = card.dataset.brand;
     const stage = card.dataset.stage;
-    card.style.display = (brand.includes(query)||stage.includes(query)) ? "" : "none";
+    card.style.display = (brand.includes(query) || stage.includes(query)) ? "" : "none";
   });
 }
 
 // Init
-document.addEventListener("DOMContentLoaded", ()=>{
-  loadSheets();
-  document.querySelector('.tab-btn').click();
-});
+document.addEventListener("DOMContentLoaded", ()=>{ loadSheets(); });
 </script>
 </body>
 </html>
