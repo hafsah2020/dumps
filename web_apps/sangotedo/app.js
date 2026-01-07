@@ -1,4 +1,4 @@
-// Google Sheet CSV URL
+// Google Sheet CSV URL (replace with your own if needed)
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUYqdxpYqeGNJS61_a1OTCzjaVBnEoqTfNL9eTT-ysoBytutaebSc24Swu5gUZ/pub?gid=0&single=true&output=csv";
 
 let sheetData = [];
@@ -9,12 +9,13 @@ const detailsView = document.getElementById("detailsView");
 const detailsContent = document.getElementById("detailsContent");
 const backBtn = document.getElementById("backBtn");
 
-// Load data from Google Sheets
+// Load CSV
 Papa.parse(sheetURL, {
   download: true,
   header: true,
+  skipEmptyLines: true,
   complete: function(results) {
-    sheetData = results.data.filter(row => row["Brand Name"]);
+    sheetData = results.data.filter(row => row["Brand Name"]); // Only rows with Brand Name
     renderCards(sheetData);
   },
   error: function(err) {
@@ -22,36 +23,26 @@ Papa.parse(sheetURL, {
   }
 });
 
-// Render the grid of cards
+// Render cards
 function renderCards(data) {
   grid.innerHTML = "";
   data.forEach((row, index) => {
     const card = document.createElement("div");
-    card.className = "group relative h-40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all active-scale bg-white dark:bg-gray-900 flex items-center justify-center cursor-pointer";
-    
-    const title = document.createElement("h3");
-    title.className = "text-white text-2xl font-bold drop-shadow-md z-10 text-center px-2";
-    title.textContent = row["Brand Name"];
-    card.appendChild(title);
+    card.className = "h-40 rounded-xl shadow-md flex items-center justify-center text-white text-xl font-bold cursor-pointer bg-blue-600 hover:bg-blue-700 transition-colors active-scale";
 
-    // Optional background image if you have Image column
-    if(row["Image"]) {
-      card.style.backgroundImage = `linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('${row["Image"]}')`;
-      card.style.backgroundSize = "cover";
-      card.style.backgroundPosition = "center";
-    } else {
-      card.style.backgroundColor = "#135bec"; // fallback color
-    }
+    card.textContent = row["Brand Name"];
 
     card.addEventListener("click", () => showDetails(index));
+
     grid.appendChild(card);
   });
 }
 
-// Show details of a brand
+// Show details
 function showDetails(index) {
   const row = sheetData[index];
-  detailsContent.innerHTML = ""; // clear previous
+  detailsContent.innerHTML = "";
+
   Object.entries(row).forEach(([key, value]) => {
     const div = document.createElement("div");
     div.className = "mb-2";
@@ -59,7 +50,6 @@ function showDetails(index) {
     detailsContent.appendChild(div);
   });
 
-  // Toggle visibility
   grid.classList.add("hidden");
   detailsView.classList.remove("hidden");
 }
