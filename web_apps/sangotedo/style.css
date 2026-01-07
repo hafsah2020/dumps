@@ -1,17 +1,17 @@
 body {
-  min-height: max(884px, 100dvh);
+  font-family: 'Inter', sans-serif;
 }
 
-/* Hide scrollbar for Chrome, Safari, Opera */
-.no-scrollbar::-webkit-scrollbar {
+/* Hide scrollbar */
+#mainContent::-webkit-scrollbar {
   display: none;
 }
-.no-scrollbar {
+#mainContent {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Touch feedback animation */
+/* Touch scale effect */
 .active-scale:active {
   transform: scale(0.98);
   transition: transform 0.1s ease-in-out;
