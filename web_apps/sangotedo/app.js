@@ -3,12 +3,18 @@ const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-Gqe
 
 let sheetData = [];
 
-// Load sheet with Papa Parse
+// Elements
+const grid = document.getElementById("cardsGrid");
+const detailsView = document.getElementById("detailsView");
+const detailsContent = document.getElementById("detailsContent");
+const backBtn = document.getElementById("backBtn");
+
+// Load data from Google Sheets
 Papa.parse(sheetURL, {
   download: true,
   header: true,
   complete: function(results) {
-    sheetData = results.data.filter(row => row["Brand Name"]); // Only rows with Brand Name
+    sheetData = results.data.filter(row => row["Brand Name"]);
     renderCards(sheetData);
   },
   error: function(err) {
@@ -16,35 +22,50 @@ Papa.parse(sheetURL, {
   }
 });
 
-// Render cards dynamically
+// Render the grid of cards
 function renderCards(data) {
-  const grid = document.getElementById("cardsGrid");
   grid.innerHTML = "";
-
   data.forEach((row, index) => {
-    const a = document.createElement("a");
-    a.href = "#";
-    a.className = "group block relative w-full h-40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all active-scale bg-white dark:bg-gray-900 flex items-center justify-center";
+    const card = document.createElement("div");
+    card.className = "group relative h-40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all active-scale bg-white dark:bg-gray-900 flex items-center justify-center cursor-pointer";
+    
+    const title = document.createElement("h3");
+    title.className = "text-white text-2xl font-bold drop-shadow-md z-10 text-center px-2";
+    title.textContent = row["Brand Name"];
+    card.appendChild(title);
 
-    // Optional: background image if you have a URL column called "Image"
+    // Optional background image if you have Image column
     if(row["Image"]) {
-      a.style.backgroundImage = `linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%), url('${row["Image"]}')`;
-      a.style.backgroundSize = "cover";
-      a.style.backgroundPosition = "center";
+      card.style.backgroundImage = `linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('${row["Image"]}')`;
+      card.style.backgroundSize = "cover";
+      card.style.backgroundPosition = "center";
+    } else {
+      card.style.backgroundColor = "#135bec"; // fallback color
     }
 
-    const h3 = document.createElement("h3");
-    h3.className = "text-white text-3xl font-bold tracking-tight drop-shadow-md";
-    h3.textContent = row["Brand Name"];
-    a.appendChild(h3);
-
-    // Click: show alert or later navigate to details page
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert(JSON.stringify(row, null, 2));
-      // TODO: implement details screen here
-    });
-
-    grid.appendChild(a);
+    card.addEventListener("click", () => showDetails(index));
+    grid.appendChild(card);
   });
 }
+
+// Show details of a brand
+function showDetails(index) {
+  const row = sheetData[index];
+  detailsContent.innerHTML = ""; // clear previous
+  Object.entries(row).forEach(([key, value]) => {
+    const div = document.createElement("div");
+    div.className = "mb-2";
+    div.innerHTML = `<span class="font-semibold">${key}:</span> ${value || "-"}`;
+    detailsContent.appendChild(div);
+  });
+
+  // Toggle visibility
+  grid.classList.add("hidden");
+  detailsView.classList.remove("hidden");
+}
+
+// Back button
+backBtn.addEventListener("click", () => {
+  detailsView.classList.add("hidden");
+  grid.classList.remove("hidden");
+});
