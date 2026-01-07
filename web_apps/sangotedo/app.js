@@ -15,7 +15,7 @@ Papa.parse(sheetURL, {
   header: true,
   skipEmptyLines: true,
   complete: function(results) {
-    sheetData = results.data.filter(row => row["Brand Name"]); // Only rows with Brand Name
+    sheetData = results.data.filter(row => row["Super Market"]); // Only rows with Brand Name
     renderCards(sheetData);
   },
   error: function(err) {
@@ -30,7 +30,7 @@ function renderCards(data) {
     const card = document.createElement("div");
     card.className = "h-40 rounded-xl shadow-md flex items-center justify-center text-white text-xl font-bold cursor-pointer bg-blue-600 hover:bg-blue-700 transition-colors active-scale";
 
-    card.textContent = row["Brand Name"];
+    card.textContent = row["Super Market"];
 
     card.addEventListener("click", () => showDetails(index));
 
