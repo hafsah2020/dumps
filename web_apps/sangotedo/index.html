@@ -10,7 +10,6 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
@@ -20,21 +19,33 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-900 dark:text-white">
 
-  <div class="max-w-md mx-auto min-h-screen flex flex-col border-x border-gray-200 dark:border-gray-800 shadow-xl">
+  <div class="max-w-2xl mx-auto min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="sticky top-0 bg-white dark:bg-gray-800 p-4 flex justify-between items-center border-b border-gray-300 dark:border-gray-700 z-50">
-      <div></div>
+    <header class="sticky top-0 bg-white dark:bg-gray-800 p-4 flex justify-center items-center border-b border-gray-300 dark:border-gray-700 z-50">
       <h2 class="text-lg font-bold">Brands</h2>
-      <div>
-        <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-          <span class="material-symbols-outlined text-xl">search</span>
-        </button>
-      </div>
     </header>
 
     <!-- Main Content -->
     <main id="mainContent" class="flex-1 p-4 overflow-y-auto">
 
       <!-- Cards Grid -->
-      <div id="cards
+      <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+      <!-- Details View -->
+      <div id="detailsView" class="hidden p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md mt-4">
+        <button id="backBtn" class="mb-4 text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-1">
+          ← Back
+        </button>
+        <div id="detailsContent"></div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
