@@ -8,7 +8,7 @@ Papa.parse(sheetURL, {
   download: true,
   header: true,
   complete: function (results) {
-    sheetData = results.data.filter(row => row["Brand Name"]);
+    sheetData = results.data.filter(row => row["Super Market"]);
     renderCards(sheetData);
   },
   error: function (err) {
@@ -23,7 +23,7 @@ function renderCards(data) {
   data.forEach((row, index) => {
     const card = document.createElement("div");
     card.className = "card";
-    card.textContent = row["Brand Name"]; // 👈 only brand name
+    card.textContent = row["Super Market"]; // 👈 only brand name
 
     card.addEventListener("click", () => showDetails(index));
 
