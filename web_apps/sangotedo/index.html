@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Cards List</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brand Cards List</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
 
-  <!-- Papa Parse -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-900 dark:text-white">
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white antialiased transition-colors duration-200">
 
-  <div class="max-w-2xl mx-auto min-h-screen flex flex-col">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto border-x border-gray-100 dark:border-gray-800 shadow-2xl">
 
-    <!-- Header -->
-    <header class="sticky top-0 bg-white dark:bg-gray-800 p-4 flex justify-center items-center border-b border-gray-300 dark:border-gray-700 z-50">
-      <h2 class="text-lg font-bold">Brands</h2>
-    </header>
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-200/50 dark:border-gray-800/50 transition-colors">
+  <div class="w-12"></div>
+  <h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Brands</h2>
+  <div class="flex w-12 items-center justify-end">
+    <button class="flex items-center justify-center rounded-full h-10 w-10 text-[#0d121b] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 active-scale transition-colors">
+      <span class="material-symbols-outlined !text-[24px]">search</span>
+    </button>
+  </div>
+</header>
 
-    <!-- Main Content -->
-    <main id="mainContent" class="flex-1 p-4 overflow-y-auto">
+<!-- Main Content -->
+<main class="flex-1 flex flex-col p-4 gap-4 pb-8 overflow-y-auto no-scrollbar">
 
-      <!-- Cards Grid -->
-      <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-
-      <!-- Details View -->
-      <div id="detailsView" class="hidden p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md mt-4">
-        <button id="backBtn" class="mb-4 text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-1">
-          ← Back
-        </button>
-        <div id="detailsContent"></div>
-      </div>
-
-    </main>
-
+  <!-- Pull Indicator Hint -->
+  <div class="w-full flex justify-center py-2 opacity-30">
+    <div class="w-12 h-1 bg-gray-400 rounded-full"></div>
   </div>
 
-  <!-- JS -->
-  <script src="app.js"></script>
+  <!-- Cards (static, original working) -->
+  <a class="group block relative w-full h-40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all active-scale bg-white dark:bg-gray-900" href="#">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4KE1Un-DujuSNWjSzvAXUQp89F4vJ5E0M89qXen2JKazDV4Ikf0VKd1_5FKTYfKUei2OiWX9NeRZTHPpP-DutfMsOXtOjmXSd52p66lMQEH0zhS3hZwWrOkLjrKeAFgbfs8t5oZr_qXPnKfEE9IAAMWmC-nrmuSHqR7hMlcf8nLE9fvWAeBV-tIydKkZkVmmEyVidln3Yq7Boy6dlMDu80Qvye2Fsz2J7LWl8EoTxVUccZY8R-b54GvWPAnKBtNz7Y7gcOJNoaa4");'></div>
+    <div class="relative h-full w-full flex items-center justify-center">
+      <h3 class="text-white text-3xl font-bold tracking-tight drop-shadow-md">Nike</h3>
+    </div>
+  </a>
+
+  <a class="group block relative w-full h-40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all active-scale bg-white dark:bg-gray-900" href="#">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2HOc7S_y2yDEYl1DmNKtbvLmMgTJp-7uFb4PQX2blg6WwcTVrZg2ePSpjl2aFn91jUfBofr72q1W5qlo8Rwmp_hfnmRlLEHMyS3_2VGJ4hxivPNrKpMGujexaC6PLKadSC5zv5Rbg99ExJVqbub4wXUNPfZLYHQ8TlLa0pjRSZayr0hbxxX9TdQY71amGYcU59q5-xvr6_xMassgTjpEYQk_imarxcKBc9swb4oNkoWmhieIESsxBzp9pOvifO27HMXwhMr9t04U");'></div>
+    <div class="relative h-full w-full flex items-center justify-center">
+      <h3 class="text-white text-3xl font-bold tracking-tight drop-shadow-md">Adidas</h3>
+    </div>
+  </a>
+
+  <!-- Add other cards like Apple, Samsung, Tesla, Sony... as in your original file -->
+
+</main>
+
+</div>
 
 </body>
 </html>
