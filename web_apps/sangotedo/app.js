@@ -1,36 +1,29 @@
-// Google Sheet CSV URL (replace with your own if needed)
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUYqdxpYqeGNJS61_a1OTCzjaVBnEoqTfNL9eTT-ysoBytutaebSc24Swu5gUZ/pub?gid=0&single=true&output=csv";
+const sheetURL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUYqdxpYqeGNJS61_a1OTCzjaVBnEoqTfNL9eTT-ysoBytutaebSc24Swu5gUZ/pub?gid=0&single=true&output=csv";
 
 let sheetData = [];
 
-// Elements
-const grid = document.getElementById("cardsGrid");
-const detailsView = document.getElementById("detailsView");
-const detailsContent = document.getElementById("detailsContent");
-const backBtn = document.getElementById("backBtn");
-
-// Load CSV
+// Load data
 Papa.parse(sheetURL, {
   download: true,
   header: true,
-  skipEmptyLines: true,
-  complete: function(results) {
-    sheetData = results.data.filter(row => row["Super Market"]); // Only rows with Brand Name
+  complete: function (results) {
+    sheetData = results.data.filter(row => row["Brand Name"]);
     renderCards(sheetData);
   },
-  error: function(err) {
+  error: function (err) {
     console.error("Error loading sheet:", err);
   }
 });
 
-// Render cards
 function renderCards(data) {
+  const grid = document.getElementById("cardGrid");
   grid.innerHTML = "";
+
   data.forEach((row, index) => {
     const card = document.createElement("div");
-    card.className = "h-40 rounded-xl shadow-md flex items-center justify-center text-white text-xl font-bold cursor-pointer bg-blue-600 hover:bg-blue-700 transition-colors active-scale";
-
-    card.textContent = row["Super Market"];
+    card.className = "card";
+    card.textContent = row["Brand Name"]; // 👈 only brand name
 
     card.addEventListener("click", () => showDetails(index));
 
@@ -38,24 +31,29 @@ function renderCards(data) {
   });
 }
 
-// Show details
 function showDetails(index) {
   const row = sheetData[index];
-  detailsContent.innerHTML = "";
+  const detailsCard = document.getElementById("detailsCard");
+  detailsCard.innerHTML = "";
 
   Object.entries(row).forEach(([key, value]) => {
     const div = document.createElement("div");
-    div.className = "mb-2";
-    div.innerHTML = `<span class="font-semibold">${key}:</span> ${value || "-"}`;
-    detailsContent.appendChild(div);
+    div.className = "details-row";
+
+    div.innerHTML = `
+      <div class="details-label">${key}</div>
+      <div>${value || "-"}</div>
+    `;
+
+    detailsCard.appendChild(div);
   });
 
-  grid.classList.add("hidden");
-  detailsView.classList.remove("hidden");
+  document.getElementById("gridView").style.display = "none";
+  document.getElementById("detailsView").style.display = "block";
 }
 
 // Back button
-backBtn.addEventListener("click", () => {
-  detailsView.classList.add("hidden");
-  grid.classList.remove("hidden");
+document.getElementById("backBtn").addEventListener("click", () => {
+  document.getElementById("detailsView").style.display = "none";
+  document.getElementById("gridView").style.display = "block";
 });
