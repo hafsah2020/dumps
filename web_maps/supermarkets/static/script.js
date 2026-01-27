@@ -51,8 +51,17 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
   download: true,
   header: true,
   complete: function(sheetData) {
-    const stageLookup = {};
-    sheetData.data.forEach(row => { if(row.ID && row.Stage) stageLookup[row.ID] = row.Stage; });
+    const sheetLookup = {};
+    sheetData.data.forEach(row => {
+      if (!row.ID) return;
+      sheetLookup[row.ID] = {
+        stage: row.Stage || "N/A",
+        phone: row.Phone || "N/A",
+        email: row.Email || "N/A",
+        address: row.Address || "N/A"
+  };
+});
+
 
     // Load GeoJSON
     fetch("static/data/supermarkets_in_abuja.geojson")
@@ -60,22 +69,29 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
       .then(geoData => {
         L.geoJSON(geoData, {
           pointToLayer: (feature, latlng) => {
-            const stage = stageLookup[feature.properties.ID] || "can't fetch";
+            const data = sheetLookup[feature.properties.ID] || {};
+            const stage = data.stage || "N/A";
             return L.marker(latlng, { icon: getStageIcon(stage) });
           },
           onEachFeature: (feature, layer) => {
             layer.on("click", () => {
               const props = feature.properties;
-              const stage = stageLookup[props.ID] || "yet to contact";
+              const sheetData = sheetLookup[props.ID] || {};
+              const stage = sheetData.stage || "yet to contact";
               sidebar.classList.add("open");
               document.getElementById("info").innerHTML = `
-                <p><strong>Supermarket:</strong> ${props.super_market || "N/A"}</p>
-                <p><strong>Phone:</strong> ${props.phone_number || "N/A"}</p>
-                <p><strong>Email:</strong> ${props.Email || "N/A"}</p>
-                <p><strong>Address:</strong> ${props.Address || "N/A"}</p>
-                <p><strong>Stage:</strong> ${stage}</p>
-                <p><a href="${props.google_map_link || "#"}" target="_blank">View on Google Map</a></p>
+              <p><strong>Supermarket:</strong> ${props.super_market || "N/A"}</p>
+              <p><strong>Phone:</strong> ${sheetData.phone || "N/A"}</p>
+              <p><strong>Email:</strong> ${sheetData.email || "N/A"}</p>
+              <p><strong>Address:</strong> ${sheetData.address || "N/A"}</p>
+              <p><strong>Stage:</strong> ${stage}</p>
+              <p>
+              <a href="${props.google_map_link || "#"}" target="_blank">
+              View on Google Map
+              </a>
+              </p>
               `;
+
             });
           }
         }).addTo(map);
