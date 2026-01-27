@@ -60,7 +60,7 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
       .then(geoData => {
         L.geoJSON(geoData, {
           pointToLayer: (feature, latlng) => {
-            const stage = stageLookup[feature.properties.ID] || "yet to contact";
+            const stage = stageLookup[feature.properties.ID] || "can't fetch";
             return L.marker(latlng, { icon: getStageIcon(stage) });
           },
           onEachFeature: (feature, layer) => {
