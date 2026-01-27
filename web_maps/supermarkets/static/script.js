@@ -77,7 +77,7 @@ Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQByBMhYI-GqeivceUY
             layer.on("click", () => {
               const props = feature.properties;
               const sheetData = sheetLookup[props.ID] || {};
-              const stage = sheetData.stage || "yet to contact";
+              const stage = sheetData.stage || "N/A";
               sidebar.classList.add("open");
               document.getElementById("info").innerHTML = `
               <p><strong>Supermarket:</strong> ${props.super_market || "N/A"}</p>
