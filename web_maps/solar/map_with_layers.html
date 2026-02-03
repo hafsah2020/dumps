@@ -1,0 +1,3713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e1dbe2a299950a2b8e5bfab4efa4eb3e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e1dbe2a299950a2b8e5bfab4efa4eb3e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e1dbe2a299950a2b8e5bfab4efa4eb3e = L.map(
+                "map_e1dbe2a299950a2b8e5bfab4efa4eb3e",
+                {
+                    center: [9.09611, 7.3875166666666665],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cf08c25f50ecd048d1c852b90d235bab = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Maps",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_22c91855f865603feba2101bb338d39e = L.marker(
+                [9.14096, 7.35301],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_0ed036826339a9e78f42b9fab26c6b4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2afed56b1a34d889b093ebd330840f6 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3a847b886b6eb0ef7fd1775221680cf1 = $(`<div id="html_3a847b886b6eb0ef7fd1775221680cf1" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Kubwa_1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.14096,7.35301' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_c2afed56b1a34d889b093ebd330840f6.setContent(html_3a847b886b6eb0ef7fd1775221680cf1);
+            
+        
+
+        marker_22c91855f865603feba2101bb338d39e.bindPopup(popup_c2afed56b1a34d889b093ebd330840f6)
+        ;
+
+        
+    
+    
+            marker_22c91855f865603feba2101bb338d39e.bindTooltip(
+                `<div>
+                     Kubwa_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+            var marker_41931825100283d3e5cd99e16aa713fe = L.marker(
+                [9.14723, 7.32422],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_201d8cc31d6ad8eaf0a40e7c91da9edf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a51e6cf860d18d6f51fc46681d45973 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_78db34f31bebe16290c7901ad29c2559 = $(`<div id="html_78db34f31bebe16290c7901ad29c2559" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Kubwa_2</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.14723,7.32422' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_0a51e6cf860d18d6f51fc46681d45973.setContent(html_78db34f31bebe16290c7901ad29c2559);
+            
+        
+
+        marker_41931825100283d3e5cd99e16aa713fe.bindPopup(popup_0a51e6cf860d18d6f51fc46681d45973)
+        ;
+
+        
+    
+    
+            marker_41931825100283d3e5cd99e16aa713fe.bindTooltip(
+                `<div>
+                     Kubwa_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+            var marker_493d3301b6c7883b70f3d5a085ba6478 = L.marker(
+                [9.15372, 7.32196],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_24c2f664ba3c80395bf4090699a96884 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7090f0e270d2d0276067c8d81af8a8ac = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f290ced86ee731890f173fb699d2f5ed = $(`<div id="html_f290ced86ee731890f173fb699d2f5ed" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Kubwa_3</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.15372,7.32196' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_7090f0e270d2d0276067c8d81af8a8ac.setContent(html_f290ced86ee731890f173fb699d2f5ed);
+            
+        
+
+        marker_493d3301b6c7883b70f3d5a085ba6478.bindPopup(popup_7090f0e270d2d0276067c8d81af8a8ac)
+        ;
+
+        
+    
+    
+            marker_493d3301b6c7883b70f3d5a085ba6478.bindTooltip(
+                `<div>
+                     Kubwa_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+            var marker_e87cd3fbd4c632c9cf62bcbde6fe7586 = L.marker(
+                [9.01645, 7.41234],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_e7e44fdb098fbd80231a55eebb196bce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_514c6f79460f340fa5c72939c923ef56 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3e2711399e47c4806aff5fac17f4edc2 = $(`<div id="html_3e2711399e47c4806aff5fac17f4edc2" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Idu_1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.01645,7.41234' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_514c6f79460f340fa5c72939c923ef56.setContent(html_3e2711399e47c4806aff5fac17f4edc2);
+            
+        
+
+        marker_e87cd3fbd4c632c9cf62bcbde6fe7586.bindPopup(popup_514c6f79460f340fa5c72939c923ef56)
+        ;
+
+        
+    
+    
+            marker_e87cd3fbd4c632c9cf62bcbde6fe7586.bindTooltip(
+                `<div>
+                     Idu_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+            var marker_4a57073aabe15deb2b1fecca1e2f1650 = L.marker(
+                [9.06465, 7.46958],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_f6c68da7c1635db26c5bc10c7a4660fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8528c3d600e1302b1c3fe133d1eb4aa6 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_e6fdc633455b264671bd27c5197ab171 = $(`<div id="html_e6fdc633455b264671bd27c5197ab171" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Wuse_1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.06465,7.46958' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8528c3d600e1302b1c3fe133d1eb4aa6.setContent(html_e6fdc633455b264671bd27c5197ab171);
+            
+        
+
+        marker_4a57073aabe15deb2b1fecca1e2f1650.bindPopup(popup_8528c3d600e1302b1c3fe133d1eb4aa6)
+        ;
+
+        
+    
+    
+            marker_4a57073aabe15deb2b1fecca1e2f1650.bindTooltip(
+                `<div>
+                     Wuse_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+            var marker_342cc75ab04b967af34c1af2d1f71eed = L.marker(
+                [9.05365, 7.44399],
+                {
+}
+            ).addTo(feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271);
+        
+    
+            var icon_d6fc2fe61826f7f978b724515d6e7022 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37e595c622ce61922152c625553cb9e5 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ce4719008913f2b849f31baec632ec3a = $(`<div id="html_ce4719008913f2b849f31baec632ec3a" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Wuye_1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.05365,7.44399' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_37e595c622ce61922152c625553cb9e5.setContent(html_ce4719008913f2b849f31baec632ec3a);
+            
+        
+
+        marker_342cc75ab04b967af34c1af2d1f71eed.bindPopup(popup_37e595c622ce61922152c625553cb9e5)
+        ;
+
+        
+    
+    
+            marker_342cc75ab04b967af34c1af2d1f71eed.bindTooltip(
+                `<div>
+                     Wuye_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var feature_group_d9441884f28f43516aa82429c8b622ee = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a9d43697adc05d0bd2a45f4bf8eb9aa7 = L.marker(
+                [9.0490903, 7.4368323],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_bdc92d1a74757a53417ed713f956f6a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8173d287e039a851d643cf2930b0ebed = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2924b4e87f545f17264b1d0c4cfa5334 = $(`<div id="html_2924b4e87f545f17264b1d0c4cfa5334" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Algamji Estate Phase 4</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0490903,7.4368323' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8173d287e039a851d643cf2930b0ebed.setContent(html_2924b4e87f545f17264b1d0c4cfa5334);
+            
+        
+
+        marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.bindPopup(popup_8173d287e039a851d643cf2930b0ebed)
+        ;
+
+        
+    
+    
+            marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.bindTooltip(
+                `<div>
+                     Algamji Estate Phase 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+            var marker_2a51969a34e59f0896be371779424c75 = L.marker(
+                [9.0427356, 7.440164699999999],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_000edb682d8ec94e5ce8b21ae915c502 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b008ebac3b6c9fa313dff223515b136e = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2eba69761fea23873e2bd7bc195632ee = $(`<div id="html_2eba69761fea23873e2bd7bc195632ee" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Al Gamji Garden Estate Phase 2</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0427356,7.440164699999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_b008ebac3b6c9fa313dff223515b136e.setContent(html_2eba69761fea23873e2bd7bc195632ee);
+            
+        
+
+        marker_2a51969a34e59f0896be371779424c75.bindPopup(popup_b008ebac3b6c9fa313dff223515b136e)
+        ;
+
+        
+    
+    
+            marker_2a51969a34e59f0896be371779424c75.bindTooltip(
+                `<div>
+                     Al Gamji Garden Estate Phase 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+            var marker_f5ffc4befeead3260458d8028bc86c8f = L.marker(
+                [9.0422502, 7.4389811],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_adb759c3a36f45c0a3d2bbba336a9036 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4be182ac86af3086d97a8d283732c321 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7f92297b20bb123ef4f3de978b5aafb8 = $(`<div id="html_7f92297b20bb123ef4f3de978b5aafb8" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Al-Gamji Estate Phase 6</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0422502,7.4389811' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_4be182ac86af3086d97a8d283732c321.setContent(html_7f92297b20bb123ef4f3de978b5aafb8);
+            
+        
+
+        marker_f5ffc4befeead3260458d8028bc86c8f.bindPopup(popup_4be182ac86af3086d97a8d283732c321)
+        ;
+
+        
+    
+    
+            marker_f5ffc4befeead3260458d8028bc86c8f.bindTooltip(
+                `<div>
+                     Al-Gamji Estate Phase 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+            var marker_80949042d22b4e9507f0bde5ee822ba7 = L.marker(
+                [9.0524995, 7.440353399999998],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_18b2f67fa89ff76caa2a6cd4b1d8aceb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6df561ad85bb94547824a4c5168b095 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_86d6a7baa164a6316aec72e2fc667975 = $(`<div id="html_86d6a7baa164a6316aec72e2fc667975" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Al Gamji Garden Estate Phase One</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0524995,7.440353399999998' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_a6df561ad85bb94547824a4c5168b095.setContent(html_86d6a7baa164a6316aec72e2fc667975);
+            
+        
+
+        marker_80949042d22b4e9507f0bde5ee822ba7.bindPopup(popup_a6df561ad85bb94547824a4c5168b095)
+        ;
+
+        
+    
+    
+            marker_80949042d22b4e9507f0bde5ee822ba7.bindTooltip(
+                `<div>
+                     Al Gamji Garden Estate Phase One
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+            var marker_15a3a72ba38f8a632e763a076561ca82 = L.marker(
+                [9.0330639, 7.432627200000001],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_5a50be5f9b56a55814f09b0881413d15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ec72f394cf893031435f9211091c7a9 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f5d220cba2bfe0910fd552628b2d1dad = $(`<div id="html_f5d220cba2bfe0910fd552628b2d1dad" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Omako Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0330639,7.432627200000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_0ec72f394cf893031435f9211091c7a9.setContent(html_f5d220cba2bfe0910fd552628b2d1dad);
+            
+        
+
+        marker_15a3a72ba38f8a632e763a076561ca82.bindPopup(popup_0ec72f394cf893031435f9211091c7a9)
+        ;
+
+        
+    
+    
+            marker_15a3a72ba38f8a632e763a076561ca82.bindTooltip(
+                `<div>
+                     Omako Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+            var marker_1529bd2b7fd2a67e9105d636a2d923fa = L.marker(
+                [9.040690399999999, 7.4363067],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_618ada30794eefb495568b1bce4aa421 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2ff15bfcd44f144efeda8f5539eb382c = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_cbc7c52e9fafb544e8244ffedc4ea7a1 = $(`<div id="html_cbc7c52e9fafb544e8244ffedc4ea7a1" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Wetland Estate Wuye</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.040690399999999,7.4363067' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_2ff15bfcd44f144efeda8f5539eb382c.setContent(html_cbc7c52e9fafb544e8244ffedc4ea7a1);
+            
+        
+
+        marker_1529bd2b7fd2a67e9105d636a2d923fa.bindPopup(popup_2ff15bfcd44f144efeda8f5539eb382c)
+        ;
+
+        
+    
+    
+            marker_1529bd2b7fd2a67e9105d636a2d923fa.bindTooltip(
+                `<div>
+                     Wetland Estate Wuye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+            var marker_348747ea68294cb4ee5dd79fa7868d7e = L.marker(
+                [9.048386899999999, 7.429971099999999],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_a969b69997ff636b15ed74c0a39ade48 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32b138776e8d6678eb7f87a4dae16101 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8e9af59dbb3831996d46fc6c76182174 = $(`<div id="html_8e9af59dbb3831996d46fc6c76182174" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Green Valley Estate (Formerly Jaiz Estate)</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.048386899999999,7.429971099999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_32b138776e8d6678eb7f87a4dae16101.setContent(html_8e9af59dbb3831996d46fc6c76182174);
+            
+        
+
+        marker_348747ea68294cb4ee5dd79fa7868d7e.bindPopup(popup_32b138776e8d6678eb7f87a4dae16101)
+        ;
+
+        
+    
+    
+            marker_348747ea68294cb4ee5dd79fa7868d7e.bindTooltip(
+                `<div>
+                     Green Valley Estate (Formerly Jaiz Estate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+            var marker_b9a5a81fd2b1ad3700edd201d346347f = L.marker(
+                [9.0516501, 7.448542299999999],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_adcc51f0d70e2875dea8f5088631fd42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_230aad63facd2850f8f970d94259a5de = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_76d562ac7f9f2944dc4785713096e536 = $(`<div id="html_76d562ac7f9f2944dc4785713096e536" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Sunway Villa Estate Wuye</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0516501,7.448542299999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_230aad63facd2850f8f970d94259a5de.setContent(html_76d562ac7f9f2944dc4785713096e536);
+            
+        
+
+        marker_b9a5a81fd2b1ad3700edd201d346347f.bindPopup(popup_230aad63facd2850f8f970d94259a5de)
+        ;
+
+        
+    
+    
+            marker_b9a5a81fd2b1ad3700edd201d346347f.bindTooltip(
+                `<div>
+                     Sunway Villa Estate Wuye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+            var marker_d4c7008a236413c5dc697a78855a6f70 = L.marker(
+                [9.0559646, 7.440316099999999],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_22261d2628e9ba5c46f93c186c11e141 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d896d829394560b16c5018b74ca7fe96 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c4b8ca37053127aeb02a365674ba7390 = $(`<div id="html_c4b8ca37053127aeb02a365674ba7390" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Nationwide Estate Wuye</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0559646,7.440316099999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_d896d829394560b16c5018b74ca7fe96.setContent(html_c4b8ca37053127aeb02a365674ba7390);
+            
+        
+
+        marker_d4c7008a236413c5dc697a78855a6f70.bindPopup(popup_d896d829394560b16c5018b74ca7fe96)
+        ;
+
+        
+    
+    
+            marker_d4c7008a236413c5dc697a78855a6f70.bindTooltip(
+                `<div>
+                     Nationwide Estate Wuye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+            var marker_44e285a95b8e45133e779b4937b880ee = L.marker(
+                [9.056735, 7.450551900000001],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_423abd68ded26ca4be19328b47fed92d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4dedfd5ad1c6c2ff02d380e47236334e = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8a3760db8f4db6e00e0f11bf6d01803f = $(`<div id="html_8a3760db8f4db6e00e0f11bf6d01803f" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Cosgrove Smart Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.056735,7.450551900000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_4dedfd5ad1c6c2ff02d380e47236334e.setContent(html_8a3760db8f4db6e00e0f11bf6d01803f);
+            
+        
+
+        marker_44e285a95b8e45133e779b4937b880ee.bindPopup(popup_4dedfd5ad1c6c2ff02d380e47236334e)
+        ;
+
+        
+    
+    
+            marker_44e285a95b8e45133e779b4937b880ee.bindTooltip(
+                `<div>
+                     Cosgrove Smart Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+            var marker_da76e6cb4f07572a8241c63b1f9e8f33 = L.marker(
+                [9.052497299999999, 7.452334],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_70df0de2a339e0b2efd4a107066baf2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_957b7e18512c609a301f9d8639d831a2 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_6d5588a7a11108f6eb04d3bab0bdfec9 = $(`<div id="html_6d5588a7a11108f6eb04d3bab0bdfec9" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Barumark Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.052497299999999,7.452334' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_957b7e18512c609a301f9d8639d831a2.setContent(html_6d5588a7a11108f6eb04d3bab0bdfec9);
+            
+        
+
+        marker_da76e6cb4f07572a8241c63b1f9e8f33.bindPopup(popup_957b7e18512c609a301f9d8639d831a2)
+        ;
+
+        
+    
+    
+            marker_da76e6cb4f07572a8241c63b1f9e8f33.bindTooltip(
+                `<div>
+                     Barumark Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+            var marker_7c5b31736cb788f7d64fc64f7f8f1488 = L.marker(
+                [9.0587736, 7.452216000000001],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_130569147c0c2fec22deab203b473422 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46fd7bc17560f05db87791d0ef2f906f = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_16f45a5d52b6ad5f2ed1b97eae540e0e = $(`<div id="html_16f45a5d52b6ad5f2ed1b97eae540e0e" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Coral Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0587736,7.452216000000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_46fd7bc17560f05db87791d0ef2f906f.setContent(html_16f45a5d52b6ad5f2ed1b97eae540e0e);
+            
+        
+
+        marker_7c5b31736cb788f7d64fc64f7f8f1488.bindPopup(popup_46fd7bc17560f05db87791d0ef2f906f)
+        ;
+
+        
+    
+    
+            marker_7c5b31736cb788f7d64fc64f7f8f1488.bindTooltip(
+                `<div>
+                     Coral Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+            var marker_86f94d1baad2b9845d498f08f3c7ef4e = L.marker(
+                [9.0505909, 7.452107900000001],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_f8af26d30e6e7f3490bdf37416b33788 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9622e69edc53af260e23ab9aa1511b28 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_479bc58bfe5d9d5ced0373b8c27ba0b2 = $(`<div id="html_479bc58bfe5d9d5ced0373b8c27ba0b2" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Alpha Estate Wuye</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0505909,7.452107900000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_9622e69edc53af260e23ab9aa1511b28.setContent(html_479bc58bfe5d9d5ced0373b8c27ba0b2);
+            
+        
+
+        marker_86f94d1baad2b9845d498f08f3c7ef4e.bindPopup(popup_9622e69edc53af260e23ab9aa1511b28)
+        ;
+
+        
+    
+    
+            marker_86f94d1baad2b9845d498f08f3c7ef4e.bindTooltip(
+                `<div>
+                     Alpha Estate Wuye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+            var marker_8a1f4f9765f64e13bc06f3df7d980e76 = L.marker(
+                [9.0522256, 7.4506858],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_add6516e3dac8894be304a13f12d17b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_395d0d568913b453e5e6443d7f2120e0 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_6321ca15f3fa87a16defca85fb40094d = $(`<div id="html_6321ca15f3fa87a16defca85fb40094d" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Acacia Groove Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0522256,7.4506858' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_395d0d568913b453e5e6443d7f2120e0.setContent(html_6321ca15f3fa87a16defca85fb40094d);
+            
+        
+
+        marker_8a1f4f9765f64e13bc06f3df7d980e76.bindPopup(popup_395d0d568913b453e5e6443d7f2120e0)
+        ;
+
+        
+    
+    
+            marker_8a1f4f9765f64e13bc06f3df7d980e76.bindTooltip(
+                `<div>
+                     Acacia Groove Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+            var marker_0542b3e7735f6a16d44f8a267c9ea74c = L.marker(
+                [9.0577664, 7.446012499999998],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_04faf49c782ff5af75f63bac62e1864e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c57ede62014ce7ee031ffaab595ea546 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_517e730119da2b0328b85fd3c6704fcc = $(`<div id="html_517e730119da2b0328b85fd3c6704fcc" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Tfp Vintage Homes</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0577664,7.446012499999998' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_c57ede62014ce7ee031ffaab595ea546.setContent(html_517e730119da2b0328b85fd3c6704fcc);
+            
+        
+
+        marker_0542b3e7735f6a16d44f8a267c9ea74c.bindPopup(popup_c57ede62014ce7ee031ffaab595ea546)
+        ;
+
+        
+    
+    
+            marker_0542b3e7735f6a16d44f8a267c9ea74c.bindTooltip(
+                `<div>
+                     Tfp Vintage Homes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+            var marker_ef64565ea83922beedf64cf17187973c = L.marker(
+                [9.0433258, 7.442726700000001],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_f918c3a749411f6372a2d9d6a11f2afb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d4e1045117d97bcaabe13c4e4372a65 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_0e5933d2fbff51919688dd153e2aaa2f = $(`<div id="html_0e5933d2fbff51919688dd153e2aaa2f" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Yah Wahab Estate Wuye</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0433258,7.442726700000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_7d4e1045117d97bcaabe13c4e4372a65.setContent(html_0e5933d2fbff51919688dd153e2aaa2f);
+            
+        
+
+        marker_ef64565ea83922beedf64cf17187973c.bindPopup(popup_7d4e1045117d97bcaabe13c4e4372a65)
+        ;
+
+        
+    
+    
+            marker_ef64565ea83922beedf64cf17187973c.bindTooltip(
+                `<div>
+                     Yah Wahab Estate Wuye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+            var marker_03622d15bf7fbbe4c2b645204bb293a3 = L.marker(
+                [9.058373999999999, 7.4480759],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_680fbdec0a62499a3c2ec86bd3c1db83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8953369fde1be7b116c0a908e6226534 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9acb904df65616e70394d936c0ddfb52 = $(`<div id="html_9acb904df65616e70394d936c0ddfb52" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Thuja Ville Estate Utako</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.058373999999999,7.4480759' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8953369fde1be7b116c0a908e6226534.setContent(html_9acb904df65616e70394d936c0ddfb52);
+            
+        
+
+        marker_03622d15bf7fbbe4c2b645204bb293a3.bindPopup(popup_8953369fde1be7b116c0a908e6226534)
+        ;
+
+        
+    
+    
+            marker_03622d15bf7fbbe4c2b645204bb293a3.bindTooltip(
+                `<div>
+                     Thuja Ville Estate Utako
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+            var marker_d2636a4d372905ff0924f76ba7b63a81 = L.marker(
+                [9.0575595, 7.451945299999999],
+                {
+}
+            ).addTo(feature_group_d9441884f28f43516aa82429c8b622ee);
+        
+    
+            var icon_ac1f8cc81d0a376adf615d67af89f848 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_477a72f2d7808dd15806274b28eda365 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ea51aa544e60629d5614de57b002b71b = $(`<div id="html_ea51aa544e60629d5614de57b002b71b" style="width: 100.0%; height: 100.0%;">         <div>             <h3>The Six Oaks Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0575595,7.451945299999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_477a72f2d7808dd15806274b28eda365.setContent(html_ea51aa544e60629d5614de57b002b71b);
+            
+        
+
+        marker_d2636a4d372905ff0924f76ba7b63a81.bindPopup(popup_477a72f2d7808dd15806274b28eda365)
+        ;
+
+        
+    
+    
+            marker_d2636a4d372905ff0924f76ba7b63a81.bindTooltip(
+                `<div>
+                     The Six Oaks Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var feature_group_57c3ccb47da587c3c319fcbca8c0cbae = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_aa8e77defe404502cbfbde3c45ca3073 = L.marker(
+                [9.065411899999999, 7.461082999999999],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_a6efa1f85da46b54d44fd1b88845a1a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f907f148795cae6d00d7060c195396b4 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7480be119f93799d0c900d0981b63b0b = $(`<div id="html_7480be119f93799d0c900d0981b63b0b" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Idyll Foundation Hotel And Garden</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.065411899999999,7.461082999999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_f907f148795cae6d00d7060c195396b4.setContent(html_7480be119f93799d0c900d0981b63b0b);
+            
+        
+
+        marker_aa8e77defe404502cbfbde3c45ca3073.bindPopup(popup_f907f148795cae6d00d7060c195396b4)
+        ;
+
+        
+    
+    
+            marker_aa8e77defe404502cbfbde3c45ca3073.bindTooltip(
+                `<div>
+                     Idyll Foundation Hotel And Garden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa8e77defe404502cbfbde3c45ca3073.setIcon(icon_a6efa1f85da46b54d44fd1b88845a1a3);
+            
+    
+            var marker_9b312a82f02375b6a06def49f461924d = L.marker(
+                [9.066652399999999, 7.462722200000001],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_21f345806bc225b2c168908a202b2555 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63d1274e504ebddd707760993a912bce = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_fcbd665edaceb54d1cef9a04724d0ff1 = $(`<div id="html_fcbd665edaceb54d1cef9a04724d0ff1" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Golden Gate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.066652399999999,7.462722200000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_63d1274e504ebddd707760993a912bce.setContent(html_fcbd665edaceb54d1cef9a04724d0ff1);
+            
+        
+
+        marker_9b312a82f02375b6a06def49f461924d.bindPopup(popup_63d1274e504ebddd707760993a912bce)
+        ;
+
+        
+    
+    
+            marker_9b312a82f02375b6a06def49f461924d.bindTooltip(
+                `<div>
+                     Golden Gate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b312a82f02375b6a06def49f461924d.setIcon(icon_21f345806bc225b2c168908a202b2555);
+            
+    
+            var marker_2a27ac511fa0a2afebdd7a88cc8a0e0c = L.marker(
+                [9.065737900000002, 7.4562122],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_6b96d86e04544c8a7b50d97ed35762cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60034571ebfa2d0dbb49b2c21e227997 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2b307827f43af31c0495500ba42403a6 = $(`<div id="html_2b307827f43af31c0495500ba42403a6" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Johnwood Hotel By Bolton</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.065737900000002,7.4562122' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_60034571ebfa2d0dbb49b2c21e227997.setContent(html_2b307827f43af31c0495500ba42403a6);
+            
+        
+
+        marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.bindPopup(popup_60034571ebfa2d0dbb49b2c21e227997)
+        ;
+
+        
+    
+    
+            marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.bindTooltip(
+                `<div>
+                     Johnwood Hotel By Bolton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.setIcon(icon_6b96d86e04544c8a7b50d97ed35762cb);
+            
+    
+            var marker_c2f465a02578dd5183af3e79d541ef6f = L.marker(
+                [9.068999999999999, 7.455831299999999],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_ed110cb0a74d9f870df8d837d4a8da41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f40ff7f5dec9b687e99bcb649afc34e = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_eef38ad8bfedbd8819aa915a256d86e8 = $(`<div id="html_eef38ad8bfedbd8819aa915a256d86e8" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Orient Hotel And Plaza</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.068999999999999,7.455831299999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_5f40ff7f5dec9b687e99bcb649afc34e.setContent(html_eef38ad8bfedbd8819aa915a256d86e8);
+            
+        
+
+        marker_c2f465a02578dd5183af3e79d541ef6f.bindPopup(popup_5f40ff7f5dec9b687e99bcb649afc34e)
+        ;
+
+        
+    
+    
+            marker_c2f465a02578dd5183af3e79d541ef6f.bindTooltip(
+                `<div>
+                     Orient Hotel And Plaza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c2f465a02578dd5183af3e79d541ef6f.setIcon(icon_ed110cb0a74d9f870df8d837d4a8da41);
+            
+    
+            var marker_ae183284b50c19f8f476b7ef635a2031 = L.marker(
+                [9.068581499999999, 7.461527999999999],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_4afada5f73d07609fb663c4b3b133981 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b7cb35459362aa6a92844aa17385770 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7129bc87e0384685b766876b4257db5e = $(`<div id="html_7129bc87e0384685b766876b4257db5e" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Chateau De La-Ray</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.068581499999999,7.461527999999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_6b7cb35459362aa6a92844aa17385770.setContent(html_7129bc87e0384685b766876b4257db5e);
+            
+        
+
+        marker_ae183284b50c19f8f476b7ef635a2031.bindPopup(popup_6b7cb35459362aa6a92844aa17385770)
+        ;
+
+        
+    
+    
+            marker_ae183284b50c19f8f476b7ef635a2031.bindTooltip(
+                `<div>
+                     Chateau De La-Ray
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae183284b50c19f8f476b7ef635a2031.setIcon(icon_4afada5f73d07609fb663c4b3b133981);
+            
+    
+            var marker_227dd1da2dcc1b943155da381b441b9f = L.marker(
+                [9.0696838, 7.4627943],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_07aa6dd40418bfc0f7eb34645c2fb20c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfb7e2660b27ae85455136c312dea469 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8a9d003e8e4ce0d35f921c9dde97732e = $(`<div id="html_8a9d003e8e4ce0d35f921c9dde97732e" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Chinox Guest Inn</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0696838,7.4627943' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_dfb7e2660b27ae85455136c312dea469.setContent(html_8a9d003e8e4ce0d35f921c9dde97732e);
+            
+        
+
+        marker_227dd1da2dcc1b943155da381b441b9f.bindPopup(popup_dfb7e2660b27ae85455136c312dea469)
+        ;
+
+        
+    
+    
+            marker_227dd1da2dcc1b943155da381b441b9f.bindTooltip(
+                `<div>
+                     Chinox Guest Inn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_227dd1da2dcc1b943155da381b441b9f.setIcon(icon_07aa6dd40418bfc0f7eb34645c2fb20c);
+            
+    
+            var marker_95db9c9d8858430dfb584302458a11d8 = L.marker(
+                [9.072453399999999, 7.4589414],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_37c58c28eb88490840109c87bf8c890e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_890a423f7d01dd1c6e5c435ce5fdfd8a = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_1b35a7ed694f62b92dce4156a210318d = $(`<div id="html_1b35a7ed694f62b92dce4156a210318d" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Grace Point Resort Hotel</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.072453399999999,7.4589414' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_890a423f7d01dd1c6e5c435ce5fdfd8a.setContent(html_1b35a7ed694f62b92dce4156a210318d);
+            
+        
+
+        marker_95db9c9d8858430dfb584302458a11d8.bindPopup(popup_890a423f7d01dd1c6e5c435ce5fdfd8a)
+        ;
+
+        
+    
+    
+            marker_95db9c9d8858430dfb584302458a11d8.bindTooltip(
+                `<div>
+                     Grace Point Resort Hotel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95db9c9d8858430dfb584302458a11d8.setIcon(icon_37c58c28eb88490840109c87bf8c890e);
+            
+    
+            var marker_c8f6798ef8fe52789ad4e51d87344c60 = L.marker(
+                [9.064187, 7.472034399999999],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_581515e629e536364e3b8fff6bb5c682 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_072e37c0a773d168971f5341105a2aa8 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_279c32f79ab63acdb848172678273818 = $(`<div id="html_279c32f79ab63acdb848172678273818" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Chesbury Hotel</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.064187,7.472034399999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_072e37c0a773d168971f5341105a2aa8.setContent(html_279c32f79ab63acdb848172678273818);
+            
+        
+
+        marker_c8f6798ef8fe52789ad4e51d87344c60.bindPopup(popup_072e37c0a773d168971f5341105a2aa8)
+        ;
+
+        
+    
+    
+            marker_c8f6798ef8fe52789ad4e51d87344c60.bindTooltip(
+                `<div>
+                     Chesbury Hotel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8f6798ef8fe52789ad4e51d87344c60.setIcon(icon_581515e629e536364e3b8fff6bb5c682);
+            
+    
+            var marker_180da927aed8a536da72548bd2dde501 = L.marker(
+                [9.065650399999999, 7.472374100000001],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_0a7f4c7d62bd565332d8eed87061aee4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b221c8d0ebc39543a03cbb5a37123df = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f3bc382dc8af06cb1623647e2dca31e9 = $(`<div id="html_f3bc382dc8af06cb1623647e2dca31e9" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Newton Park Hotels & Resort</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.065650399999999,7.472374100000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_6b221c8d0ebc39543a03cbb5a37123df.setContent(html_f3bc382dc8af06cb1623647e2dca31e9);
+            
+        
+
+        marker_180da927aed8a536da72548bd2dde501.bindPopup(popup_6b221c8d0ebc39543a03cbb5a37123df)
+        ;
+
+        
+    
+    
+            marker_180da927aed8a536da72548bd2dde501.bindTooltip(
+                `<div>
+                     Newton Park Hotels & Resort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_180da927aed8a536da72548bd2dde501.setIcon(icon_0a7f4c7d62bd565332d8eed87061aee4);
+            
+    
+            var marker_dd2795cbacb4b5ba896a589da0cd1ba4 = L.marker(
+                [9.0649953, 7.474637200000001],
+                {
+}
+            ).addTo(feature_group_57c3ccb47da587c3c319fcbca8c0cbae);
+        
+    
+            var icon_c0e1d23c3bbf523f670f23631ef8cb25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_423748a7cb2ea80b23cf11242ebb53b1 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9014509309fd9a63b78f42b852244723 = $(`<div id="html_9014509309fd9a63b78f42b852244723" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Chateau De Trybze</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0649953,7.474637200000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_423748a7cb2ea80b23cf11242ebb53b1.setContent(html_9014509309fd9a63b78f42b852244723);
+            
+        
+
+        marker_dd2795cbacb4b5ba896a589da0cd1ba4.bindPopup(popup_423748a7cb2ea80b23cf11242ebb53b1)
+        ;
+
+        
+    
+    
+            marker_dd2795cbacb4b5ba896a589da0cd1ba4.bindTooltip(
+                `<div>
+                     Chateau De Trybze
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd2795cbacb4b5ba896a589da0cd1ba4.setIcon(icon_c0e1d23c3bbf523f670f23631ef8cb25);
+            
+    
+            feature_group_57c3ccb47da587c3c319fcbca8c0cbae.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_aa8e77defe404502cbfbde3c45ca3073.setIcon(icon_a6efa1f85da46b54d44fd1b88845a1a3);
+            
+    
+                marker_9b312a82f02375b6a06def49f461924d.setIcon(icon_21f345806bc225b2c168908a202b2555);
+            
+    
+                marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.setIcon(icon_6b96d86e04544c8a7b50d97ed35762cb);
+            
+    
+                marker_c2f465a02578dd5183af3e79d541ef6f.setIcon(icon_ed110cb0a74d9f870df8d837d4a8da41);
+            
+    
+                marker_ae183284b50c19f8f476b7ef635a2031.setIcon(icon_4afada5f73d07609fb663c4b3b133981);
+            
+    
+                marker_227dd1da2dcc1b943155da381b441b9f.setIcon(icon_07aa6dd40418bfc0f7eb34645c2fb20c);
+            
+    
+                marker_95db9c9d8858430dfb584302458a11d8.setIcon(icon_37c58c28eb88490840109c87bf8c890e);
+            
+    
+                marker_c8f6798ef8fe52789ad4e51d87344c60.setIcon(icon_581515e629e536364e3b8fff6bb5c682);
+            
+    
+                marker_180da927aed8a536da72548bd2dde501.setIcon(icon_0a7f4c7d62bd565332d8eed87061aee4);
+            
+    
+                marker_dd2795cbacb4b5ba896a589da0cd1ba4.setIcon(icon_c0e1d23c3bbf523f670f23631ef8cb25);
+            
+    
+            feature_group_57c3ccb47da587c3c319fcbca8c0cbae.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var feature_group_337854111f0fe0e52a56765c915cbdaf = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_918f018daed9b13b1fdbc191d92e3e89 = L.marker(
+                [9.040948, 7.3991348],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_dd7a440a9e1ac1dfe807e62650916c81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b65345a7e56626f2837697c23e8e595 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9616f255b222990cc366b8e64554cec9 = $(`<div id="html_9616f255b222990cc366b8e64554cec9" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Efab Block 2 Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.040948,7.3991348' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_9b65345a7e56626f2837697c23e8e595.setContent(html_9616f255b222990cc366b8e64554cec9);
+            
+        
+
+        marker_918f018daed9b13b1fdbc191d92e3e89.bindPopup(popup_9b65345a7e56626f2837697c23e8e595)
+        ;
+
+        
+    
+    
+            marker_918f018daed9b13b1fdbc191d92e3e89.bindTooltip(
+                `<div>
+                     Efab Block 2 Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_918f018daed9b13b1fdbc191d92e3e89.setIcon(icon_dd7a440a9e1ac1dfe807e62650916c81);
+            
+    
+            var marker_26790267094ff8664105b99f12d0edaf = L.marker(
+                [9.0583101, 7.3646429],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_a4ef02fe6b6b02d8095fa8645be1f179 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0899f3fbb69b504a11dcc78bec94b3a = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7caff5a0ed8f947fec424f05a953f8c3 = $(`<div id="html_7caff5a0ed8f947fec424f05a953f8c3" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Ochacho Real Homes 1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0583101,7.3646429' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_f0899f3fbb69b504a11dcc78bec94b3a.setContent(html_7caff5a0ed8f947fec424f05a953f8c3);
+            
+        
+
+        marker_26790267094ff8664105b99f12d0edaf.bindPopup(popup_f0899f3fbb69b504a11dcc78bec94b3a)
+        ;
+
+        
+    
+    
+            marker_26790267094ff8664105b99f12d0edaf.bindTooltip(
+                `<div>
+                     Ochacho Real Homes 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26790267094ff8664105b99f12d0edaf.setIcon(icon_a4ef02fe6b6b02d8095fa8645be1f179);
+            
+    
+            var marker_d3ffa0bef583d7871cdf9873a14368ae = L.marker(
+                [9.0585319, 7.3590651],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_22978fd055c72808a5232e08d1f8f477 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b63d79f8bfbdcbb5cf6a38488186054 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_fb59b16abb9cbef7c9eedd7e3d727d06 = $(`<div id="html_fb59b16abb9cbef7c9eedd7e3d727d06" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Shelter Greenland Estate Idu</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0585319,7.3590651' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8b63d79f8bfbdcbb5cf6a38488186054.setContent(html_fb59b16abb9cbef7c9eedd7e3d727d06);
+            
+        
+
+        marker_d3ffa0bef583d7871cdf9873a14368ae.bindPopup(popup_8b63d79f8bfbdcbb5cf6a38488186054)
+        ;
+
+        
+    
+    
+            marker_d3ffa0bef583d7871cdf9873a14368ae.bindTooltip(
+                `<div>
+                     Shelter Greenland Estate Idu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3ffa0bef583d7871cdf9873a14368ae.setIcon(icon_22978fd055c72808a5232e08d1f8f477);
+            
+    
+            var marker_256aa052a4544fbfac93bd25d0f5d3bc = L.marker(
+                [9.0324992, 7.3894772],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_b3bf2aff657d3fed5cd2da47d760b5b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ce46b18bb7fa845ec1ba4ed6563693a = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9c6717a9069e599c11fd3ed0bdbbd364 = $(`<div id="html_9c6717a9069e599c11fd3ed0bdbbd364" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Army Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0324992,7.3894772' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8ce46b18bb7fa845ec1ba4ed6563693a.setContent(html_9c6717a9069e599c11fd3ed0bdbbd364);
+            
+        
+
+        marker_256aa052a4544fbfac93bd25d0f5d3bc.bindPopup(popup_8ce46b18bb7fa845ec1ba4ed6563693a)
+        ;
+
+        
+    
+    
+            marker_256aa052a4544fbfac93bd25d0f5d3bc.bindTooltip(
+                `<div>
+                     Army Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_256aa052a4544fbfac93bd25d0f5d3bc.setIcon(icon_b3bf2aff657d3fed5cd2da47d760b5b9);
+            
+    
+            var marker_5d2092671dbd4cc749c58bf5778f6faf = L.marker(
+                [9.027322, 7.328766499999999],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_7f9db1a81490944b766e0ba9d9d2684a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8fff1490c71ef77b04d17120c04d49c2 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_171b43d5cc2d24e74e8b1aebd9bdbe05 = $(`<div id="html_171b43d5cc2d24e74e8b1aebd9bdbe05" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Broadview Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.027322,7.328766499999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_8fff1490c71ef77b04d17120c04d49c2.setContent(html_171b43d5cc2d24e74e8b1aebd9bdbe05);
+            
+        
+
+        marker_5d2092671dbd4cc749c58bf5778f6faf.bindPopup(popup_8fff1490c71ef77b04d17120c04d49c2)
+        ;
+
+        
+    
+    
+            marker_5d2092671dbd4cc749c58bf5778f6faf.bindTooltip(
+                `<div>
+                     Broadview Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d2092671dbd4cc749c58bf5778f6faf.setIcon(icon_7f9db1a81490944b766e0ba9d9d2684a);
+            
+    
+            var marker_16ac95473c842b25e0431ed04f063224 = L.marker(
+                [9.014297299999999, 7.327793700000001],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_00679b6bc27e5eb65a2433aeea59e4df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63b42b360444fe65b408d484c678b0c9 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7210b95c9eed63250d097b3e886fe796 = $(`<div id="html_7210b95c9eed63250d097b3e886fe796" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Valington Premium City Idu</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.014297299999999,7.327793700000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_63b42b360444fe65b408d484c678b0c9.setContent(html_7210b95c9eed63250d097b3e886fe796);
+            
+        
+
+        marker_16ac95473c842b25e0431ed04f063224.bindPopup(popup_63b42b360444fe65b408d484c678b0c9)
+        ;
+
+        
+    
+    
+            marker_16ac95473c842b25e0431ed04f063224.bindTooltip(
+                `<div>
+                     Valington Premium City Idu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_16ac95473c842b25e0431ed04f063224.setIcon(icon_00679b6bc27e5eb65a2433aeea59e4df);
+            
+    
+            var marker_f75d5b2d8c42e28d1e926987b41ffbbf = L.marker(
+                [9.0223438, 7.390368499999998],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_313061451afcd8a0eeb9ae97c9eb0eba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ea2cabb00f2edcc1293df9f063552c3 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f7a97e9bdafc7d853baf1708b39f432a = $(`<div id="html_f7a97e9bdafc7d853baf1708b39f432a" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Fafu Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0223438,7.390368499999998' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_9ea2cabb00f2edcc1293df9f063552c3.setContent(html_f7a97e9bdafc7d853baf1708b39f432a);
+            
+        
+
+        marker_f75d5b2d8c42e28d1e926987b41ffbbf.bindPopup(popup_9ea2cabb00f2edcc1293df9f063552c3)
+        ;
+
+        
+    
+    
+            marker_f75d5b2d8c42e28d1e926987b41ffbbf.bindTooltip(
+                `<div>
+                     Fafu Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f75d5b2d8c42e28d1e926987b41ffbbf.setIcon(icon_313061451afcd8a0eeb9ae97c9eb0eba);
+            
+    
+            var marker_bbfd645853676f8b06e803c2e77bb79b = L.marker(
+                [9.0612801, 7.362721199999999],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_282fb9d0a20d4521e78dab7da091e685 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_52fd4feaf7a2f6103ac451e789034a6b = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_574ba785943c3cf25522e43d4eb3cb9a = $(`<div id="html_574ba785943c3cf25522e43d4eb3cb9a" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Mab Global Estate Idu Abuja</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0612801,7.362721199999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_52fd4feaf7a2f6103ac451e789034a6b.setContent(html_574ba785943c3cf25522e43d4eb3cb9a);
+            
+        
+
+        marker_bbfd645853676f8b06e803c2e77bb79b.bindPopup(popup_52fd4feaf7a2f6103ac451e789034a6b)
+        ;
+
+        
+    
+    
+            marker_bbfd645853676f8b06e803c2e77bb79b.bindTooltip(
+                `<div>
+                     Mab Global Estate Idu Abuja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bbfd645853676f8b06e803c2e77bb79b.setIcon(icon_282fb9d0a20d4521e78dab7da091e685);
+            
+    
+            var marker_52b2b83b72b5ed4983dfabe1e4b4e1cd = L.marker(
+                [9.0289849, 7.385251299999998],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_a847d754c34f35ac138d7a3d1ada5f57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6d9d651d2f00e53a3e1eeb807ffd706 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_292c2ebbeaa27c52b9949fbb16f113ba = $(`<div id="html_292c2ebbeaa27c52b9949fbb16f113ba" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Bstan Homes </h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0289849,7.385251299999998' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_b6d9d651d2f00e53a3e1eeb807ffd706.setContent(html_292c2ebbeaa27c52b9949fbb16f113ba);
+            
+        
+
+        marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.bindPopup(popup_b6d9d651d2f00e53a3e1eeb807ffd706)
+        ;
+
+        
+    
+    
+            marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.bindTooltip(
+                `<div>
+                     Bstan Homes 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.setIcon(icon_a847d754c34f35ac138d7a3d1ada5f57);
+            
+    
+            var marker_5e49552caf697eacf156a19e3c1f0eea = L.marker(
+                [9.0583101, 7.3646429],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_2ff516d3db2d0f0c13b2bacc4a0a2b51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e23cfcedca8adf2c806a151e9c5ad6b = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3b408f0ca9d53b5ac328c97a363886b3 = $(`<div id="html_3b408f0ca9d53b5ac328c97a363886b3" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Ochacho Real Homes 1</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0583101,7.3646429' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_7e23cfcedca8adf2c806a151e9c5ad6b.setContent(html_3b408f0ca9d53b5ac328c97a363886b3);
+            
+        
+
+        marker_5e49552caf697eacf156a19e3c1f0eea.bindPopup(popup_7e23cfcedca8adf2c806a151e9c5ad6b)
+        ;
+
+        
+    
+    
+            marker_5e49552caf697eacf156a19e3c1f0eea.bindTooltip(
+                `<div>
+                     Ochacho Real Homes 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e49552caf697eacf156a19e3c1f0eea.setIcon(icon_2ff516d3db2d0f0c13b2bacc4a0a2b51);
+            
+    
+            var marker_0aeefeda5a29845583c9df52f0efa94c = L.marker(
+                [9.051815699999999, 7.3901628],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_828188e909291957d4b87f781a1b9920 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ebbe3a030ec0aca03152e86d5f91d559 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_90752252388b8c0d77d9bbc4880f9918 = $(`<div id="html_90752252388b8c0d77d9bbc4880f9918" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Sil Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.051815699999999,7.3901628' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_ebbe3a030ec0aca03152e86d5f91d559.setContent(html_90752252388b8c0d77d9bbc4880f9918);
+            
+        
+
+        marker_0aeefeda5a29845583c9df52f0efa94c.bindPopup(popup_ebbe3a030ec0aca03152e86d5f91d559)
+        ;
+
+        
+    
+    
+            marker_0aeefeda5a29845583c9df52f0efa94c.bindTooltip(
+                `<div>
+                     Sil Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0aeefeda5a29845583c9df52f0efa94c.setIcon(icon_828188e909291957d4b87f781a1b9920);
+            
+    
+            var marker_8d3ff9936483ddc9de555040a10e5251 = L.marker(
+                [9.0428034, 7.391126099999998],
+                {
+}
+            ).addTo(feature_group_337854111f0fe0e52a56765c915cbdaf);
+        
+    
+            var icon_f1acf6e2ef2348a9f72a7cb8d4f3411d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9206197ff130b450d4965ecb3afa904 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_4c8bd2b953784c464b2f92bb33b9329f = $(`<div id="html_4c8bd2b953784c464b2f92bb33b9329f" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Efab Global Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.0428034,7.391126099999998' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_a9206197ff130b450d4965ecb3afa904.setContent(html_4c8bd2b953784c464b2f92bb33b9329f);
+            
+        
+
+        marker_8d3ff9936483ddc9de555040a10e5251.bindPopup(popup_a9206197ff130b450d4965ecb3afa904)
+        ;
+
+        
+    
+    
+            marker_8d3ff9936483ddc9de555040a10e5251.bindTooltip(
+                `<div>
+                     Efab Global Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d3ff9936483ddc9de555040a10e5251.setIcon(icon_f1acf6e2ef2348a9f72a7cb8d4f3411d);
+            
+    
+            feature_group_337854111f0fe0e52a56765c915cbdaf.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_aa8e77defe404502cbfbde3c45ca3073.setIcon(icon_a6efa1f85da46b54d44fd1b88845a1a3);
+            
+    
+                marker_9b312a82f02375b6a06def49f461924d.setIcon(icon_21f345806bc225b2c168908a202b2555);
+            
+    
+                marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.setIcon(icon_6b96d86e04544c8a7b50d97ed35762cb);
+            
+    
+                marker_c2f465a02578dd5183af3e79d541ef6f.setIcon(icon_ed110cb0a74d9f870df8d837d4a8da41);
+            
+    
+                marker_ae183284b50c19f8f476b7ef635a2031.setIcon(icon_4afada5f73d07609fb663c4b3b133981);
+            
+    
+                marker_227dd1da2dcc1b943155da381b441b9f.setIcon(icon_07aa6dd40418bfc0f7eb34645c2fb20c);
+            
+    
+                marker_95db9c9d8858430dfb584302458a11d8.setIcon(icon_37c58c28eb88490840109c87bf8c890e);
+            
+    
+                marker_c8f6798ef8fe52789ad4e51d87344c60.setIcon(icon_581515e629e536364e3b8fff6bb5c682);
+            
+    
+                marker_180da927aed8a536da72548bd2dde501.setIcon(icon_0a7f4c7d62bd565332d8eed87061aee4);
+            
+    
+                marker_dd2795cbacb4b5ba896a589da0cd1ba4.setIcon(icon_c0e1d23c3bbf523f670f23631ef8cb25);
+            
+    
+            feature_group_57c3ccb47da587c3c319fcbca8c0cbae.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_918f018daed9b13b1fdbc191d92e3e89.setIcon(icon_dd7a440a9e1ac1dfe807e62650916c81);
+            
+    
+                marker_26790267094ff8664105b99f12d0edaf.setIcon(icon_a4ef02fe6b6b02d8095fa8645be1f179);
+            
+    
+                marker_d3ffa0bef583d7871cdf9873a14368ae.setIcon(icon_22978fd055c72808a5232e08d1f8f477);
+            
+    
+                marker_256aa052a4544fbfac93bd25d0f5d3bc.setIcon(icon_b3bf2aff657d3fed5cd2da47d760b5b9);
+            
+    
+                marker_5d2092671dbd4cc749c58bf5778f6faf.setIcon(icon_7f9db1a81490944b766e0ba9d9d2684a);
+            
+    
+                marker_16ac95473c842b25e0431ed04f063224.setIcon(icon_00679b6bc27e5eb65a2433aeea59e4df);
+            
+    
+                marker_f75d5b2d8c42e28d1e926987b41ffbbf.setIcon(icon_313061451afcd8a0eeb9ae97c9eb0eba);
+            
+    
+                marker_bbfd645853676f8b06e803c2e77bb79b.setIcon(icon_282fb9d0a20d4521e78dab7da091e685);
+            
+    
+                marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.setIcon(icon_a847d754c34f35ac138d7a3d1ada5f57);
+            
+    
+                marker_5e49552caf697eacf156a19e3c1f0eea.setIcon(icon_2ff516d3db2d0f0c13b2bacc4a0a2b51);
+            
+    
+                marker_0aeefeda5a29845583c9df52f0efa94c.setIcon(icon_828188e909291957d4b87f781a1b9920);
+            
+    
+                marker_8d3ff9936483ddc9de555040a10e5251.setIcon(icon_f1acf6e2ef2348a9f72a7cb8d4f3411d);
+            
+    
+            feature_group_337854111f0fe0e52a56765c915cbdaf.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var feature_group_15b35ef2f0e9a7ee731af21f3179dbe6 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_544ce31d3edc6f96d4cb06ea7eabb77a = L.marker(
+                [9.1660392, 7.3705865],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_99d95e6f1e54b8474b2429814927b524 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3f90840bba5600c3b4f9db25fc5921e = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2052908c03c10ddf670517558aac25a8 = $(`<div id="html_2052908c03c10ddf670517558aac25a8" style="width: 100.0%; height: 100.0%;">         <div>             <h3>F01 Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1660392,7.3705865' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_f3f90840bba5600c3b4f9db25fc5921e.setContent(html_2052908c03c10ddf670517558aac25a8);
+            
+        
+
+        marker_544ce31d3edc6f96d4cb06ea7eabb77a.bindPopup(popup_f3f90840bba5600c3b4f9db25fc5921e)
+        ;
+
+        
+    
+    
+            marker_544ce31d3edc6f96d4cb06ea7eabb77a.bindTooltip(
+                `<div>
+                     F01 Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_544ce31d3edc6f96d4cb06ea7eabb77a.setIcon(icon_99d95e6f1e54b8474b2429814927b524);
+            
+    
+            var marker_433908df32c06385ead5bfc2a9dd0f38 = L.marker(
+                [9.135753, 7.3488017],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_017c99411fb53c210a9b7b8996b3cce6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c073d225bdc23be4cbb7c0a71caa62aa = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_75c2e15e9988c328ef51150b0f9a8f08 = $(`<div id="html_75c2e15e9988c328ef51150b0f9a8f08" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Aso Garden Estate (Karsana)</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.135753,7.3488017' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_c073d225bdc23be4cbb7c0a71caa62aa.setContent(html_75c2e15e9988c328ef51150b0f9a8f08);
+            
+        
+
+        marker_433908df32c06385ead5bfc2a9dd0f38.bindPopup(popup_c073d225bdc23be4cbb7c0a71caa62aa)
+        ;
+
+        
+    
+    
+            marker_433908df32c06385ead5bfc2a9dd0f38.bindTooltip(
+                `<div>
+                     Aso Garden Estate (Karsana)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_433908df32c06385ead5bfc2a9dd0f38.setIcon(icon_017c99411fb53c210a9b7b8996b3cce6);
+            
+    
+            var marker_80b6375409cde98472733cdb8d41466b = L.marker(
+                [9.1489181, 7.363585100000001],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_df90984c43bca816a9d8c80802d66a10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7841ebd018b2fcac31e7b202dade8bac = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_cde0a694b34882b12fc5f14a307c107e = $(`<div id="html_cde0a694b34882b12fc5f14a307c107e" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Sigma Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1489181,7.363585100000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_7841ebd018b2fcac31e7b202dade8bac.setContent(html_cde0a694b34882b12fc5f14a307c107e);
+            
+        
+
+        marker_80b6375409cde98472733cdb8d41466b.bindPopup(popup_7841ebd018b2fcac31e7b202dade8bac)
+        ;
+
+        
+    
+    
+            marker_80b6375409cde98472733cdb8d41466b.bindTooltip(
+                `<div>
+                     Sigma Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_80b6375409cde98472733cdb8d41466b.setIcon(icon_df90984c43bca816a9d8c80802d66a10);
+            
+    
+            var marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc = L.marker(
+                [9.1529937, 7.356560999999999],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_bcd6f0a82df04dec7675f566ed81162f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08b726be28b0cfbfa2af9e1ee3845d71 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9904002f2f9829088628b8c81abeef79 = $(`<div id="html_9904002f2f9829088628b8c81abeef79" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Maritime Quarters</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1529937,7.356560999999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_08b726be28b0cfbfa2af9e1ee3845d71.setContent(html_9904002f2f9829088628b8c81abeef79);
+            
+        
+
+        marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc.bindPopup(popup_08b726be28b0cfbfa2af9e1ee3845d71)
+        ;
+
+        
+    
+    
+            marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc.bindTooltip(
+                `<div>
+                     Maritime Quarters
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc.setIcon(icon_bcd6f0a82df04dec7675f566ed81162f);
+            
+    
+            var marker_7533f5a094f110bfbc3165b24890bae0 = L.marker(
+                [9.1518182, 7.353531699999999],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_80674f045a6d7d7fa2c2585258b0cdaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7f67d4133333703c627a42e8db5b0bd = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_1ed3da1f016c2d9ec0d21da9f7a2d722 = $(`<div id="html_1ed3da1f016c2d9ec0d21da9f7a2d722" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Aso Garden Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1518182,7.353531699999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_c7f67d4133333703c627a42e8db5b0bd.setContent(html_1ed3da1f016c2d9ec0d21da9f7a2d722);
+            
+        
+
+        marker_7533f5a094f110bfbc3165b24890bae0.bindPopup(popup_c7f67d4133333703c627a42e8db5b0bd)
+        ;
+
+        
+    
+    
+            marker_7533f5a094f110bfbc3165b24890bae0.bindTooltip(
+                `<div>
+                     Aso Garden Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7533f5a094f110bfbc3165b24890bae0.setIcon(icon_80674f045a6d7d7fa2c2585258b0cdaf);
+            
+    
+            var marker_f58842658fb222367d289133c8ef554c = L.marker(
+                [9.1568062, 7.3380847],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_79a3c9c5cfd19ae711b81bd7c3c664b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_17354110561135a9ee41e90b3b94d76d = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_1e8874155c542c93b21968c2a8981c98 = $(`<div id="html_1e8874155c542c93b21968c2a8981c98" style="width: 100.0%; height: 100.0%;">         <div>             <h3>District Centre Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1568062,7.3380847' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_17354110561135a9ee41e90b3b94d76d.setContent(html_1e8874155c542c93b21968c2a8981c98);
+            
+        
+
+        marker_f58842658fb222367d289133c8ef554c.bindPopup(popup_17354110561135a9ee41e90b3b94d76d)
+        ;
+
+        
+    
+    
+            marker_f58842658fb222367d289133c8ef554c.bindTooltip(
+                `<div>
+                     District Centre Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f58842658fb222367d289133c8ef554c.setIcon(icon_79a3c9c5cfd19ae711b81bd7c3c664b9);
+            
+    
+            var marker_fe5324ca33ac09ae3be2abece4be50ad = L.marker(
+                [9.161025799999999, 7.3382748],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_bea97a73bf99d2d9c33fe3bb0119e12c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4565fb5446a48948fb6d621ab51449ec = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_11e0a7754e6f261ef1fd5fd71b2ef9c9 = $(`<div id="html_11e0a7754e6f261ef1fd5fd71b2ef9c9" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Philkruz Estate Ii</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.161025799999999,7.3382748' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_4565fb5446a48948fb6d621ab51449ec.setContent(html_11e0a7754e6f261ef1fd5fd71b2ef9c9);
+            
+        
+
+        marker_fe5324ca33ac09ae3be2abece4be50ad.bindPopup(popup_4565fb5446a48948fb6d621ab51449ec)
+        ;
+
+        
+    
+    
+            marker_fe5324ca33ac09ae3be2abece4be50ad.bindTooltip(
+                `<div>
+                     Philkruz Estate Ii
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fe5324ca33ac09ae3be2abece4be50ad.setIcon(icon_bea97a73bf99d2d9c33fe3bb0119e12c);
+            
+    
+            var marker_6622a64d984a6665973927ba08807bc2 = L.marker(
+                [9.161361099999999, 7.323211799999999],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_01b74664d24127c983930a0187394faf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b619ceaaa3e41ea3984f1000c4394943 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ac961e45355f3a2e83ea0eef2f6cc35b = $(`<div id="html_ac961e45355f3a2e83ea0eef2f6cc35b" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Dantata Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.161361099999999,7.323211799999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_b619ceaaa3e41ea3984f1000c4394943.setContent(html_ac961e45355f3a2e83ea0eef2f6cc35b);
+            
+        
+
+        marker_6622a64d984a6665973927ba08807bc2.bindPopup(popup_b619ceaaa3e41ea3984f1000c4394943)
+        ;
+
+        
+    
+    
+            marker_6622a64d984a6665973927ba08807bc2.bindTooltip(
+                `<div>
+                     Dantata Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6622a64d984a6665973927ba08807bc2.setIcon(icon_01b74664d24127c983930a0187394faf);
+            
+    
+            var marker_b9c9a1ebd9e45632b7c00408ddf35ff7 = L.marker(
+                [9.1682024, 7.319637200000001],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_f3f57af2028454c43006343e0eda2078 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53fcf7d3f0db69be4aefdae39e048039 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_de7d2d1037789847b67d6a80ad549112 = $(`<div id="html_de7d2d1037789847b67d6a80ad549112" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Haj Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1682024,7.319637200000001' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_53fcf7d3f0db69be4aefdae39e048039.setContent(html_de7d2d1037789847b67d6a80ad549112);
+            
+        
+
+        marker_b9c9a1ebd9e45632b7c00408ddf35ff7.bindPopup(popup_53fcf7d3f0db69be4aefdae39e048039)
+        ;
+
+        
+    
+    
+            marker_b9c9a1ebd9e45632b7c00408ddf35ff7.bindTooltip(
+                `<div>
+                     Haj Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9c9a1ebd9e45632b7c00408ddf35ff7.setIcon(icon_f3f57af2028454c43006343e0eda2078);
+            
+    
+            var marker_f73ae1ea50609f416f4202b7ea8f4091 = L.marker(
+                [9.1452715, 7.2962749],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_91a59448d9198dddb0c2f81d969c3001 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3655d1faf6e66a6d8c0923b8f8fcc1f = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_0af140d4777a1043b9889107af47bd3c = $(`<div id="html_0af140d4777a1043b9889107af47bd3c" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Lennar Hillside Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.1452715,7.2962749' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_b3655d1faf6e66a6d8c0923b8f8fcc1f.setContent(html_0af140d4777a1043b9889107af47bd3c);
+            
+        
+
+        marker_f73ae1ea50609f416f4202b7ea8f4091.bindPopup(popup_b3655d1faf6e66a6d8c0923b8f8fcc1f)
+        ;
+
+        
+    
+    
+            marker_f73ae1ea50609f416f4202b7ea8f4091.bindTooltip(
+                `<div>
+                     Lennar Hillside Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f73ae1ea50609f416f4202b7ea8f4091.setIcon(icon_91a59448d9198dddb0c2f81d969c3001);
+            
+    
+            var marker_f9d1a6849a99dbc479545cdcc97beb31 = L.marker(
+                [9.135974899999999, 7.307425599999999],
+                {
+}
+            ).addTo(feature_group_15b35ef2f0e9a7ee731af21f3179dbe6);
+        
+    
+            var icon_5e4eb79bfa9ccacb9ea509b2e532194a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2c1907412ac1024491731747ebaf522 = L.popup({
+  "maxWidth": 400,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_61272c49e25172f49fcdc2da58434e98 = $(`<div id="html_61272c49e25172f49fcdc2da58434e98" style="width: 100.0%; height: 100.0%;">         <div>             <h3>Custom Estate</h3>             <p><a href='https://www.google.com/maps/search/?api=1&query=9.135974899999999,7.307425599999999' target='_blank'>Get Directions         </a></p>         </div>         </div>`)[0];
+                popup_c2c1907412ac1024491731747ebaf522.setContent(html_61272c49e25172f49fcdc2da58434e98);
+            
+        
+
+        marker_f9d1a6849a99dbc479545cdcc97beb31.bindPopup(popup_c2c1907412ac1024491731747ebaf522)
+        ;
+
+        
+    
+    
+            marker_f9d1a6849a99dbc479545cdcc97beb31.bindTooltip(
+                `<div>
+                     Custom Estate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f9d1a6849a99dbc479545cdcc97beb31.setIcon(icon_5e4eb79bfa9ccacb9ea509b2e532194a);
+            
+    
+            feature_group_15b35ef2f0e9a7ee731af21f3179dbe6.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_aa8e77defe404502cbfbde3c45ca3073.setIcon(icon_a6efa1f85da46b54d44fd1b88845a1a3);
+            
+    
+                marker_9b312a82f02375b6a06def49f461924d.setIcon(icon_21f345806bc225b2c168908a202b2555);
+            
+    
+                marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.setIcon(icon_6b96d86e04544c8a7b50d97ed35762cb);
+            
+    
+                marker_c2f465a02578dd5183af3e79d541ef6f.setIcon(icon_ed110cb0a74d9f870df8d837d4a8da41);
+            
+    
+                marker_ae183284b50c19f8f476b7ef635a2031.setIcon(icon_4afada5f73d07609fb663c4b3b133981);
+            
+    
+                marker_227dd1da2dcc1b943155da381b441b9f.setIcon(icon_07aa6dd40418bfc0f7eb34645c2fb20c);
+            
+    
+                marker_95db9c9d8858430dfb584302458a11d8.setIcon(icon_37c58c28eb88490840109c87bf8c890e);
+            
+    
+                marker_c8f6798ef8fe52789ad4e51d87344c60.setIcon(icon_581515e629e536364e3b8fff6bb5c682);
+            
+    
+                marker_180da927aed8a536da72548bd2dde501.setIcon(icon_0a7f4c7d62bd565332d8eed87061aee4);
+            
+    
+                marker_dd2795cbacb4b5ba896a589da0cd1ba4.setIcon(icon_c0e1d23c3bbf523f670f23631ef8cb25);
+            
+    
+            feature_group_57c3ccb47da587c3c319fcbca8c0cbae.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_918f018daed9b13b1fdbc191d92e3e89.setIcon(icon_dd7a440a9e1ac1dfe807e62650916c81);
+            
+    
+                marker_26790267094ff8664105b99f12d0edaf.setIcon(icon_a4ef02fe6b6b02d8095fa8645be1f179);
+            
+    
+                marker_d3ffa0bef583d7871cdf9873a14368ae.setIcon(icon_22978fd055c72808a5232e08d1f8f477);
+            
+    
+                marker_256aa052a4544fbfac93bd25d0f5d3bc.setIcon(icon_b3bf2aff657d3fed5cd2da47d760b5b9);
+            
+    
+                marker_5d2092671dbd4cc749c58bf5778f6faf.setIcon(icon_7f9db1a81490944b766e0ba9d9d2684a);
+            
+    
+                marker_16ac95473c842b25e0431ed04f063224.setIcon(icon_00679b6bc27e5eb65a2433aeea59e4df);
+            
+    
+                marker_f75d5b2d8c42e28d1e926987b41ffbbf.setIcon(icon_313061451afcd8a0eeb9ae97c9eb0eba);
+            
+    
+                marker_bbfd645853676f8b06e803c2e77bb79b.setIcon(icon_282fb9d0a20d4521e78dab7da091e685);
+            
+    
+                marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.setIcon(icon_a847d754c34f35ac138d7a3d1ada5f57);
+            
+    
+                marker_5e49552caf697eacf156a19e3c1f0eea.setIcon(icon_2ff516d3db2d0f0c13b2bacc4a0a2b51);
+            
+    
+                marker_0aeefeda5a29845583c9df52f0efa94c.setIcon(icon_828188e909291957d4b87f781a1b9920);
+            
+    
+                marker_8d3ff9936483ddc9de555040a10e5251.setIcon(icon_f1acf6e2ef2348a9f72a7cb8d4f3411d);
+            
+    
+            feature_group_337854111f0fe0e52a56765c915cbdaf.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_544ce31d3edc6f96d4cb06ea7eabb77a.setIcon(icon_99d95e6f1e54b8474b2429814927b524);
+            
+    
+                marker_433908df32c06385ead5bfc2a9dd0f38.setIcon(icon_017c99411fb53c210a9b7b8996b3cce6);
+            
+    
+                marker_80b6375409cde98472733cdb8d41466b.setIcon(icon_df90984c43bca816a9d8c80802d66a10);
+            
+    
+                marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc.setIcon(icon_bcd6f0a82df04dec7675f566ed81162f);
+            
+    
+                marker_7533f5a094f110bfbc3165b24890bae0.setIcon(icon_80674f045a6d7d7fa2c2585258b0cdaf);
+            
+    
+                marker_f58842658fb222367d289133c8ef554c.setIcon(icon_79a3c9c5cfd19ae711b81bd7c3c664b9);
+            
+    
+                marker_fe5324ca33ac09ae3be2abece4be50ad.setIcon(icon_bea97a73bf99d2d9c33fe3bb0119e12c);
+            
+    
+                marker_6622a64d984a6665973927ba08807bc2.setIcon(icon_01b74664d24127c983930a0187394faf);
+            
+    
+                marker_b9c9a1ebd9e45632b7c00408ddf35ff7.setIcon(icon_f3f57af2028454c43006343e0eda2078);
+            
+    
+                marker_f73ae1ea50609f416f4202b7ea8f4091.setIcon(icon_91a59448d9198dddb0c2f81d969c3001);
+            
+    
+                marker_f9d1a6849a99dbc479545cdcc97beb31.setIcon(icon_5e4eb79bfa9ccacb9ea509b2e532194a);
+            
+    
+            feature_group_15b35ef2f0e9a7ee731af21f3179dbe6.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+            var layer_control_06cd17140dff5b5fba8d57e208fc48c5_layers = {
+                base_layers : {
+                    "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}" : tile_layer_cf08c25f50ecd048d1c852b90d235bab,
+                },
+                overlays :  {
+                    "Stands Locations" : feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271,
+                    "Estates in Wuye" : feature_group_d9441884f28f43516aa82429c8b622ee,
+                    "Hotels in Wuse" : feature_group_57c3ccb47da587c3c319fcbca8c0cbae,
+                    "Estates in Idu" : feature_group_337854111f0fe0e52a56765c915cbdaf,
+                    "Estates in Kubwa" : feature_group_15b35ef2f0e9a7ee731af21f3179dbe6,
+                },
+            };
+            let layer_control_06cd17140dff5b5fba8d57e208fc48c5 = L.control.layers(
+                layer_control_06cd17140dff5b5fba8d57e208fc48c5_layers.base_layers,
+                layer_control_06cd17140dff5b5fba8d57e208fc48c5_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+
+        
+    
+            tile_layer_cf08c25f50ecd048d1c852b90d235bab.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_22c91855f865603feba2101bb338d39e.setIcon(icon_0ed036826339a9e78f42b9fab26c6b4d);
+            
+    
+                marker_41931825100283d3e5cd99e16aa713fe.setIcon(icon_201d8cc31d6ad8eaf0a40e7c91da9edf);
+            
+    
+                marker_493d3301b6c7883b70f3d5a085ba6478.setIcon(icon_24c2f664ba3c80395bf4090699a96884);
+            
+    
+                marker_e87cd3fbd4c632c9cf62bcbde6fe7586.setIcon(icon_e7e44fdb098fbd80231a55eebb196bce);
+            
+    
+                marker_4a57073aabe15deb2b1fecca1e2f1650.setIcon(icon_f6c68da7c1635db26c5bc10c7a4660fa);
+            
+    
+                marker_342cc75ab04b967af34c1af2d1f71eed.setIcon(icon_d6fc2fe61826f7f978b724515d6e7022);
+            
+    
+            feature_group_72ce6f13381d8f8a8dc5ce3c15e8c271.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_a9d43697adc05d0bd2a45f4bf8eb9aa7.setIcon(icon_bdc92d1a74757a53417ed713f956f6a8);
+            
+    
+                marker_2a51969a34e59f0896be371779424c75.setIcon(icon_000edb682d8ec94e5ce8b21ae915c502);
+            
+    
+                marker_f5ffc4befeead3260458d8028bc86c8f.setIcon(icon_adb759c3a36f45c0a3d2bbba336a9036);
+            
+    
+                marker_80949042d22b4e9507f0bde5ee822ba7.setIcon(icon_18b2f67fa89ff76caa2a6cd4b1d8aceb);
+            
+    
+                marker_15a3a72ba38f8a632e763a076561ca82.setIcon(icon_5a50be5f9b56a55814f09b0881413d15);
+            
+    
+                marker_1529bd2b7fd2a67e9105d636a2d923fa.setIcon(icon_618ada30794eefb495568b1bce4aa421);
+            
+    
+                marker_348747ea68294cb4ee5dd79fa7868d7e.setIcon(icon_a969b69997ff636b15ed74c0a39ade48);
+            
+    
+                marker_b9a5a81fd2b1ad3700edd201d346347f.setIcon(icon_adcc51f0d70e2875dea8f5088631fd42);
+            
+    
+                marker_d4c7008a236413c5dc697a78855a6f70.setIcon(icon_22261d2628e9ba5c46f93c186c11e141);
+            
+    
+                marker_44e285a95b8e45133e779b4937b880ee.setIcon(icon_423abd68ded26ca4be19328b47fed92d);
+            
+    
+                marker_da76e6cb4f07572a8241c63b1f9e8f33.setIcon(icon_70df0de2a339e0b2efd4a107066baf2c);
+            
+    
+                marker_7c5b31736cb788f7d64fc64f7f8f1488.setIcon(icon_130569147c0c2fec22deab203b473422);
+            
+    
+                marker_86f94d1baad2b9845d498f08f3c7ef4e.setIcon(icon_f8af26d30e6e7f3490bdf37416b33788);
+            
+    
+                marker_8a1f4f9765f64e13bc06f3df7d980e76.setIcon(icon_add6516e3dac8894be304a13f12d17b3);
+            
+    
+                marker_0542b3e7735f6a16d44f8a267c9ea74c.setIcon(icon_04faf49c782ff5af75f63bac62e1864e);
+            
+    
+                marker_ef64565ea83922beedf64cf17187973c.setIcon(icon_f918c3a749411f6372a2d9d6a11f2afb);
+            
+    
+                marker_03622d15bf7fbbe4c2b645204bb293a3.setIcon(icon_680fbdec0a62499a3c2ec86bd3c1db83);
+            
+    
+                marker_d2636a4d372905ff0924f76ba7b63a81.setIcon(icon_ac1f8cc81d0a376adf615d67af89f848);
+            
+    
+            feature_group_d9441884f28f43516aa82429c8b622ee.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_aa8e77defe404502cbfbde3c45ca3073.setIcon(icon_a6efa1f85da46b54d44fd1b88845a1a3);
+            
+    
+                marker_9b312a82f02375b6a06def49f461924d.setIcon(icon_21f345806bc225b2c168908a202b2555);
+            
+    
+                marker_2a27ac511fa0a2afebdd7a88cc8a0e0c.setIcon(icon_6b96d86e04544c8a7b50d97ed35762cb);
+            
+    
+                marker_c2f465a02578dd5183af3e79d541ef6f.setIcon(icon_ed110cb0a74d9f870df8d837d4a8da41);
+            
+    
+                marker_ae183284b50c19f8f476b7ef635a2031.setIcon(icon_4afada5f73d07609fb663c4b3b133981);
+            
+    
+                marker_227dd1da2dcc1b943155da381b441b9f.setIcon(icon_07aa6dd40418bfc0f7eb34645c2fb20c);
+            
+    
+                marker_95db9c9d8858430dfb584302458a11d8.setIcon(icon_37c58c28eb88490840109c87bf8c890e);
+            
+    
+                marker_c8f6798ef8fe52789ad4e51d87344c60.setIcon(icon_581515e629e536364e3b8fff6bb5c682);
+            
+    
+                marker_180da927aed8a536da72548bd2dde501.setIcon(icon_0a7f4c7d62bd565332d8eed87061aee4);
+            
+    
+                marker_dd2795cbacb4b5ba896a589da0cd1ba4.setIcon(icon_c0e1d23c3bbf523f670f23631ef8cb25);
+            
+    
+            feature_group_57c3ccb47da587c3c319fcbca8c0cbae.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_918f018daed9b13b1fdbc191d92e3e89.setIcon(icon_dd7a440a9e1ac1dfe807e62650916c81);
+            
+    
+                marker_26790267094ff8664105b99f12d0edaf.setIcon(icon_a4ef02fe6b6b02d8095fa8645be1f179);
+            
+    
+                marker_d3ffa0bef583d7871cdf9873a14368ae.setIcon(icon_22978fd055c72808a5232e08d1f8f477);
+            
+    
+                marker_256aa052a4544fbfac93bd25d0f5d3bc.setIcon(icon_b3bf2aff657d3fed5cd2da47d760b5b9);
+            
+    
+                marker_5d2092671dbd4cc749c58bf5778f6faf.setIcon(icon_7f9db1a81490944b766e0ba9d9d2684a);
+            
+    
+                marker_16ac95473c842b25e0431ed04f063224.setIcon(icon_00679b6bc27e5eb65a2433aeea59e4df);
+            
+    
+                marker_f75d5b2d8c42e28d1e926987b41ffbbf.setIcon(icon_313061451afcd8a0eeb9ae97c9eb0eba);
+            
+    
+                marker_bbfd645853676f8b06e803c2e77bb79b.setIcon(icon_282fb9d0a20d4521e78dab7da091e685);
+            
+    
+                marker_52b2b83b72b5ed4983dfabe1e4b4e1cd.setIcon(icon_a847d754c34f35ac138d7a3d1ada5f57);
+            
+    
+                marker_5e49552caf697eacf156a19e3c1f0eea.setIcon(icon_2ff516d3db2d0f0c13b2bacc4a0a2b51);
+            
+    
+                marker_0aeefeda5a29845583c9df52f0efa94c.setIcon(icon_828188e909291957d4b87f781a1b9920);
+            
+    
+                marker_8d3ff9936483ddc9de555040a10e5251.setIcon(icon_f1acf6e2ef2348a9f72a7cb8d4f3411d);
+            
+    
+            feature_group_337854111f0fe0e52a56765c915cbdaf.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+    
+                marker_544ce31d3edc6f96d4cb06ea7eabb77a.setIcon(icon_99d95e6f1e54b8474b2429814927b524);
+            
+    
+                marker_433908df32c06385ead5bfc2a9dd0f38.setIcon(icon_017c99411fb53c210a9b7b8996b3cce6);
+            
+    
+                marker_80b6375409cde98472733cdb8d41466b.setIcon(icon_df90984c43bca816a9d8c80802d66a10);
+            
+    
+                marker_f908c87a25d55f3cdd3a3b7c8f3bc6fc.setIcon(icon_bcd6f0a82df04dec7675f566ed81162f);
+            
+    
+                marker_7533f5a094f110bfbc3165b24890bae0.setIcon(icon_80674f045a6d7d7fa2c2585258b0cdaf);
+            
+    
+                marker_f58842658fb222367d289133c8ef554c.setIcon(icon_79a3c9c5cfd19ae711b81bd7c3c664b9);
+            
+    
+                marker_fe5324ca33ac09ae3be2abece4be50ad.setIcon(icon_bea97a73bf99d2d9c33fe3bb0119e12c);
+            
+    
+                marker_6622a64d984a6665973927ba08807bc2.setIcon(icon_01b74664d24127c983930a0187394faf);
+            
+    
+                marker_b9c9a1ebd9e45632b7c00408ddf35ff7.setIcon(icon_f3f57af2028454c43006343e0eda2078);
+            
+    
+                marker_f73ae1ea50609f416f4202b7ea8f4091.setIcon(icon_91a59448d9198dddb0c2f81d969c3001);
+            
+    
+                marker_f9d1a6849a99dbc479545cdcc97beb31.setIcon(icon_5e4eb79bfa9ccacb9ea509b2e532194a);
+            
+    
+            feature_group_15b35ef2f0e9a7ee731af21f3179dbe6.addTo(map_e1dbe2a299950a2b8e5bfab4efa4eb3e);
+        
+</script>
+</html>
