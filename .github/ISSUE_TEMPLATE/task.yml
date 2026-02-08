@@ -1,0 +1,48 @@
+name: Task / Action Item
+description: Use this form for all standard tasks
+title: "[Task]: "
+labels: ["task"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+      placeholder: Describe the task clearly in simple terms.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current status
+      options:
+        - Not Started
+        - In Progress
+        - Blocked
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: What does “done” look like?
+      placeholder: Describe the expected outcome.
+    validations:
+      required: true
+
+  - type: input
+    id: due_date
+    attributes:
+      label: Expected completion date
+      placeholder: YYYY-MM-DD
