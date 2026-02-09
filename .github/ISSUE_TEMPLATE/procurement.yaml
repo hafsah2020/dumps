@@ -1,0 +1,131 @@
+name: Procurement
+description: Track purchasing or acquisition of materials, products, or services.
+title: "[Procurement] {{item_name}}"
+labels: ["procurement"]
+assignees: []  # Top-level assignees if needed
+
+body:
+  # Item / Product Name
+  - type: input
+    id: item_name
+    attributes:
+      label: Item / Product Name
+      placeholder: "Enter the name of the item or product"
+    validations:
+      required: true
+
+  # Quantity / Specifications
+  - type: input
+    id: quantity
+    attributes:
+      label: Quantity / Specifications
+      placeholder: "e.g., 50 units, 5kg, specific model"
+    validations:
+      required: true
+
+  # Owner / Responsible Staff
+  - type: input
+    id: owner
+    attributes:
+      label: Owner / Responsible Staff
+      placeholder: "GitHub username of the person responsible"
+    validations:
+      required: true
+
+  # Priority
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      description: "Select the priority of this procurement"
+      default: 1  # 0-based index → "Medium"
+    validations:
+      required: true
+
+  # Status
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Not Started
+        - Ordered
+        - Delivered
+        - Issue
+      description: "Select the current status of the procurement"
+      default: 0
+    validations:
+      required: true
+
+  # Supplier / Vendor
+  - type: input
+    id: supplier
+    attributes:
+      label: Supplier / Vendor
+      placeholder: "Optional: Name of supplier or vendor"
+    validations:
+      required: false
+
+  # Expected Delivery Date
+  - type: input
+    id: delivery_date
+    attributes:
+      label: Expected Delivery Date
+      description: "Optional: Enter expected delivery date (YYYY-MM-DD)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
+
+  # Notes / Issues
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Issues
+      placeholder: "Optional: Any additional notes, issues, or observations"
+    validations:
+      required: false
+
+  # Definition of Done
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe how we know this procurement is complete"
+      placeholder: "- Item delivered and checked\n- Invoice processed\n- Stakeholders informed"
+    validations:
+      required: true
+
+  # Other People to copy
+  - type: textarea
+    id: managers_to_notify
+    attributes:
+      label: Other People to copy
+      description: "Add GitHub usernames to notify (use cc:@username, comma-separated)"
+      placeholder: "cc:@manager1, @manager2"
+    validations:
+      required: false
+
+  - type: textarea
+    id: comment_template
+    attributes:
+      label: Copyable Comment Template (DO NOT EDIT!)
+      description: "Copy and paste the following into a comment to update progress. Follow the instructions in each field."
+      value: |
+        ```markdown
+        #### Update: 
+        e.g., Order placed, Item received, Issue reported
+        
+        **Status:** Choose one: Not Started / Ordered / Delivered / Issue
+        
+        #### Notes / Issues: 
+        e.g., Any obstacles, delays, or vendor feedback
+        
+        #### Next Steps: 
+        e.g., State next actions; Notify others if needed
+        ```
+    validations:
+      required: false
