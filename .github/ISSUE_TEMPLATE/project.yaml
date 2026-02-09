@@ -1,0 +1,122 @@
+name: Project
+description: Track larger initiatives or multi-step operational projects.
+title: "Project Name / Initiative"
+labels: ["project"]
+assignees: []  # Top-level assignees if needed
+
+body:
+  # Description
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: "Please share every detail on this project"
+    validations:
+      required: true
+
+  # Priority
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      description: "Select the priority of this project"
+      default: 1  # 0-based index → "Medium"
+    validations:
+      required: true
+
+  # Status
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Not Started
+        - In Progress
+        - Blocked
+        - Completed
+      description: "Select the current status of the project"
+      default: 0
+    validations:
+      required: true
+
+  # Start / End Dates
+  - type: input
+    id: start_date
+    attributes:
+      label: Start Date
+      description: "Project start date (YYYY-MM-DD)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: input
+    id: end_date
+    attributes:
+      label: End Date
+      description: "Project end date (YYYY-MM-DD)"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  # Milestones / Deliverables
+  - type: textarea
+    id: milestones
+    attributes:
+      label: Milestones / Deliverables
+      placeholder: "Optional: List key milestones or deliverables"
+    validations:
+      required: false
+
+  # Team Members
+  - type: textarea
+    id: team_members
+    attributes:
+      label: Team Members
+      placeholder: "Optional: List GitHub usernames of project team members"
+    validations:
+      required: false
+
+  # Definition of Done
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe how we know this project is complete"
+      placeholder: "- All milestones completed\n- Deliverables submitted\n- Stakeholders informed"
+    validations:
+      required: true
+
+  # Other People to copy
+  - type: textarea
+    id: managers_to_notify
+    attributes:
+      label: Other People to copy
+      description: "Add GitHub usernames to notify (use cc:@username, comma-separated)"
+      placeholder: "cc:@manager1, @manager2"
+    validations:
+      required: false
+
+  - type: textarea
+    id: comment_template
+    attributes:
+      label: Copyable Comment Template (DO NOT EDIT!)
+      description: "Copy and paste the following into a comment to update progress. Follow the instructions in each field."
+      value: |
+        ```markdown
+        #### Update: 
+        e.g., Acknowledgement, Progress update, Milestone achieved
+        
+        **Status:** Choose one: Not Started / In Progress / Blocked / Completed
+        
+        #### Milestones / Deliverables Completed: 
+        e.g., Specify milestones completed
+        
+        #### Next Steps: 
+        e.g., State next actions; Notify others if needed
+        ```
+    validations:
+      required: false
