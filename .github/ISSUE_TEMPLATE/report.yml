@@ -1,18 +1,10 @@
 name: Report
 description: Track operational reporting, audits, and analytics.
+title: "[Report] {{report_name}}"
 labels: ["report"]
 assignees: []  # Top-level assignees if needed
 
 body:
-  # Report Name / Type
-  - type: input
-    id: report_name
-    attributes:
-      label: Report Name / Type
-      placeholder: "Enter the name or type of the report"
-    validations:
-      required: true
-
   # Status
   - type: dropdown
     id: status
