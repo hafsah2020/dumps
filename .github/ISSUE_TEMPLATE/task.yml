@@ -45,7 +45,7 @@ body:
     attributes:
       label: How to update this task. DO NOT EDIT THIS SECTION!
       description: "Copy and paste this into a comment to update progress."
-    value: |
+      value: |
         > Copy everything below into a new comment to update this task:
         ```markdown
         **Update:** [Brief update on progress]
