@@ -58,7 +58,6 @@ body:
     validations:
       required: false
 
-  # Copyable Comment Template
   - type: textarea
     id: comment_template
     attributes:
@@ -69,7 +68,7 @@ body:
         **Update:** e.g., Acknowledgement, Progress update, Deliverable submitted
         **Status:** Choose one: Not Started / In Progress / Blocked / Done
         **Notes / Challenges:** e.g., Any obstacles, issues, or feedback
-        ---
+        [Example Notes Separator]
         e.g., Acknowledged feedback; Shared deliverable; Blocked by dependency
         **Next Steps:** e.g., State your next actions; Notify others if needed
         ```
