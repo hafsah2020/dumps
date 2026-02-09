@@ -1,19 +1,10 @@
 name: Procurement
 description: Track purchasing or acquisition of materials, products, or services.
-title: "[Procurement] {{item_name}}"
+title: "[Item / Product Name]"
 labels: ["procurement"]
 assignees: []  # Top-level assignees if needed
 
 body:
-  # Item / Product Name
-  - type: input
-    id: item_name
-    attributes:
-      label: Item / Product Name
-      placeholder: "Enter the name of the item or product"
-    validations:
-      required: true
-
   # Quantity / Specifications
   - type: input
     id: quantity
@@ -23,12 +14,12 @@ body:
     validations:
       required: true
 
-  # Owner / Responsible Staff
-  - type: input
-    id: owner
+  # Need
+  - type: textarea
+    id: need
     attributes:
-      label: Owner / Responsible Staff
-      placeholder: "GitHub username of the person responsible"
+      label: Purpose
+      placeholder: "This item will...."
     validations:
       required: true
 
@@ -88,16 +79,6 @@ body:
       placeholder: "Optional: Any additional notes, issues, or observations"
     validations:
       required: false
-
-  # Definition of Done
-  - type: textarea
-    id: definition_of_done
-    attributes:
-      label: Definition of Done
-      description: "Describe how we know this procurement is complete"
-      placeholder: "- Item delivered and checked\n- Invoice processed\n- Stakeholders informed"
-    validations:
-      required: true
 
   # Other People to copy
   - type: textarea
