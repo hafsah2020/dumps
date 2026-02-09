@@ -40,7 +40,7 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: markdown
     id: comment_template
     attributes:
       label: How to update this task. DO NOT EDIT THIS SECTION!
