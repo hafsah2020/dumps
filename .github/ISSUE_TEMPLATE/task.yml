@@ -1,18 +1,38 @@
 name: Task
 description: Create a new task with ownership, deadline, and definition of done.
-title: "e.g Create Github Issue Template"
+title: "[Task] "
 labels: ["task"]
 assignees: []
 
 body:
+  # Task Description
   - type: textarea
     id: task_description
     attributes:
       label: What needs to be done?
-      placeholder: Describe the task in detail.
+      placeholder: "Describe the task in detail"
     validations:
       required: true
 
+  # Owner (Assignee)
+  - type: assignees
+    id: owner
+    attributes:
+      label: Person in Charge / Owner
+    validations:
+      required: true
+
+  # Managers / People to Notify
+  - type: input
+    id: managers_to_notify
+    attributes:
+      label: Managers to Notify
+      description: "Add GitHub usernames to notify (use @username, comma-separated). They will not be assigned as owners."
+      placeholder: "@manager1, @manager2"
+    validations:
+      required: false
+
+  # Deadline
   - type: input
     id: deadline
     attributes:
@@ -22,6 +42,20 @@ body:
     validations:
       required: true
 
+  # Priority
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      default: Medium
+    validations:
+      required: true
+
+  # Definition of Done
   - type: textarea
     id: definition_of_done
     attributes:
@@ -31,24 +65,18 @@ body:
     validations:
       required: true
 
+  # Copyable Comment Template (renders properly in issue)
   - type: textarea
-    id: copy
+    id: comment_template
     attributes:
-      label: Who should be copied
-      description: "Copy who needs to be copied"
-      placeholder: "cc: @username1; @username2 ....... @usernamen"
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
+      label: Copyable Comment Template (DO NOT EDIT!)
+      description: "Copy and paste the following into a comment to update progress."
       value: |
-        ### How to update this task (DO NOT EDIT THIS SECTION)
-        Copy and paste the following into a comment to update progress:
-  
-            **Update:** [Brief update on progress]
-            **Status:** Not Started / In Progress / Blocked / Done
-            **Notes / Challenges:** [Optional]
-            **Next Steps:** [Optional]
-
-
+        ```markdown
+        **Update:** [Brief update on progress]
+        **Status:** Not Started / In Progress / Blocked / Done
+        **Notes / Challenges:** [Optional]
+        **Next Steps:** [Optional]
+        ```
+    validations:
+      required: false
