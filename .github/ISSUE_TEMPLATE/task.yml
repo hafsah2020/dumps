@@ -1,23 +1,15 @@
 name: Task
 description: Create a new task with ownership, deadline, and definition of done.
-title: "[Task] "
+title: "e.g Create Github Issue Template"
 labels: ["task"]
 assignees: []
 
 body:
-  - type: input
+  - type: textarea
     id: task_description
     attributes:
       label: What needs to be done?
       placeholder: Describe the task in detail.
-    validations:
-      required: true
-
-  - type: input
-    id: owner
-    attributes:
-      label: Assigned to
-      placeholder: Who is responsible for this task?
     validations:
       required: true
 
@@ -40,9 +32,18 @@ body:
       required: true
 
   - type: textarea
+    id: copy
+    attributes:
+      label: Who should be copied
+      description: "Copy who needs to be copied"
+      placeholder: "cc: @username1; @username2 ....... @usernamen"
+    validations:
+      required: true
+
+  - type: textarea
     id: comment_template
     attributes:
-      label: How to update this task
+      label: How to update this task. DO NOT EDIT THIS SECTION!
       description: "Copy and paste this into a comment to update progress."
       value: |
         > Copy everything below into a new comment to update this task:
