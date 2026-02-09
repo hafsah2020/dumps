@@ -1,0 +1,54 @@
+name: Task
+description: Create a new task with ownership, deadline, and definition of done.
+title: "[Task] "
+labels: ["task"]
+assignees: []
+
+body:
+  - type: input
+    id: task_description
+    attributes:
+      label: What needs to be done?
+      placeholder: Describe the task in detail.
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Assigned to
+      placeholder: Who is responsible for this task?
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: "YYYY-MM-DD"
+      placeholder: "2026-02-15"
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe how we know this task is complete."
+      placeholder: "- Task completed and tested\n- Documentation updated\n- Stakeholders informed"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **How to update this task:**  
+        When updating progress, please copy and use this comment template:
+
+        ```markdown
+        **Update:** [Brief update on progress]
+        **Status:** Not Started / In Progress / Blocked / Done
+        **Notes / Challenges:** [Optional]
+        **Next Steps:** [Optional]
+        ```
