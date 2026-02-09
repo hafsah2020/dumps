@@ -1,6 +1,6 @@
 name: Report
 description: Track operational reporting, audits, and analytics.
-title: "[Report Name] {{report_name}}"
+title: "[Report Name]"
 labels: ["report"]
 assignees: []  # Top-level assignees if needed
 
