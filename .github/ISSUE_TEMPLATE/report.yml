@@ -1,6 +1,5 @@
 name: Report
 description: Track operational reporting, audits, and analytics.
-title: "[Report] "
 labels: ["report"]
 assignees: []  # Top-level assignees if needed
 
@@ -11,15 +10,6 @@ body:
     attributes:
       label: Report Name / Type
       placeholder: "Enter the name or type of the report"
-    validations:
-      required: true
-
-  # Owner / Responsible Staff
-  - type: input
-    id: owner
-    attributes:
-      label: Owner / Responsible Staff
-      placeholder: "GitHub username of the person responsible"
     validations:
       required: true
 
@@ -55,7 +45,7 @@ body:
       label: Data Sources / Attachments
       placeholder: "Optional: List data sources or attach relevant files"
     validations:
-      required: false
+      required: true
 
   # Key Findings / Observations
   - type: textarea
@@ -74,16 +64,6 @@ body:
       placeholder: "Optional: Recommended actions based on findings"
     validations:
       required: false
-
-  # Definition of Done
-  - type: textarea
-    id: definition_of_done
-    attributes:
-      label: Definition of Done
-      description: "Describe how we know this report is complete"
-      placeholder: "- Report finalised and submitted\n- Findings reviewed\n- Stakeholders informed"
-    validations:
-      required: true
 
   # Other People to copy
   - type: textarea
