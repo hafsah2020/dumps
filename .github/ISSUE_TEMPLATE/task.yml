@@ -1,9 +1,8 @@
+---
 name: Task Issue
-about: Create a detailed task issue with instructions and comment templates
 title: "[TASK] "
-labels: task
-assignees: ''
-
+labels: ["task"]
+assignees: []
 ---
 
 ## Task Overview
