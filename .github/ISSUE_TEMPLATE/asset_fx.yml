@@ -1,0 +1,131 @@
+name: Asset Fix
+description: Track maintenance, repairs, or technical fixes for assets.
+title: "[Asset Fix] "
+labels: ["asset-fix"]
+assignees: []  # Top-level assignees if needed
+
+body:
+  # Asset Name / ID
+  - type: input
+    id: asset_name
+    attributes:
+      label: Asset Name / ID
+      placeholder: "Enter the asset name or identification code"
+    validations:
+      required: true
+
+  # Issue Description
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Issue Description
+      placeholder: "Describe the issue in detail"
+    validations:
+      required: true
+
+  # Owner / Technician
+  - type: input
+    id: owner
+    attributes:
+      label: Owner / Technician
+      placeholder: "GitHub username of responsible staff"
+    validations:
+      required: true
+
+  # Priority
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      description: "Select the priority of this asset fix"
+      default: 1  # 0-based index → "Medium"
+    validations:
+      required: true
+
+  # Status
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Not Started
+        - In Progress
+        - Under Review
+        - Completed
+      description: "Select the current status of the fix"
+      default: 0
+    validations:
+      required: true
+
+  # Location
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: "Optional: Where the asset is located"
+    validations:
+      required: false
+
+  # Steps Taken / Actions
+  - type: textarea
+    id: steps_taken
+    attributes:
+      label: Steps Taken / Actions
+      placeholder: "Describe actions already taken to fix the issue"
+    validations:
+      required: true
+
+  # Next Steps / Follow-Up
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: Next Steps / Follow-Up
+      placeholder: "Optional: Recommended follow-up actions"
+    validations:
+      required: false
+
+  # Definition of Done
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe how we know this fix is complete"
+      placeholder: "- Issue resolved\n- Asset tested\n- Documentation updated"
+    validations:
+      required: true
+
+  # Other People to copy
+  - type: textarea
+    id: managers_to_notify
+    attributes:
+      label: Other People to copy
+      description: "Add GitHub usernames to notify (use cc:@username, comma-separated) of this asset fix"
+      placeholder: "cc:@manager1, @manager2"
+    validations:
+      required: false
+
+  - type: textarea
+    id: comment_template
+    attributes:
+      label: Copyable Comment Template (DO NOT EDIT!)
+      description: "Copy and paste the following into a comment to update progress. Follow the instructions in each field."
+      value: |
+        ```markdown
+        #### Update: 
+        e.g., Acknowledgement, Progress update, Fix completed
+        
+        **Status:** Choose one: Not Started / In Progress / Under Review / Completed
+        
+        #### Notes / Challenges: 
+        e.g., Any obstacles, issues, or feedback
+        
+        #### Next Steps: 
+        e.g., State your next actions; Notify others if needed
+        ```
+    validations:
+      required: false
+
