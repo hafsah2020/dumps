@@ -1,55 +1,122 @@
----
-name: Task Issue
+name: Task Issue Form
 title: "[TASK] "
 labels: ["task"]
 assignees: []
----
 
-## Task Overview
-**Title:**  
-_Short descriptive title of the task_
+description: >
+  Use this form to create a detailed task issue with all necessary information.
+  At the end, copy comment templates for updates.
 
-**Description:**  
-_Detail the task, including the goal, expected outcomes, and context._
+body:
+  - type: input
+    id: task_title
+    attributes:
+      label: "Task Title"
+      description: "Short descriptive title for the task"
+      placeholder: "Implement login feature"
+      required: true
 
-**Priority:**  
-- [ ] High  
-- [ ] Medium  
-- [ ] Low
+  - type: textarea
+    id: task_description
+    attributes:
+      label: "Description"
+      description: "Detail the task, including goals and expected outcomes"
+      placeholder: "This task involves creating a login feature for the app..."
+      required: true
 
-**Due Date:**  
-_YYYY-MM-DD_
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "Select task priority"
+      options:
+        - High
+        - Medium
+        - Low
+      required: true
 
-**Task Owner / Assignee:**  
-_@username_
+  - type: input
+    id: due_date
+    attributes:
+      label: "Due Date"
+      description: "YYYY-MM-DD"
+      placeholder: "2026-03-01"
+      required: false
 
-**Related Issues / References:**  
-_Link related issues, documents, or resources_
+  - type: input
+    id: assignee
+    attributes:
+      label: "Task Owner / Assignee"
+      description: "GitHub username of the task owner"
+      placeholder: "@username"
+      required: false
 
----
+  - type: textarea
+    id: related_issues
+    attributes:
+      label: "Related Issues / References"
+      description: "Link related issues or resources"
+      placeholder: "https://github.com/org/repo/issues/123"
+      required: false
 
-## Requirements / Checklist
-- [ ] Define task objectives clearly
-- [ ] Include necessary resources or links
-- [ ] Add steps for execution
-- [ ] List dependencies if any
-- [ ] Identify stakeholders to notify
-- [ ] Add labels and milestones
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Task Checklist"
+      options:
+        - Define task objectives clearly
+        - Include necessary resources or links
+        - Add steps for execution
+        - List dependencies if any
+        - Identify stakeholders to notify
+        - Add labels and milestones
 
----
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Additional Notes"
+      description: "Any extra information to help complete the task"
+      required: false
 
-## Additional Notes
-_Any extra information to help complete the task._
+  - type: textarea
+    id: comment_templates
+    attributes:
+      label: "Comment Templates (Copy & Paste YAML)"
+      description: |
+        Use these templates for updates. Replace placeholders like @username, YYYY-MM-DD, XX%.
+      default: |
+        ### Task Started
+        ```yaml
+        body: |
+          🔹 Task Update: Started
+          Assigned to: @username
+          Start Date: YYYY-MM-DD
+          Notes: Task has officially started.
+        ```
 
----
+        ### Task In Progress
+        ```yaml
+        body: |
+          🔹 Task Update: In Progress
+          Assigned to: @username
+          Progress: XX%
+          Notes: Current updates or blockers.
+        ```
 
-## Comment Templates (Copy & Paste in YAML)
-> Use these templates when updating this task. Replace placeholders (`@username`, `YYYY-MM-DD`, `XX%`) as needed.
+        ### Task Completed
+        ```yaml
+        body: |
+          ✅ Task Update: Completed
+          Completed by: @username
+          Completion Date: YYYY-MM-DD
+          Notes: Final remarks, outcomes, or follow-ups.
+        ```
 
-### **1. Task Started**
-```yaml
-body: |
-  🔹 Task Update: Started
-  Assigned to: @username
-  Start Date: YYYY-MM-DD
-  Notes: Task has officially started.
+        ### Task Blocked / Needs Attention
+        ```yaml
+        body: |
+          ⚠️ Task Update: Blocked
+          Assigned to: @username
+          Issue: Describe blocker
+          Action Needed: Describe next steps or assistance required
+        ```
