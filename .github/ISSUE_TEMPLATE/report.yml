@@ -1,6 +1,6 @@
 name: Report
 description: Track operational reporting, audits, and analytics.
-title: "[Report] {{report_name}}"
+title: "[Report Name] {{report_name}}"
 labels: ["report"]
 assignees: []  # Top-level assignees if needed
 
@@ -11,8 +11,6 @@ body:
     attributes:
       label: Status
       options:
-        - Not Started
-        - In Progress
         - Draft Completed
         - Final Submitted
       description: "Select the current status of the report"
