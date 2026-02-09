@@ -1,0 +1,54 @@
+name: Product Monitoring
+description: Track ongoing monitoring of specific products (performance, usage, adoption, issues).
+title: "Monitoring of {{product_name}}"
+
+body:
+  # description
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: "Describe the product, expected performance, metrics"
+    validations:
+      required: true
+
+  # Monitoring Period / Dates
+  - type: input
+    id: monitoring_period
+    attributes:
+      label: Monitoring Period / Dates
+      description: "Enter the monitoring period, e.g., 2026-01-01 to 2026-01-31"
+      placeholder: "YYYY-MM-DD to YYYY-MM-DD"
+    validations:
+      required: true
+
+  # Definition of Done
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe how we know this monitoring is complete"
+      placeholder: "- Product performance monitored and reported"
+    validations:
+      required: true
+
+    - type: textarea
+      id: vendor_comment_template
+      attributes:
+        label: Copyable Template to share with Vendors (DO NOT EDIT!)
+        description: "Copy and paste the following into a comment to update progress. Follow the instructions in each field."
+        value: |
+          ```markdown
+          #### Update:
+          e.g., Acknowledgement, Draft completed, Final submitted
+  
+          **Status:** Choose one: Not Started / In Progress / Draft Completed / Final Submitted
+  
+          #### Key Findings / Observations:
+          e.g., Summarise the main points or insights
+  
+          #### Recommendations / Next Steps:
+          e.g., State next actions; Notify others if needed
+          ```
+      validations:
+        required: false
