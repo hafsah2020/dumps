@@ -14,23 +14,13 @@ body:
     validations:
       required: true
 
-  # Owner (Person in Charge)
-  - type: input
-    id: owner
-    attributes:
-      label: Person in Charge / Owner
-      description: "Type the GitHub username of the person responsible (e.g., @username)"
-      placeholder: "@username"
-    validations:
-      required: true
-
-  # Managers / People to Notify
-  - type: input
+  # Other People to copy
+  - type: textarea
     id: managers_to_notify
     attributes:
-      label: Managers to Notify
-      description: "Add GitHub usernames to notify (use @username, comma-separated). They will not be assigned."
-      placeholder: "@manager1, @manager2"
+      label:  Other People to cop
+      description: "Add GitHub usernames to notify (use cc:@username, comma-separated) of task"
+      placeholder: "cc:@manager1, @manager2"
     validations:
       required: false
 
