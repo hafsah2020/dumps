@@ -52,13 +52,14 @@ body:
   - type: textarea
     id: managers_to_notify
     attributes:
-      label:  Other People to copy
+      label: Other People to copy
       description: "Add GitHub usernames to notify (use cc:@username, comma-separated) of task"
       placeholder: "cc:@manager1, @manager2"
     validations:
       required: false
 
-   - type: textarea
+  # Copyable Comment Template
+  - type: textarea
     id: comment_template
     attributes:
       label: Copyable Comment Template (DO NOT EDIT!)
