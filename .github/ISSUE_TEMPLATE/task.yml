@@ -40,19 +40,15 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: comment_template
+  - type: markdown
     attributes:
-      label: How to update this task. DO NOT EDIT THIS SECTION!
-      description: "Copy and paste this into a comment to update progress."
       value: |
-        > Copy everything below into a new comment to update this task:
-        ```markdown
-        **Update:** [Brief update on progress]
-        **Status:** Not Started / In Progress / Blocked / Done
-        **Notes / Challenges:** [Optional]
-        **Next Steps:** [Optional]
-        ```
-    validations:
-      required: false
+        ### How to update this task (DO NOT EDIT THIS SECTION)
+        Copy and paste the following into a comment to update progress:
+  
+            **Update:** [Brief update on progress]
+            **Status:** Not Started / In Progress / Blocked / Done
+            **Notes / Challenges:** [Optional]
+            **Next Steps:** [Optional]
+
 
