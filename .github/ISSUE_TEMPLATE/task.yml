@@ -65,12 +65,12 @@ body:
       description: "Copy and paste the following into a comment to update progress. Follow the instructions in each field."
       value: |
         ```markdown
-        **Update:** e.g., Acknowledgement, Progress update, Deliverable submitted
+        #### Update: e.g., Acknowledgement, Progress update, Deliverable submitted
         **Status:** Choose one: Not Started / In Progress / Blocked / Done
-        **Notes / Challenges:** e.g., Any obstacles, issues, or feedback
+        ####Notes / Challenges: e.g., Any obstacles, issues, or feedback
         [Example Notes Separator]
         e.g., Acknowledged feedback; Shared deliverable; Blocked by dependency
-        **Next Steps:** e.g., State your next actions; Notify others if needed
+        ####Next Steps: e.g., State your next actions; Notify others if needed
         ```
     validations:
       required: false
