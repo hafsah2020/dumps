@@ -2,7 +2,7 @@ name: Task
 description: Create a new task with ownership, deadline, and definition of done.
 title: "[Task] "
 labels: ["task"]
-assignees: []
+assignees: []  # Top-level assignees if needed
 
 body:
   # Task Description
@@ -14,11 +14,13 @@ body:
     validations:
       required: true
 
-  # Owner (Assignee)
-  - type: assignees
+  # Owner (Person in Charge)
+  - type: input
     id: owner
     attributes:
       label: Person in Charge / Owner
+      description: "Type the GitHub username of the person responsible (e.g., @username)"
+      placeholder: "@username"
     validations:
       required: true
 
@@ -27,7 +29,7 @@ body:
     id: managers_to_notify
     attributes:
       label: Managers to Notify
-      description: "Add GitHub usernames to notify (use @username, comma-separated). They will not be assigned as owners."
+      description: "Add GitHub usernames to notify (use @username, comma-separated). They will not be assigned."
       placeholder: "@manager1, @manager2"
     validations:
       required: false
@@ -51,7 +53,8 @@ body:
         - High
         - Medium
         - Low
-      default: Medium
+      description: "Select the priority of this task"
+      default: 1  # 0-based index → "Medium"
     validations:
       required: true
 
@@ -65,7 +68,7 @@ body:
     validations:
       required: true
 
-  # Copyable Comment Template (renders properly in issue)
+  # Copyable Comment Template
   - type: textarea
     id: comment_template
     attributes:
