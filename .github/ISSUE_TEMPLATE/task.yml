@@ -1,48 +1,56 @@
-name: Task / Action Item
-description: Use this form for all standard tasks
-title: "[Task]: "
-labels: ["task"]
-body:
-  - type: textarea
-    id: description
-    attributes:
-      label: What needs to be done?
-      placeholder: Describe the task clearly in simple terms.
-    validations:
-      required: true
+name: Task Issue
+about: Create a detailed task issue with instructions and comment templates
+title: "[TASK] "
+labels: task
+assignees: ''
 
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      options:
-        - High
-        - Medium
-        - Low
-    validations:
-      required: true
+---
 
-  - type: dropdown
-    id: status
-    attributes:
-      label: Current status
-      options:
-        - Not Started
-        - In Progress
-        - Blocked
-    validations:
-      required: true
+## Task Overview
+**Title:**  
+_Short descriptive title of the task_
 
-  - type: textarea
-    id: done
-    attributes:
-      label: What does “done” look like?
-      placeholder: Describe the expected outcome.
-    validations:
-      required: true
+**Description:**  
+_Detail the task, including the goal, expected outcomes, and context._
 
-  - type: input
-    id: due_date
-    attributes:
-      label: Expected completion date
-      placeholder: YYYY-MM-DD
+**Priority:**  
+- [ ] High  
+- [ ] Medium  
+- [ ] Low
+
+**Due Date:**  
+_YYYY-MM-DD_
+
+**Task Owner / Assignee:**  
+_@username_
+
+**Related Issues / References:**  
+_Link related issues, documents, or resources_
+
+---
+
+## Requirements / Checklist
+- [ ] Define task objectives clearly
+- [ ] Include necessary resources or links
+- [ ] Add steps for execution
+- [ ] List dependencies if any
+- [ ] Identify stakeholders to notify
+- [ ] Add labels and milestones
+
+---
+
+## Additional Notes
+_Any extra information to help complete the task._
+
+---
+
+## Comment Templates (Copy & Paste in YAML)
+> Use these templates when updating this task. Replace placeholders (`@username`, `YYYY-MM-DD`, `XX%`) as needed.
+
+### **1. Task Started**
+```yaml
+body: |
+  🔹 Task Update: Started
+  Assigned to: @username
+  Start Date: YYYY-MM-DD
+  Notes: Task has officially started.
