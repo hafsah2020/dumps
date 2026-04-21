@@ -14,7 +14,7 @@ body:
     id: eta
     attributes:
       label: ETA / Deadline
-      description: Enter the expected completion date
+      description: Enter the expected completion date (yyyy-mm-dd)
       placeholder: e.g. 2026-04-30
     validations:
       required: true
@@ -22,6 +22,6 @@ body:
   - type: input
     id: cc
     attributes:
-      label: CC (Stakeholders)
+      label: Notifying:
       description: Add GitHub usernames to notify (e.g. @username)
       placeholder: e.g. @hafsah @team-lead
