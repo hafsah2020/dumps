@@ -1,0 +1,38 @@
+name: Task
+description: Create a new task with ETA and stakeholders
+title: "[Task]: "
+labels: ["task"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Task Title
+      description: Provide a clear and concise title
+      placeholder: e.g. Review Finance Dashboard KPIs
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the task in detail
+      placeholder: What needs to be done? Include context, links, or notes.
+    validations:
+      required: true
+
+  - type: input
+    id: eta
+    attributes:
+      label: ETA / Deadline
+      description: Enter the expected completion date
+      placeholder: e.g. 2026-04-30
+    validations:
+      required: true
+
+  - type: input
+    id: cc
+    attributes:
+      label: CC (Stakeholders)
+      description: Add GitHub usernames to notify (e.g. @username)
+      placeholder: e.g. @hafsah @team-lead
