@@ -1,6 +1,5 @@
 name: Use Template
 description: Template to create issues
-title: "Title: "
 body:
   - type: textarea
     id: description
