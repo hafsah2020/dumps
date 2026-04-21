@@ -1,7 +1,6 @@
-name: Task
-description: Create a new task with ETA and stakeholders
-title: "[Task]: "
-labels: ["task"]
+name: Use Template
+description: Template to create issues
+title: "Title: "
 body:
   - type: textarea
     id: description
