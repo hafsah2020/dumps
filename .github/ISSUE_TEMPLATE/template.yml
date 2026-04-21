@@ -22,6 +22,6 @@ body:
   - type: input
     id: cc
     attributes:
-      label: Notifying:
+      label: Notifying
       description: Add GitHub usernames to notify (e.g. @username)
       placeholder: e.g. @hafsah @team-lead
