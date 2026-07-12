@@ -28,5 +28,311 @@
     "name": "department: management",
     "color": "6E7781",
     "description": "Management and administration"
+  },
+
+  {
+    "name": "office management",
+    "color": "6E7781",
+    "description": "Office management activities"
+  },
+  {
+    "name": "workspace management",
+    "color": "6E7781",
+    "description": "Workspace management activities"
+  },
+  {
+    "name": "staff management",
+    "color": "6E7781",
+    "description": "Staff management"
+  },
+  {
+    "name": "staff welfare",
+    "color": "6E7781",
+    "description": "Staff welfare initiatives"
+  },
+  {
+    "name": "staff collaboration",
+    "color": "6E7781",
+    "description": "Team collaboration"
+  },
+  {
+    "name": "internal communication",
+    "color": "6E7781",
+    "description": "Internal communications"
+  },
+  {
+    "name": "policy & governance",
+    "color": "6E7781",
+    "description": "Policies and governance"
+  },
+  {
+    "name": "meetings & planning",
+    "color": "6E7781",
+    "description": "Meetings and planning"
+  },
+  {
+    "name": "administration",
+    "color": "6E7781",
+    "description": "Administrative tasks"
+  },
+
+  {
+    "name": "service delivery",
+    "color": "1D76DB",
+    "description": "Service delivery"
+  },
+  {
+    "name": "logistics",
+    "color": "1D76DB",
+    "description": "Logistics activities"
+  },
+  {
+    "name": "SOP development",
+    "color": "1D76DB",
+    "description": "Developing SOPs"
+  },
+  {
+    "name": "SOP review",
+    "color": "1D76DB",
+    "description": "Reviewing SOPs"
+  },
+  {
+    "name": "safety (HSE)",
+    "color": "1D76DB",
+    "description": "Health, Safety and Environment"
+  },
+  {
+    "name": "quality assurance",
+    "color": "1D76DB",
+    "description": "Quality assurance"
+  },
+  {
+    "name": "inventory management",
+    "color": "1D76DB",
+    "description": "Inventory management"
+  },
+  {
+    "name": "vendor coordination",
+    "color": "1D76DB",
+    "description": "Vendor coordination"
+  },
+  {
+    "name": "field operations",
+    "color": "1D76DB",
+    "description": "Field operations"
+  },
+  {
+    "name": "maintenance",
+    "color": "1D76DB",
+    "description": "Maintenance activities"
+  },
+
+  {
+    "name": "content creation",
+    "color": "0E8A16",
+    "description": "Content creation"
+  },
+  {
+    "name": "campaign management",
+    "color": "0E8A16",
+    "description": "Marketing campaigns"
+  },
+  {
+    "name": "brand awareness",
+    "color": "0E8A16",
+    "description": "Brand awareness initiatives"
+  },
+  {
+    "name": "events",
+    "color": "0E8A16",
+    "description": "Marketing events"
+  },
+  {
+    "name": "social media",
+    "color": "0E8A16",
+    "description": "Social media activities"
+  },
+  {
+    "name": "website content",
+    "color": "0E8A16",
+    "description": "Website content"
+  },
+  {
+    "name": "email marketing",
+    "color": "0E8A16",
+    "description": "Email marketing"
+  },
+  {
+    "name": "public relations",
+    "color": "0E8A16",
+    "description": "Public relations"
+  },
+  {
+    "name": "creative design",
+    "color": "0E8A16",
+    "description": "Creative design"
+  },
+  {
+    "name": "market research",
+    "color": "0E8A16",
+    "description": "Market research"
+  },
+
+  {
+    "name": "lead generation",
+    "color": "D93F0B",
+    "description": "Lead generation"
+  },
+  {
+    "name": "lead qualification",
+    "color": "D93F0B",
+    "description": "Lead qualification"
+  },
+  {
+    "name": "customer follow-up",
+    "color": "D93F0B",
+    "description": "Customer follow-up"
+  },
+  {
+    "name": "proposal & quotation",
+    "color": "D93F0B",
+    "description": "Proposals and quotations"
+  },
+  {
+    "name": "customer onboarding",
+    "color": "D93F0B",
+    "description": "Customer onboarding"
+  },
+  {
+    "name": "vendor onboarding",
+    "color": "D93F0B",
+    "description": "Vendor onboarding"
+  },
+  {
+    "name": "distributor onboarding",
+    "color": "D93F0B",
+    "description": "Distributor onboarding"
+  },
+  {
+    "name": "pricing review",
+    "color": "D93F0B",
+    "description": "Pricing reviews"
+  },
+  {
+    "name": "sales support",
+    "color": "D93F0B",
+    "description": "Sales support"
+  },
+  {
+    "name": "customer retention",
+    "color": "D93F0B",
+    "description": "Customer retention"
+  },
+
+  {
+    "name": "budgeting",
+    "color": "FBCA04",
+    "description": "Budget planning"
+  },
+  {
+    "name": "payments",
+    "color": "FBCA04",
+    "description": "Payments"
+  },
+  {
+    "name": "invoicing",
+    "color": "FBCA04",
+    "description": "Invoicing"
+  },
+  {
+    "name": "expense management",
+    "color": "FBCA04",
+    "description": "Expense management"
+  },
+  {
+    "name": "procurement",
+    "color": "FBCA04",
+    "description": "Procurement"
+  },
+  {
+    "name": "financial reporting",
+    "color": "FBCA04",
+    "description": "Financial reporting"
+  },
+  {
+    "name": "payroll",
+    "color": "FBCA04",
+    "description": "Payroll"
+  },
+  {
+    "name": "compliance",
+    "color": "FBCA04",
+    "description": "Compliance"
+  },
+  {
+    "name": "revenue tracking",
+    "color": "FBCA04",
+    "description": "Revenue tracking"
+  },
+
+  {
+    "name": "bug",
+    "color": "5319E7",
+    "description": "Software bug"
+  },
+  {
+    "name": "feature request",
+    "color": "5319E7",
+    "description": "New feature request"
+  },
+  {
+    "name": "enhancement",
+    "color": "5319E7",
+    "description": "Enhancement"
+  },
+  {
+    "name": "website",
+    "color": "5319E7",
+    "description": "Website-related work"
+  },
+  {
+    "name": "mobile app",
+    "color": "5319E7",
+    "description": "Mobile application"
+  },
+  {
+    "name": "backend",
+    "color": "5319E7",
+    "description": "Backend development"
+  },
+  {
+    "name": "API",
+    "color": "5319E7",
+    "description": "API development"
+  },
+  {
+    "name": "UI/UX",
+    "color": "5319E7",
+    "description": "User interface and experience"
+  },
+  {
+    "name": "security",
+    "color": "5319E7",
+    "description": "Security"
+  },
+  {
+    "name": "infrastructure",
+    "color": "5319E7",
+    "description": "Infrastructure"
+  },
+  {
+    "name": "database",
+    "color": "5319E7",
+    "description": "Database"
+  },
+  {
+    "name": "performance",
+    "color": "5319E7",
+    "description": "Performance optimisation"
   }
 ]
