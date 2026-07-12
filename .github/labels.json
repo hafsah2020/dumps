@@ -1,0 +1,32 @@
+[
+  {
+    "name": "department: operations",
+    "color": "1D76DB",
+    "description": "Operations-related work"
+  },
+  {
+    "name": "department: marketing",
+    "color": "0E8A16",
+    "description": "Marketing-related work"
+  },
+  {
+    "name": "department: sales",
+    "color": "D93F0B",
+    "description": "Sales-related work"
+  },
+  {
+    "name": "department: finance",
+    "color": "FBCA04",
+    "description": "Finance-related work"
+  },
+  {
+    "name": "department: tech",
+    "color": "5319E7",
+    "description": "Technology-related work"
+  },
+  {
+    "name": "department: management",
+    "color": "6E7781",
+    "description": "Management and administration"
+  }
+]
