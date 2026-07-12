@@ -1,23 +1,25 @@
 name: Sync Labels
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - ".github/labels.json"
-  workflow_dispatch:
+      - ".github/workflows/sync-labels.yml"
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
-  labels:
+  sync:
     runs-on: ubuntu-latest
-
-    permissions:
-      issues: write
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Sync labels
-        uses: EndBug/label-sync@v2
+        uses: EndBug/label-sync@v2.3.3
         with:
           config-file: .github/labels.json
           delete-other-labels: false
